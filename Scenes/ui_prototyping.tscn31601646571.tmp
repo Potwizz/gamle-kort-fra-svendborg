@@ -1,0 +1,139 @@
+[gd_scene load_steps=7 format=3 uid="uid://dcxh0ihn0n3ik"]
+
+[ext_resource type="Theme" uid="uid://cptlnk3vxajih" path="res://Themes/location_theme.tres" id="1_yh7hs"]
+[ext_resource type="Shader" uid="uid://dovh6a6atjsxx" path="res://Shaders/sliding_background.gdshader" id="2_7lkhx"]
+[ext_resource type="Script" uid="uid://b2ix37ryg5cg1" path="res://Scenes/location.gd" id="2_ln1cq"]
+[ext_resource type="Texture2D" uid="uid://bw2dkfg3ersv0" path="res://Shaders/kort-ww2-background.jpg" id="3_ln1cq"]
+[ext_resource type="PackedScene" uid="uid://dud0nadirnaup" path="res://Scenes/audio_player.tscn" id="5_yh7hs"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x8bai"]
+shader = ExtResource("2_7lkhx")
+shader_parameter/pattern_sampler = ExtResource("3_ln1cq")
+shader_parameter/bg_color = Color(0.362829, 0.362829, 0.362829, 1)
+shader_parameter/pattern_color = Color(0, 0, 0, 1)
+shader_parameter/pattern_size = 2000.0
+
+[node name="UI-prototyping-location" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_yh7hs")
+script = ExtResource("2_ln1cq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_x8bai")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = -56.0
+offset_bottom = -62.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("1_yh7hs")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="NextButton" type="Button" parent="TextureRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.869176
+anchor_top = 0.463978
+anchor_right = 0.957176
+anchor_bottom = 0.511978
+offset_left = 0.0319214
+offset_top = 1.22998
+offset_right = -3.0
+offset_bottom = 1.28595
+grow_horizontal = 2
+grow_vertical = 2
+text = "Next"
+metadata/_edit_use_anchors_ = true
+
+[node name="PreviousButton" type="Button" parent="TextureRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0193611
+anchor_top = 0.466068
+anchor_right = 0.163361
+anchor_bottom = 0.514068
+offset_left = -0.728001
+offset_top = -0.814026
+offset_right = -0.144012
+offset_bottom = -0.758057
+text = "Previous"
+metadata/_edit_use_anchors_ = true
+
+[node name="FullscreenButton" type="Button" parent="TextureRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.895
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 349.0
+offset_top = 51.6899
+offset_right = -285.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Fullscreen"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 0.762
+offset_left = 51.0
+offset_top = 49.0
+offset_right = -79.0
+offset_bottom = -59.96
+text = "Den 10. februar 1944 skrev Svendborg Avis: \"Den anrettede Skade ved bombeeksplosionerne i Svendborg vil beløbe sig til langt over en halv Million kr.” For natten før, 9. februar 1944 ca. kl. 01.00, blev kriminalpolitiets lokaler i Tinghuset ramt af en voldsom eksplosion. Lufttrykket fra eksplosionen var så voldsom at ruderne ned gennem Nannasvej og ned at Bagergade trykkede ind. Selv langs Vestergade var samtlige butikker rørt af lufttrykket og stykker af mursten blev fundet op til 100 meter fra eksplosions stedet.
+
+Avisen beretter bl.a. hvordan tagene langs Vestergade var delvist revet af, en bagerforretning overfor rådhuset var inventaret, en nærliggende lejlighed blev døren ind til sovekammeret slynget ind i sengen og hvordan andre steder at lufttrykket kastede folk ud af deres senge.
+
+Det er uvist, hvem der stod bag dette angreb på Tinghuset. Oprindelsen af eksplosionen skulle have været kommet fra en grøn kuffert, men det vides ikke hvordan den er blevet placeret der. Det kan spekuleres at motivet bag angrebet var på baggrund af at det danske politi i denne periode arresterede modstandsfolk, og at politiet muligvis sad inde med materiale der kunne skade modstandsbevægelsen. I eksplosionen gik mange uerstattelige papirer bort, som blev opbevaret i kriminalpolitiets ekspeditionslokale.
+
+Samme nat, en time efterfølgende, var der også en eksplosion på Møllergade 22.
+
+Samlet mellem eksplosionen ved Tinghuset og Møllergade var 94 ejendomme beskadiget, og reparationerne ville beløbe sig til ‘langt over en halv million kr.’ (En halv million er ca. 12.596.923 kr i 2024)."
+
+[node name="FullscreenImage" type="TextureRect" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="FullscreenExitButton" type="Button" parent="FullscreenImage"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "exit fullscreen"
+
+[node name="AudioPlayer" parent="." instance=ExtResource("5_yh7hs")]
+layout_mode = 1

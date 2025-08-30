@@ -1,0 +1,133 @@
+[gd_scene load_steps=8 format=3 uid="uid://dud0nadirnaup"]
+
+[ext_resource type="Script" uid="uid://bual8v7uoc4p0" path="res://Scenes/audio_player.gd" id="1_u4osw"]
+[ext_resource type="Texture2D" uid="uid://b4p1fcaqwbb01" path="res://Assets Prototyping/istockphoto-160470073-612x612.jpg" id="2_8x5jh"]
+[ext_resource type="AudioStream" uid="uid://dlra5nyd7a4g" path="res://Assets Prototyping/prototype_speak.wav" id="2_nlbx0"]
+[ext_resource type="Texture2D" uid="uid://c4npcps6tu63r" path="res://Assets/Icons/cursor_right.png" id="3_8x5jh"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_8x5jh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8x5jh"]
+bg_color = Color(1, 0.345098, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d4rhe"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="AudioPlayer" type="Control"]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 0.559
+offset_right = -1532.0
+offset_bottom = -507.72
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u4osw")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_8x5jh")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="ColorRect" type="ColorRect" parent="TextureRect"]
+material = SubResource("CanvasItemMaterial_8x5jh")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.513726)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="HSeparator7" type="HSeparator" parent="VBoxContainer/HBoxContainer2"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_8x5jh")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_d4rhe")
+step = 0.1
+
+[node name="HSeparator8" type="HSeparator" parent="VBoxContainer/HBoxContainer2"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/HBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer/HBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HSeparator6" type="HSeparator" parent="VBoxContainer/HBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PlayButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+icon = ExtResource("3_8x5jh")
+flat = true
+icon_alignment = 2
+expand_icon = true
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+vertical_alignment = 1
+
+[node name="HSeparator3" type="HSeparator" parent="VBoxContainer/HBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HSeparator4" type="HSeparator" parent="VBoxContainer/HBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HSeparator5" type="HSeparator" parent="VBoxContainer/HBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("2_nlbx0")
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
