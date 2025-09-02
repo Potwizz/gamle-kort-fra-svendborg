@@ -1,0 +1,158 @@
+[gd_scene load_steps=12 format=3 uid="uid://c1gdolffqfto"]
+
+[ext_resource type="Script" uid="uid://b14y7la05xk07" path="res://Scenes/map.gd" id="1_26yhd"]
+[ext_resource type="Script" uid="uid://dmgt1b4nsp7lw" path="res://Scenes/map_resource.gd" id="2_6q3n4"]
+[ext_resource type="Script" uid="uid://dskw4hvfnq340" path="res://Scenes/camera.gd" id="2_myvm1"]
+[ext_resource type="Texture2D" uid="uid://chewu8f5g3mit" path="res://Assets/Icons/info.png" id="3_p3ir5"]
+[ext_resource type="Shader" uid="uid://dovh6a6atjsxx" path="res://Shaders/sliding_background.gdshader" id="3_w7jjh"]
+[ext_resource type="Texture2D" uid="uid://c84372t7ncgxj" path="res://Assets/Images/maps/ww2-kort.jpg" id="4_4c2oa"]
+[ext_resource type="Texture2D" uid="uid://dbbq7gflyeok4" path="res://Assets/Images/maps/k36-resen-1677.jpg" id="4_np2xp"]
+[ext_resource type="Texture2D" uid="uid://byllqo832ml8j" path="res://Assets/Splash Screen/historie-logo.png" id="6_np2xp"]
+
+[sub_resource type="Resource" id="Resource_olcgw"]
+script = ExtResource("2_6q3n4")
+button_text = "Resen"
+info_text = "RESEN TETE"
+map_texture = ExtResource("4_np2xp")
+metadata/_custom_type_script = "uid://dmgt1b4nsp7lw"
+
+[sub_resource type="Resource" id="Resource_dlo4w"]
+script = ExtResource("2_6q3n4")
+button_text = "Besættelsen"
+info_text = "fdfd"
+map_texture = ExtResource("4_4c2oa")
+metadata/_custom_type_script = "uid://dmgt1b4nsp7lw"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6q3n4"]
+shader = ExtResource("3_w7jjh")
+shader_parameter/pattern_sampler = ExtResource("4_np2xp")
+shader_parameter/bg_color = Color(0.244776, 0.244776, 0.244776, 1)
+shader_parameter/pattern_color = Color(0, 0, 0, 1)
+shader_parameter/pattern_size = 5000.0
+
+[node name="Map" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_26yhd")
+map_entries = Array[ExtResource("2_6q3n4")]([SubResource("Resource_olcgw"), SubResource("Resource_dlo4w")])
+
+[node name="Camera2D" type="Camera2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(2507, 2418)
+zoom = Vector2(0.2, 0.2)
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 100.0
+script = ExtResource("2_myvm1")
+
+[node name="BackgroundShader" type="ColorRect" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_6q3n4")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -21240.0
+offset_top = -13143.0
+offset_right = 32973.0
+offset_bottom = 26039.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MapTexture" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -956.0
+offset_top = -358.0
+offset_right = 6784.0
+offset_bottom = 5321.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_np2xp")
+stretch_mode = 4
+
+[node name="PlaceOfInterest" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 3044.0
+offset_top = 2820.0
+offset_right = 3252.0
+offset_bottom = 2956.0
+scale = Vector2(0.758462, 0.758462)
+icon = ExtResource("3_p3ir5")
+icon_alignment = 1
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GUI"]
+anchors_preset = -1
+anchor_right = 0.159
+anchor_bottom = 1.0
+offset_right = -0.280029
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="GUI/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.776471, 0.278431, 0.352941, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GUI/HBoxContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -89.0
+offset_right = 89.0
+offset_bottom = 80.0
+grow_horizontal = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="GUI/HBoxContainer/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 20
+
+[node name="TextureRect" type="TextureRect" parent="GUI/HBoxContainer/ColorRect/VBoxContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("6_np2xp")
+stretch_mode = 5
+
+[node name="ButtonMenu" type="VBoxContainer" parent="GUI/HBoxContainer/ColorRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.0
+offset_top = -50.5
+offset_right = 89.0
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Resen" type="Button" parent="GUI/HBoxContainer/ColorRect/ButtonMenu"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "Resen"
+
+[node name="ww2" type="Button" parent="GUI/HBoxContainer/ColorRect/ButtonMenu"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "Besæt"
+
+[node name="Button3" type="Button" parent="GUI/HBoxContainer/ColorRect/ButtonMenu"]
+visible = false
+layout_mode = 2
+text = "fddfd"

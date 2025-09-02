@@ -1,11 +1,55 @@
-[gd_scene load_steps=8 format=3 uid="uid://c1gdolffqfto"]
+[gd_scene load_steps=17 format=3 uid="uid://c1gdolffqfto"]
 
 [ext_resource type="Script" uid="uid://b14y7la05xk07" path="res://Scenes/map.gd" id="1_26yhd"]
+[ext_resource type="Script" uid="uid://dmgt1b4nsp7lw" path="res://Scenes/map_resource.gd" id="2_6q3n4"]
 [ext_resource type="Script" uid="uid://dskw4hvfnq340" path="res://Scenes/camera.gd" id="2_myvm1"]
 [ext_resource type="Texture2D" uid="uid://chewu8f5g3mit" path="res://Assets/Icons/info.png" id="3_p3ir5"]
 [ext_resource type="Shader" uid="uid://dovh6a6atjsxx" path="res://Shaders/sliding_background.gdshader" id="3_w7jjh"]
+[ext_resource type="Texture2D" uid="uid://c84372t7ncgxj" path="res://Assets/Images/maps/ww2-kort.jpg" id="4_4c2oa"]
 [ext_resource type="Texture2D" uid="uid://dbbq7gflyeok4" path="res://Assets/Images/maps/k36-resen-1677.jpg" id="4_np2xp"]
+[ext_resource type="Texture2D" uid="uid://c1fuk553s321t" path="res://Assets/Images/maps/k24-turistBrochure-1901.jpg" id="5_4c2oa"]
 [ext_resource type="Texture2D" uid="uid://byllqo832ml8j" path="res://Assets/Splash Screen/historie-logo.png" id="6_np2xp"]
+[ext_resource type="Texture2D" uid="uid://cvk57676l8qux" path="res://Assets/Images/maps/k37-mensa-1873.jpg" id="6_olcgw"]
+[ext_resource type="Theme" uid="uid://cptlnk3vxajih" path="res://Themes/location_theme.tres" id="11_dlo4w"]
+
+[sub_resource type="Resource" id="Resource_olcgw"]
+script = ExtResource("2_6q3n4")
+button_text = "1677"
+info_text = "Anført af Resen.
+
+Topografisk kort af Svendborg by 1677."
+map_texture = ExtResource("4_np2xp")
+metadata/_custom_type_script = "uid://dmgt1b4nsp7lw"
+
+[sub_resource type="Resource" id="Resource_dlo4w"]
+script = ExtResource("2_6q3n4")
+button_text = "1935"
+info_text = "fdfd"
+map_texture = ExtResource("4_4c2oa")
+metadata/_custom_type_script = "uid://dmgt1b4nsp7lw"
+
+[sub_resource type="Resource" id="Resource_4c2oa"]
+script = ExtResource("2_6q3n4")
+button_text = "1901"
+info_text = "Turist brochure med kort
+Udgivet af havnekomissionen i Svendborg.
+Engelsk sproget.
+Kortet beskriver havnens virksomheder 1901."
+map_texture = ExtResource("5_4c2oa")
+metadata/_custom_type_script = "uid://dmgt1b4nsp7lw"
+
+[sub_resource type="Resource" id="Resource_q6lx1"]
+script = ExtResource("2_6q3n4")
+button_text = "1873"
+info_text = "Topografisk kort af J. H. Mensa
+Udgivet af Emil Bærentzen og co Lith. Inst.
+
+Svendborg By i 1873 med ejerlav, sogneskel mellem Frue sogn og Sct. Nicolai sogn, vandløb, skoler, kirker, fattiggård, navigationsskole, gasværk.
+
+Bemærkning: J. P. Trap, Danmark, original udgave.
+Bygrænse efter lov af 11. februar 1863."
+map_texture = ExtResource("6_olcgw")
+metadata/_custom_type_script = "uid://dmgt1b4nsp7lw"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6q3n4"]
 shader = ExtResource("3_w7jjh")
@@ -21,7 +65,147 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
 script = ExtResource("1_26yhd")
+map_entries = Array[ExtResource("2_6q3n4")]([SubResource("Resource_olcgw"), SubResource("Resource_dlo4w"), SubResource("Resource_4c2oa"), SubResource("Resource_q6lx1")])
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_force_pass_scroll_events = false
+
+[node name="GUI" type="CanvasLayer" parent="UI"]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/GUI"]
+anchors_preset = -1
+anchor_right = 0.159
+anchor_bottom = 1.0
+offset_right = -0.280029
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="UI/GUI/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.776471, 0.278431, 0.352941, 1)
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="UI/GUI/HBoxContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/GUI/HBoxContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -89.0
+offset_right = 89.0
+offset_bottom = 80.0
+grow_horizontal = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/GUI/HBoxContainer/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 20
+
+[node name="TextureRect" type="TextureRect" parent="UI/GUI/HBoxContainer/ColorRect/VBoxContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("6_np2xp")
+stretch_mode = 5
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/GUI/HBoxContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -131.0
+offset_top = -385.0
+offset_right = 131.0
+offset_bottom = 323.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ButtonMenu" type="VBoxContainer" parent="UI/GUI/HBoxContainer/ColorRect/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Resen" type="Button" parent="UI/GUI/HBoxContainer/ColorRect/ScrollContainer/ButtonMenu"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "Resen"
+
+[node name="ww2" type="Button" parent="UI/GUI/HBoxContainer/ColorRect/ScrollContainer/ButtonMenu"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "Besæt"
+
+[node name="Button3" type="Button" parent="UI/GUI/HBoxContainer/ColorRect/ScrollContainer/ButtonMenu"]
+visible = false
+layout_mode = 2
+text = "fddfd"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="UI/GUI/HBoxContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -68.0
+offset_top = -139.0
+offset_right = 68.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/GUI/HBoxContainer/ColorRect/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 20
+
+[node name="InfoBoxButton" type="Button" parent="UI/GUI/HBoxContainer/ColorRect/VBoxContainer2/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+icon = ExtResource("3_p3ir5")
+icon_alignment = 1
+
+[node name="InfoBox" type="HBoxContainer" parent="UI/GUI"]
+anchors_preset = -1
+anchor_left = 0.167
+anchor_top = 0.457
+anchor_right = 0.422
+anchor_bottom = 0.984
+offset_left = 0.359985
+offset_top = 0.439972
+offset_right = 0.759949
+offset_bottom = 0.280029
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InfoBoxText" type="RichTextLabel" parent="UI/GUI/InfoBox"]
+unique_name_in_owner = true
+visible = false
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("11_dlo4w")
+text = "Anført af Resen.
+
+Topografisk kort af Svendborg by 1677."
 
 [node name="Camera2D" type="Camera2D" parent="."]
 unique_name_in_owner = true
@@ -62,76 +246,3 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_np2xp")
 stretch_mode = 4
-
-[node name="PlaceOfInterest" type="Button" parent="."]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 3044.0
-offset_top = 2820.0
-offset_right = 3252.0
-offset_bottom = 2956.0
-scale = Vector2(0.758462, 0.758462)
-icon = ExtResource("3_p3ir5")
-icon_alignment = 1
-
-[node name="GUI" type="CanvasLayer" parent="."]
-
-[node name="HBoxContainer" type="HBoxContainer" parent="GUI"]
-anchors_preset = -1
-anchor_right = 0.159
-anchor_bottom = 1.0
-offset_right = -0.280029
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="GUI/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(0.776471, 0.278431, 0.352941, 1)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="GUI/HBoxContainer/ColorRect"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -89.0
-offset_right = 89.0
-offset_bottom = 80.0
-grow_horizontal = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="GUI/HBoxContainer/ColorRect/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 0
-theme_override_constants/margin_top = 20
-
-[node name="TextureRect" type="TextureRect" parent="GUI/HBoxContainer/ColorRect/VBoxContainer/MarginContainer"]
-layout_mode = 2
-texture = ExtResource("6_np2xp")
-stretch_mode = 5
-
-[node name="ButtonMenu" type="VBoxContainer" parent="GUI/HBoxContainer/ColorRect"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -89.0
-offset_top = -50.5
-offset_right = 89.0
-offset_bottom = 50.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Resen" type="Button" parent="GUI/HBoxContainer/ColorRect/ButtonMenu"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Resen"
-
-[node name="ww2" type="Button" parent="GUI/HBoxContainer/ColorRect/ButtonMenu"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Besæt"
-
-[node name="Button3" type="Button" parent="GUI/HBoxContainer/ColorRect/ButtonMenu"]
-layout_mode = 2
-text = "fddfd"

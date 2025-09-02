@@ -1,23 +1,31 @@
 extends Control
 
-@onready var place_of_interest: Button = %PlaceOfInterest
-@onready var map_texture: TextureRect = %MapTexture
-@onready var background_shader: ColorRect = %BackgroundShader
-@onready var resen: Button = %Resen
-@onready var ww_2: Button = %ww2
+@onready var map_textureRect: TextureRect = %MapTexture
+@onready var button_menu: VBoxContainer = %ButtonMenu
+@onready var button = Button
+@onready var info_box_button: Button = %InfoBoxButton
+@onready var info_box_text: RichTextLabel = %InfoBoxText
 
-var resen_map := preload("res://Assets/Images/maps/k36-resen-1677.jpg")
-
-# Change to packedscene. Figure out how to 
-var ww2_kort := preload("res://Assets/Images/maps/ww2-kort.jpg")
+@export var map_entries: Array[MapData] = []
 
 func _ready() -> void:
-	resen.pressed.connect(change_map_resen)
-	ww_2.pressed.connect(change_map_ww2)
+	map_buttons()
+	info_box_button.pressed.connect(info_box_visible)
 
-func change_map_resen() -> void:
-	map_texture.texture = resen_map
+# Create buttons on runtime and store MapEntries dictionary data for each button
+func map_buttons() -> void:
+	for entries in map_entries:
+		button = Button.new()
+		button_menu.add_child(button)
+		button.text = entries.button_text
+		button.name = entries.button_text
+		button.pressed.connect(func() -> void:
+			map_textureRect.texture = entries.map_texture
+			info_box_text.text = entries.info_text
+			)
 
-func change_map_ww2() -> void:
-	map_texture.texture = ww2_kort
-#THIS IS FOR GIT
+func info_box_visible() -> void:
+	if info_box_text.visible == false:
+		info_box_text.visible = true
+	else:
+		info_box_text.visible = false

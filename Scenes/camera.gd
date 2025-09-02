@@ -25,7 +25,10 @@ func _process(_delta: float) -> void:
 			_camera_2d.zoom.x = current_zoom_x - 0.1
 			_camera_2d.zoom.y = current_zoom_y - 0.1
 
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion:
-		if event.button_mask == MOUSE_BUTTON_MASK_LEFT:
-			position -= event.relative / zoom
+func _unhandled_input(event: InputEvent) -> void:
+		if event is InputEventMouseMotion:
+			if event.button_mask == MOUSE_BUTTON_MASK_LEFT:
+				position -= event.relative / zoom
+		#if event is InputEventMouseButton:
+			#if event.button_index == MOUSE_BUTTON_WHEEL_UP:
+				#zoom += Vector2(0.1, 0.1) 
