@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c1gdolffqfto"]
+[gd_scene load_steps=20 format=3 uid="uid://c1gdolffqfto"]
 
 [ext_resource type="Script" uid="uid://b14y7la05xk07" path="res://Scenes/map.gd" id="1_26yhd"]
 [ext_resource type="Script" uid="uid://dmgt1b4nsp7lw" path="res://Scenes/map_resource.gd" id="2_6q3n4"]
@@ -10,7 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://c1fuk553s321t" path="res://Assets/Images/maps/k24-turistBrochure-1901.jpg" id="5_4c2oa"]
 [ext_resource type="Texture2D" uid="uid://byllqo832ml8j" path="res://Assets/Splash Screen/historie-logo.png" id="6_np2xp"]
 [ext_resource type="Texture2D" uid="uid://cvk57676l8qux" path="res://Assets/Images/maps/k37-mensa-1873.jpg" id="6_olcgw"]
+[ext_resource type="FontFile" uid="uid://7fijmbvj7cw5" path="res://Themes/Fonts/Barlow-Regular.ttf" id="9_q6lx1"]
 [ext_resource type="Theme" uid="uid://cptlnk3vxajih" path="res://Themes/location_theme.tres" id="11_dlo4w"]
+[ext_resource type="Texture2D" uid="uid://2ekm02hi16v6" path="res://Assets/Icons/zoom_in.png" id="12_ie368"]
+[ext_resource type="Texture2D" uid="uid://ckicweawyx70j" path="res://Assets/Icons/zoom_out.png" id="13_x5dfk"]
 
 [sub_resource type="Resource" id="Resource_olcgw"]
 script = ExtResource("2_6q3n4")
@@ -70,6 +73,15 @@ mouse_force_pass_scroll_events = false
 script = ExtResource("1_26yhd")
 map_entries = Array[ExtResource("2_6q3n4")]([SubResource("Resource_olcgw"), SubResource("Resource_dlo4w"), SubResource("Resource_4c2oa"), SubResource("Resource_q6lx1")])
 
+[node name="Camera2D" type="Camera2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(2507, 2418)
+zoom = Vector2(0.2, 0.2)
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 100.0
+script = ExtResource("2_myvm1")
+
 [node name="UI" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -83,23 +95,14 @@ mouse_force_pass_scroll_events = false
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UI/GUI"]
 anchors_preset = -1
-anchor_right = 0.159
 anchor_bottom = 1.0
-offset_right = -0.280029
+offset_right = 305.0
 grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="UI/GUI/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 color = Color(0.776471, 0.278431, 0.352941, 1)
-
-[node name="VBoxContainer3" type="VBoxContainer" parent="UI/GUI/HBoxContainer/ColorRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/GUI/HBoxContainer/ColorRect"]
 layout_mode = 1
@@ -120,6 +123,25 @@ theme_override_constants/margin_top = 20
 layout_mode = 2
 texture = ExtResource("6_np2xp")
 stretch_mode = 5
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="UI/GUI/HBoxContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.073
+anchor_right = 1.0
+anchor_bottom = 0.157
+offset_top = 0.159996
+offset_bottom = 0.439987
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/GUI/HBoxContainer/ColorRect/VBoxContainer3"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("9_q6lx1")
+theme_override_font_sizes/normal_font_size = 24
+text = "GAMLE KORT AF SVENDBORG"
+horizontal_alignment = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="UI/GUI/HBoxContainer/ColorRect"]
 layout_mode = 1
@@ -159,40 +181,16 @@ visible = false
 layout_mode = 2
 text = "fddfd"
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="UI/GUI/HBoxContainer/ColorRect"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -68.0
-offset_top = -139.0
-offset_right = 68.0
-grow_horizontal = 2
-grow_vertical = 0
-alignment = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="UI/GUI/HBoxContainer/ColorRect/VBoxContainer2"]
-layout_mode = 2
-theme_override_constants/margin_bottom = 20
-
-[node name="InfoBoxButton" type="Button" parent="UI/GUI/HBoxContainer/ColorRect/VBoxContainer2/MarginContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-icon = ExtResource("3_p3ir5")
-icon_alignment = 1
-
 [node name="InfoBox" type="HBoxContainer" parent="UI/GUI"]
 anchors_preset = -1
 anchor_left = 0.167
 anchor_top = 0.457
 anchor_right = 0.422
 anchor_bottom = 0.984
-offset_left = 0.359985
-offset_top = 0.439972
-offset_right = 0.759949
-offset_bottom = 0.280029
+offset_left = 21.36
+offset_top = 193.44
+offset_right = 196.76
+offset_bottom = -106.72
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -205,16 +203,78 @@ size_flags_horizontal = 3
 theme = ExtResource("11_dlo4w")
 text = "Anført af Resen.
 
-Topografisk kort af Svendborg by 1677."
+Topografisk kort af Svendborg by 1677.
+df
+d
+d
+df
+d
+d
+d
+d
+d
+d
+d
+d
+d
+dd
+d
+d
+"
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="VBoxContainer2" type="VBoxContainer" parent="UI/GUI"]
+anchors_preset = -1
+anchor_left = 0.159
+anchor_top = 1.0
+anchor_right = 0.159
+anchor_bottom = 1.0
+offset_left = 14.72
+offset_top = -66.0
+offset_right = 64.72
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 2
+
+[node name="InfoBoxButton" type="Button" parent="UI/GUI/VBoxContainer2"]
 unique_name_in_owner = true
-position = Vector2(2507, 2418)
-zoom = Vector2(0.2, 0.2)
-limit_smoothed = true
-position_smoothing_enabled = true
-position_smoothing_speed = 100.0
-script = ExtResource("2_myvm1")
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme = ExtResource("11_dlo4w")
+icon = ExtResource("3_p3ir5")
+icon_alignment = 1
+expand_icon = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/GUI"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -82.0
+offset_top = -136.0
+offset_right = -32.0
+offset_bottom = -32.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="ZoomInButton" type="Button" parent="UI/GUI/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme = ExtResource("11_dlo4w")
+icon = ExtResource("12_ie368")
+icon_alignment = 1
+expand_icon = true
+
+[node name="ZoomOutButton" type="Button" parent="UI/GUI/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme = ExtResource("11_dlo4w")
+icon = ExtResource("13_x5dfk")
+icon_alignment = 1
+expand_icon = true
 
 [node name="BackgroundShader" type="ColorRect" parent="."]
 unique_name_in_owner = true
@@ -238,10 +298,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -956.0
-offset_top = -358.0
-offset_right = 6784.0
-offset_bottom = 5321.0
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 6780.0
+offset_bottom = 5139.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_np2xp")

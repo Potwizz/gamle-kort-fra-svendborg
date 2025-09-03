@@ -27,5 +27,7 @@ func map_buttons() -> void:
 func info_box_visible() -> void:
 	if info_box_text.visible == false:
 		info_box_text.visible = true
+		#info_box_button.visible = false
 	else:
 		info_box_text.visible = false
+		#info_box_button.visible = true
