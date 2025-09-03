@@ -1,19 +1,34 @@
-[gd_scene load_steps=20 format=3 uid="uid://c1gdolffqfto"]
+[gd_scene load_steps=50 format=3 uid="uid://c1gdolffqfto"]
 
 [ext_resource type="Script" uid="uid://b14y7la05xk07" path="res://Scenes/map.gd" id="1_26yhd"]
 [ext_resource type="Script" uid="uid://dmgt1b4nsp7lw" path="res://Scenes/map_resource.gd" id="2_6q3n4"]
 [ext_resource type="Script" uid="uid://dskw4hvfnq340" path="res://Scenes/camera.gd" id="2_myvm1"]
 [ext_resource type="Texture2D" uid="uid://chewu8f5g3mit" path="res://Assets/Icons/info.png" id="3_p3ir5"]
 [ext_resource type="Shader" uid="uid://dovh6a6atjsxx" path="res://Shaders/sliding_background.gdshader" id="3_w7jjh"]
-[ext_resource type="Texture2D" uid="uid://c84372t7ncgxj" path="res://Assets/Images/maps/ww2-kort.jpg" id="4_4c2oa"]
+[ext_resource type="Texture2D" uid="uid://hrynl7g6lxog" path="res://Assets/Images/maps/k40-matrikelkort-1810.jpg" id="4_k63oc"]
+[ext_resource type="Texture2D" uid="uid://tq2i4tadu81x" path="res://Assets/Images/maps/k61-kjoebstad-1767.jpg" id="4_ltf6m"]
+[ext_resource type="Texture2D" uid="uid://dblnfk5x6f7e8" path="res://Assets/Images/maps/k60-kjoebstad-1771.jpg" id="4_macow"]
 [ext_resource type="Texture2D" uid="uid://dbbq7gflyeok4" path="res://Assets/Images/maps/k36-resen-1677.jpg" id="4_np2xp"]
 [ext_resource type="Texture2D" uid="uid://c1fuk553s321t" path="res://Assets/Images/maps/k24-turistBrochure-1901.jpg" id="5_4c2oa"]
+[ext_resource type="Texture2D" uid="uid://cra3rsiywfw5t" path="res://Assets/Images/maps/k39-kjoebstad-1860.jpg" id="5_fls3e"]
 [ext_resource type="Texture2D" uid="uid://byllqo832ml8j" path="res://Assets/Splash Screen/historie-logo.png" id="6_np2xp"]
 [ext_resource type="Texture2D" uid="uid://cvk57676l8qux" path="res://Assets/Images/maps/k37-mensa-1873.jpg" id="6_olcgw"]
+[ext_resource type="Texture2D" uid="uid://56pnujef4g88" path="res://Assets/Images/maps/k56-matrikelkort-1870.jpg" id="7_j4oe2"]
+[ext_resource type="Texture2D" uid="uid://c5vwocemoo38o" path="res://Assets/Images/maps/k58-matrikelkort-1863.jpg" id="7_vtkp8"]
+[ext_resource type="Texture2D" uid="uid://w5q5kmmndnn7" path="res://Assets/Images/maps/k38-kjoebstad-1823.jpg" id="7_x5dfk"]
 [ext_resource type="FontFile" uid="uid://7fijmbvj7cw5" path="res://Themes/Fonts/Barlow-Regular.ttf" id="9_q6lx1"]
 [ext_resource type="Theme" uid="uid://cptlnk3vxajih" path="res://Themes/location_theme.tres" id="11_dlo4w"]
+[ext_resource type="Texture2D" uid="uid://c7ix2j1iiyy71" path="res://Assets/Images/maps/k57-svendorgAmt-1871.jpg" id="11_riaky"]
 [ext_resource type="Texture2D" uid="uid://2ekm02hi16v6" path="res://Assets/Icons/zoom_in.png" id="12_ie368"]
+[ext_resource type="Texture2D" uid="uid://d783lj6r8n6a" path="res://Assets/Images/maps/k59-kjoebstad-1903.jpg" id="13_rg57b"]
 [ext_resource type="Texture2D" uid="uid://ckicweawyx70j" path="res://Assets/Icons/zoom_out.png" id="13_x5dfk"]
+[ext_resource type="Texture2D" uid="uid://dr8216cwno8my" path="res://Assets/Images/maps/k65-turistkort-1938.jpg" id="16_uus22"]
+[ext_resource type="Texture2D" uid="uid://c7yuqhq41j6bf" path="res://Assets/Images/maps/k-68-1-turistkort-1939.jpg" id="17_1ye5v"]
+[ext_resource type="Texture2D" uid="uid://dgrcmtqlebcr1" path="res://Assets/Images/maps/k66-turistkort-1950.jpg" id="17_tuwt4"]
+[ext_resource type="Texture2D" uid="uid://d284juwjrxlib" path="res://Assets/Images/maps/k72-bykort-1897.jpg" id="18_1ye5v"]
+[ext_resource type="Texture2D" uid="uid://d16pul2ayj2g7" path="res://Assets/Images/maps/k82-1-turist-1890.jpg" id="19_078fj"]
+[ext_resource type="Texture2D" uid="uid://dkr2313mcqx4k" path="res://Assets/Images/maps/k83-specialkort-1930.jpg" id="20_unquq"]
+[ext_resource type="Texture2D" uid="uid://d3ebn2l8xh1bx" path="res://Assets/Images/maps/k124-bykort-1860.jpg" id="21_pptwf"]
 
 [sub_resource type="Resource" id="Resource_olcgw"]
 script = ExtResource("2_6q3n4")
@@ -24,21 +39,73 @@ Topografisk kort af Svendborg by 1677."
 map_texture = ExtResource("4_np2xp")
 metadata/_custom_type_script = "uid://dmgt1b4nsp7lw"
 
-[sub_resource type="Resource" id="Resource_dlo4w"]
+[sub_resource type="Resource" id="Resource_uus22"]
 script = ExtResource("2_6q3n4")
-button_text = "1935"
-info_text = "fdfd"
-map_texture = ExtResource("4_4c2oa")
+button_text = "1767"
+info_text = ""
+map_texture = ExtResource("4_ltf6m")
 metadata/_custom_type_script = "uid://dmgt1b4nsp7lw"
 
-[sub_resource type="Resource" id="Resource_4c2oa"]
+[sub_resource type="Resource" id="Resource_ltf6m"]
 script = ExtResource("2_6q3n4")
-button_text = "1901"
-info_text = "Turist brochure med kort
-Udgivet af havnekomissionen i Svendborg.
-Engelsk sproget.
-Kortet beskriver havnens virksomheder 1901."
-map_texture = ExtResource("5_4c2oa")
+button_text = "1771"
+info_text = ""
+map_texture = ExtResource("4_macow")
+metadata/_custom_type_script = "uid://dmgt1b4nsp7lw"
+
+[sub_resource type="Resource" id="Resource_j4oe2"]
+script = ExtResource("2_6q3n4")
+button_text = "1810"
+info_text = ""
+map_texture = ExtResource("4_k63oc")
+metadata/_custom_type_script = "uid://dmgt1b4nsp7lw"
+
+[sub_resource type="Resource" id="Resource_ie368"]
+script = ExtResource("2_6q3n4")
+button_text = "1823"
+info_text = "[b]Grundtegning over Svendborg Kjøbstad 1819, vejkort.[/b]
+
+Sct. Nikolai Kirke, Vor Frue kirke, Klosteret, Assistenskirkegården, Grubbe Mølle, Ørkilds Møller, gadenavne.
+
+Udført af G. Heiberg, kopi af J. Begtrup 1823
+
+udgivet af Anthon og Mensa Trykkeri"
+map_texture = ExtResource("7_x5dfk")
+metadata/_custom_type_script = "uid://dmgt1b4nsp7lw"
+
+[sub_resource type="Resource" id="Resource_k63oc"]
+script = ExtResource("2_6q3n4")
+button_text = "1860"
+info_text = ""
+map_texture = ExtResource("5_fls3e")
+metadata/_custom_type_script = "uid://dmgt1b4nsp7lw"
+
+[sub_resource type="Resource" id="Resource_cwq17"]
+script = ExtResource("2_6q3n4")
+button_text = "1860"
+info_text = ""
+map_texture = ExtResource("21_pptwf")
+metadata/_custom_type_script = "uid://dmgt1b4nsp7lw"
+
+[sub_resource type="Resource" id="Resource_rg57b"]
+script = ExtResource("2_6q3n4")
+button_text = "1863"
+info_text = ""
+map_texture = ExtResource("7_vtkp8")
+metadata/_custom_type_script = "uid://dmgt1b4nsp7lw"
+
+[sub_resource type="Resource" id="Resource_riaky"]
+script = ExtResource("2_6q3n4")
+button_text = "1870"
+info_text = ""
+map_texture = ExtResource("7_j4oe2")
+metadata/_custom_type_script = "uid://dmgt1b4nsp7lw"
+
+[sub_resource type="Resource" id="Resource_vtkp8"]
+script = ExtResource("2_6q3n4")
+button_text = "1871"
+info_text = ""
+map_texture = ExtResource("11_riaky")
 metadata/_custom_type_script = "uid://dmgt1b4nsp7lw"
 
 [sub_resource type="Resource" id="Resource_q6lx1"]
@@ -52,6 +119,65 @@ Svendborg By i 1873 med ejerlav, sogneskel mellem Frue sogn og Sct. Nicolai sogn
 Bemærkning: J. P. Trap, Danmark, original udgave.
 Bygrænse efter lov af 11. februar 1863."
 map_texture = ExtResource("6_olcgw")
+metadata/_custom_type_script = "uid://dmgt1b4nsp7lw"
+
+[sub_resource type="Resource" id="Resource_ak4ow"]
+script = ExtResource("2_6q3n4")
+button_text = "1890"
+info_text = ""
+map_texture = ExtResource("19_078fj")
+metadata/_custom_type_script = "uid://dmgt1b4nsp7lw"
+
+[sub_resource type="Resource" id="Resource_wpvg5"]
+script = ExtResource("2_6q3n4")
+button_text = "1897"
+info_text = ""
+map_texture = ExtResource("18_1ye5v")
+metadata/_custom_type_script = "uid://dmgt1b4nsp7lw"
+
+[sub_resource type="Resource" id="Resource_4c2oa"]
+script = ExtResource("2_6q3n4")
+button_text = "1901"
+info_text = "Turist brochure med kort
+Udgivet af havnekomissionen i Svendborg.
+Engelsk sproget.
+Kortet beskriver havnens virksomheder 1901."
+map_texture = ExtResource("5_4c2oa")
+metadata/_custom_type_script = "uid://dmgt1b4nsp7lw"
+
+[sub_resource type="Resource" id="Resource_macow"]
+script = ExtResource("2_6q3n4")
+button_text = "1903"
+info_text = ""
+map_texture = ExtResource("13_rg57b")
+metadata/_custom_type_script = "uid://dmgt1b4nsp7lw"
+
+[sub_resource type="Resource" id="Resource_ajvq6"]
+script = ExtResource("2_6q3n4")
+button_text = "1930"
+info_text = ""
+map_texture = ExtResource("20_unquq")
+metadata/_custom_type_script = "uid://dmgt1b4nsp7lw"
+
+[sub_resource type="Resource" id="Resource_tuwt4"]
+script = ExtResource("2_6q3n4")
+button_text = "1938"
+info_text = ""
+map_texture = ExtResource("16_uus22")
+metadata/_custom_type_script = "uid://dmgt1b4nsp7lw"
+
+[sub_resource type="Resource" id="Resource_8cxpi"]
+script = ExtResource("2_6q3n4")
+button_text = "1939"
+info_text = ""
+map_texture = ExtResource("17_1ye5v")
+metadata/_custom_type_script = "uid://dmgt1b4nsp7lw"
+
+[sub_resource type="Resource" id="Resource_1ye5v"]
+script = ExtResource("2_6q3n4")
+button_text = "1950"
+info_text = ""
+map_texture = ExtResource("17_tuwt4")
 metadata/_custom_type_script = "uid://dmgt1b4nsp7lw"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6q3n4"]
@@ -71,7 +197,7 @@ grow_vertical = 2
 mouse_filter = 2
 mouse_force_pass_scroll_events = false
 script = ExtResource("1_26yhd")
-map_entries = Array[ExtResource("2_6q3n4")]([SubResource("Resource_olcgw"), SubResource("Resource_dlo4w"), SubResource("Resource_4c2oa"), SubResource("Resource_q6lx1")])
+map_entries = Array[ExtResource("2_6q3n4")]([SubResource("Resource_olcgw"), SubResource("Resource_uus22"), SubResource("Resource_ltf6m"), SubResource("Resource_j4oe2"), SubResource("Resource_ie368"), SubResource("Resource_k63oc"), SubResource("Resource_cwq17"), SubResource("Resource_rg57b"), SubResource("Resource_riaky"), SubResource("Resource_vtkp8"), SubResource("Resource_q6lx1"), SubResource("Resource_ak4ow"), SubResource("Resource_wpvg5"), SubResource("Resource_4c2oa"), SubResource("Resource_macow"), SubResource("Resource_ajvq6"), SubResource("Resource_tuwt4"), SubResource("Resource_8cxpi"), SubResource("Resource_1ye5v")])
 
 [node name="Camera2D" type="Camera2D" parent="."]
 unique_name_in_owner = true
@@ -95,9 +221,12 @@ mouse_force_pass_scroll_events = false
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UI/GUI"]
 anchors_preset = -1
+anchor_right = 0.201
 anchor_bottom = 1.0
-offset_right = 305.0
-grow_vertical = 2
+offset_right = 0.0799866
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 20
 
 [node name="ColorRect" type="ColorRect" parent="UI/GUI/HBoxContainer"]
 layout_mode = 2
@@ -109,53 +238,43 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -89.0
-offset_right = 89.0
-offset_bottom = 80.0
+offset_left = -88.5
+offset_right = 89.5
+offset_bottom = 1072.0
 grow_horizontal = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="UI/GUI/HBoxContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 0
 theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 10
 
 [node name="TextureRect" type="TextureRect" parent="UI/GUI/HBoxContainer/ColorRect/VBoxContainer/MarginContainer"]
 layout_mode = 2
 texture = ExtResource("6_np2xp")
 stretch_mode = 5
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="UI/GUI/HBoxContainer/ColorRect"]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.073
-anchor_right = 1.0
-anchor_bottom = 0.157
-offset_top = 0.159996
-offset_bottom = 0.439987
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="RichTextLabel" type="RichTextLabel" parent="UI/GUI/HBoxContainer/ColorRect/VBoxContainer3"]
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/GUI/HBoxContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
 theme_override_fonts/normal_font = ExtResource("9_q6lx1")
 theme_override_font_sizes/normal_font_size = 24
-text = "GAMLE KORT AF SVENDBORG"
+bbcode_enabled = true
+text = "[b]GAMLE KORT AF SVENDBORG[/b]"
+fit_content = true
 horizontal_alignment = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="UI/GUI/HBoxContainer/ColorRect"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -131.0
-offset_top = -385.0
-offset_right = 131.0
-offset_bottom = 323.0
+layout_mode = 2
+anchor_left = 0.203
+anchor_right = 0.832
+anchor_bottom = 1.0
+offset_left = -4.148
+offset_top = 136.0
+offset_right = 4.08798
+offset_bottom = -11.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_vertical = 3
 
 [node name="ButtonMenu" type="VBoxContainer" parent="UI/GUI/HBoxContainer/ColorRect/ScrollContainer"]
 unique_name_in_owner = true
@@ -164,22 +283,24 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
 
-[node name="Resen" type="Button" parent="UI/GUI/HBoxContainer/ColorRect/ScrollContainer/ButtonMenu"]
-unique_name_in_owner = true
-visible = false
+[node name="InfoButtonContainer" type="VBoxContainer" parent="UI/GUI/HBoxContainer"]
 layout_mode = 2
-text = "Resen"
+size_flags_horizontal = 8
+size_flags_vertical = 8
+alignment = 2
 
-[node name="ww2" type="Button" parent="UI/GUI/HBoxContainer/ColorRect/ScrollContainer/ButtonMenu"]
-unique_name_in_owner = true
-visible = false
+[node name="MarginContainer" type="MarginContainer" parent="UI/GUI/HBoxContainer/InfoButtonContainer"]
 layout_mode = 2
-text = "Besæt"
+theme_override_constants/margin_bottom = 20
 
-[node name="Button3" type="Button" parent="UI/GUI/HBoxContainer/ColorRect/ScrollContainer/ButtonMenu"]
-visible = false
+[node name="InfoBoxButton" type="Button" parent="UI/GUI/HBoxContainer/InfoButtonContainer/MarginContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-text = "fddfd"
+theme = ExtResource("11_dlo4w")
+icon = ExtResource("3_p3ir5")
+icon_alignment = 1
+expand_icon = true
 
 [node name="InfoBox" type="HBoxContainer" parent="UI/GUI"]
 anchors_preset = -1
@@ -201,7 +322,8 @@ clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("11_dlo4w")
-text = "Anført af Resen.
+bbcode_enabled = true
+text = "[b]Anført af Resen.[/b]
 
 Topografisk kort af Svendborg by 1677.
 df
@@ -222,43 +344,23 @@ d
 d
 "
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="UI/GUI"]
-anchors_preset = -1
-anchor_left = 0.159
-anchor_top = 1.0
-anchor_right = 0.159
-anchor_bottom = 1.0
-offset_left = 14.72
-offset_top = -66.0
-offset_right = 64.72
-offset_bottom = -16.0
-grow_horizontal = 2
-grow_vertical = 0
-alignment = 2
-
-[node name="InfoBoxButton" type="Button" parent="UI/GUI/VBoxContainer2"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme = ExtResource("11_dlo4w")
-icon = ExtResource("3_p3ir5")
-icon_alignment = 1
-expand_icon = true
-
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/GUI"]
+[node name="MarginContainer" type="MarginContainer" parent="UI/GUI"]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -82.0
-offset_top = -136.0
-offset_right = -32.0
-offset_bottom = -32.0
+offset_left = -70.0
+offset_top = -124.0
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
 
-[node name="ZoomInButton" type="Button" parent="UI/GUI/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/GUI/MarginContainer"]
+layout_mode = 2
+
+[node name="ZoomInButton" type="Button" parent="UI/GUI/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
@@ -267,7 +369,7 @@ icon = ExtResource("12_ie368")
 icon_alignment = 1
 expand_icon = true
 
-[node name="ZoomOutButton" type="Button" parent="UI/GUI/VBoxContainer"]
+[node name="ZoomOutButton" type="Button" parent="UI/GUI/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2

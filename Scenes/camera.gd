@@ -24,26 +24,26 @@ func _process(_delta: float) -> void:
 	var current_zoom_y = _camera_2d.zoom.y
 	if Input.is_action_just_pressed("Scroll Up"):
 		if current_zoom_x < zoom_in:
-			_camera_2d.zoom.x = current_zoom_x + 0.1
-			_camera_2d.zoom.y = current_zoom_y + 0.1
+			_camera_2d.zoom.x = current_zoom_x + 0.2
+			_camera_2d.zoom.y = current_zoom_y + 0.2
 	if Input.is_action_just_pressed("Scroll Down"):
 		if current_zoom_x > zoom_out:
-			_camera_2d.zoom.x = current_zoom_x - 0.1
-			_camera_2d.zoom.y = current_zoom_y - 0.1
+			_camera_2d.zoom.x = current_zoom_x - 0.2
+			_camera_2d.zoom.y = current_zoom_y - 0.2
 
 func ZoomIn() -> void:
 	var current_zoom_x = _camera_2d.zoom.x
 	var current_zoom_y = _camera_2d.zoom.y
-	
-	_camera_2d.zoom.x = current_zoom_x + 0.1
-	_camera_2d.zoom.y = current_zoom_y + 0.1
+	if current_zoom_x < zoom_in:
+		_camera_2d.zoom.x = current_zoom_x + 0.4
+		_camera_2d.zoom.y = current_zoom_y + 0.4
 
 func ZoomOut() -> void:
 	var current_zoom_x = _camera_2d.zoom.x
 	var current_zoom_y = _camera_2d.zoom.y
-	
-	_camera_2d.zoom.x = current_zoom_x - 0.1
-	_camera_2d.zoom.y = current_zoom_y - 0.1
+	if current_zoom_x >= zoom_out:
+			_camera_2d.zoom.x = current_zoom_x - 0.2
+			_camera_2d.zoom.y = current_zoom_y - 0.2
 
 func _unhandled_input(event: InputEvent) -> void:
 		if event is InputEventMouseMotion:

@@ -17,7 +17,7 @@ boot_splash/bg_color=Color(0.776471, 0.278431, 0.352941, 1)
 boot_splash/fullsize=false
 boot_splash/use_filter=false
 boot_splash/image="uid://byllqo832ml8j"
-config/icon="res://icon.svg"
+config/icon="uid://doaqa2qy1xt2r"
 boot_splash/minimum_display_time=2000
 
 [display]
@@ -27,6 +27,7 @@ window/size/viewport_height=1080
 window/size/mode=2
 window/size/window_width_override=1280
 window/size/window_height_override=720
+window/stretch/aspect="expand"
 
 [input]
 

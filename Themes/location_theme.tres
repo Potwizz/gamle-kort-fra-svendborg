@@ -1,5 +1,6 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://cptlnk3vxajih"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://cptlnk3vxajih"]
 
+[ext_resource type="FontFile" uid="uid://0ly24o6e4u6m" path="res://Themes/Fonts/Barlow-Bold.ttf" id="1_8qaxl"]
 [ext_resource type="FontFile" uid="uid://7fijmbvj7cw5" path="res://Themes/Fonts/Barlow-Regular.ttf" id="1_sqy3k"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sqy3k"]
@@ -30,4 +31,5 @@ default_font_size = 24
 Button/styles/normal = SubResource("StyleBoxFlat_sqy3k")
 RichTextLabel/colors/default_color = Color(0, 0, 0, 0.780392)
 RichTextLabel/constants/line_separation = 5
+RichTextLabel/fonts/bold_font = ExtResource("1_8qaxl")
 RichTextLabel/styles/normal = SubResource("StyleBoxFlat_ep3xt")

@@ -18,6 +18,7 @@ func map_buttons() -> void:
 		button = Button.new()
 		button_menu.add_child(button)
 		button.text = entries.button_text
+		button.theme = preload("res://Themes/location_theme.tres")
 		button.name = entries.button_text
 		button.pressed.connect(func() -> void:
 			map_textureRect.texture = entries.map_texture
