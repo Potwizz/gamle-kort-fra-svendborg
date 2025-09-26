@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c1gdolffqfto"]
+[gd_scene load_steps=17 format=3 uid="uid://c1gdolffqfto"]
 
 [ext_resource type="Script" uid="uid://b14y7la05xk07" path="res://Scenes/map.gd" id="1_26yhd"]
 [ext_resource type="Script" uid="uid://dmgt1b4nsp7lw" path="res://Scenes/map_resource.gd" id="2_6q3n4"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://d2wtv2exi0g4c" path="res://Assets/Images/maps/k-68-1-turistkort-1939.webp" id="4_dlo4w"]
 [ext_resource type="Texture2D" uid="uid://4iy0cmxthtj4" path="res://Assets/Images/maps/k59-kjoebstad-1903.webp" id="5_q6lx1"]
 [ext_resource type="Texture2D" uid="uid://byllqo832ml8j" path="res://Assets/Splash Screen/historie-logo.png" id="6_np2xp"]
+[ext_resource type="Texture2D" uid="uid://doaqa2qy1xt2r" path="res://sh-favicon.png" id="9_5qtum"]
 [ext_resource type="FontFile" uid="uid://7fijmbvj7cw5" path="res://Themes/Fonts/Barlow-Regular.ttf" id="9_q6lx1"]
 [ext_resource type="Theme" uid="uid://cptlnk3vxajih" path="res://Themes/location_theme.tres" id="11_dlo4w"]
 [ext_resource type="Texture2D" uid="uid://2ekm02hi16v6" path="res://Assets/Icons/zoom_in.png" id="12_ie368"]
@@ -64,27 +65,31 @@ mouse_force_pass_scroll_events = false
 [node name="GUI" type="CanvasLayer" parent="UI"]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UI/GUI"]
+visible = false
 anchors_preset = -1
-anchor_right = 0.201
-anchor_bottom = 1.0
-offset_right = 0.0799866
+anchor_right = 0.034
+anchor_bottom = 0.061000004
+offset_right = 0.7199936
+offset_bottom = 0.11999512
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 20
 
 [node name="ColorRect" type="ColorRect" parent="UI/GUI/HBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 color = Color(0.776471, 0.278431, 0.352941, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/GUI/HBoxContainer/ColorRect"]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -88.5
 offset_right = 89.5
-offset_bottom = 1072.0
+offset_bottom = 183.0
 grow_horizontal = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="UI/GUI/HBoxContainer/ColorRect/VBoxContainer"]
@@ -107,44 +112,12 @@ text = "[b]GAMLE KORT AF SVENDBORG[/b]"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="UI/GUI/HBoxContainer/ColorRect"]
-layout_mode = 0
-anchor_left = 0.203
-anchor_right = 0.832
-anchor_bottom = 1.0
-offset_left = -4.148
-offset_top = 136.0
-offset_right = 4.08798
-offset_bottom = -11.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_vertical = 3
-
-[node name="ButtonMenu" type="VBoxContainer" parent="UI/GUI/HBoxContainer/ColorRect/ScrollContainer"]
-unique_name_in_owner = true
+[node name="Logo" type="TextureRect" parent="UI/GUI/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
-alignment = 1
-
-[node name="InfoButtonContainer" type="VBoxContainer" parent="UI/GUI/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 8
-alignment = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="UI/GUI/HBoxContainer/InfoButtonContainer"]
-layout_mode = 2
-theme_override_constants/margin_bottom = 20
-
-[node name="InfoBoxButton" type="Button" parent="UI/GUI/HBoxContainer/InfoButtonContainer/MarginContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme = ExtResource("11_dlo4w")
-icon = ExtResource("3_p3ir5")
-icon_alignment = 1
-expand_icon = true
+texture = ExtResource("9_5qtum")
+expand_mode = 1
+stretch_mode = 4
 
 [node name="InfoBox" type="HBoxContainer" parent="UI/GUI"]
 anchors_preset = -1
@@ -208,6 +181,7 @@ layout_mode = 2
 unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+focus_mode = 0
 theme = ExtResource("11_dlo4w")
 icon = ExtResource("12_ie368")
 icon_alignment = 1
@@ -217,10 +191,58 @@ expand_icon = true
 unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+focus_mode = 0
 theme = ExtResource("11_dlo4w")
 icon = ExtResource("13_x5dfk")
 icon_alignment = 1
 expand_icon = true
+
+[node name="InfoBoxButton" type="Button" parent="UI/GUI/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("11_dlo4w")
+icon = ExtResource("3_p3ir5")
+icon_alignment = 1
+expand_icon = true
+
+[node name="ButtonBox" type="VBoxContainer" parent="UI/GUI"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -960.0
+offset_right = 960.0
+offset_bottom = 114.0
+grow_horizontal = 2
+size_flags_horizontal = 8
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/GUI/ButtonBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ButtonMenu" type="HBoxContainer" parent="UI/GUI/ButtonBox/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="InfoButtonContainer" type="VBoxContainer" parent="UI/GUI"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -70.0
+offset_right = 50.0
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/GUI/InfoButtonContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 20
 
 [node name="BackgroundShader" type="ColorRect" parent="."]
 unique_name_in_owner = true

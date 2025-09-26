@@ -1,7 +1,7 @@
 extends Control
 
 @onready var map_textureRect: TextureRect = %MapTexture
-@onready var button_menu: VBoxContainer = %ButtonMenu
+@onready var button_menu: HBoxContainer = %ButtonMenu
 @onready var button = Button
 @onready var info_box_button: Button = %InfoBoxButton
 @onready var info_box_text: RichTextLabel = %InfoBoxText
