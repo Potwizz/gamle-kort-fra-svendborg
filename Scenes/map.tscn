@@ -17,6 +17,12 @@
 [sub_resource type="Resource" id="Resource_4c2oa"]
 script = ExtResource("2_6q3n4")
 button_text = "1677"
+info_text = "Resen, bla sdds
+dsf
+sdf
+sdf
+sdf
+dsfsdfsdfsdfdsfsdfsdfsdfsdfsdf"
 map_texture = ExtResource("3_unquq")
 metadata/_custom_type_script = "uid://dmgt1b4nsp7lw"
 
@@ -70,19 +76,20 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/GUI/HBoxContainer2"]
+[node name="SidebarMenu" type="HBoxContainer" parent="UI/GUI/HBoxContainer2"]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="ColorRect" type="ColorRect" parent="UI/GUI/HBoxContainer2/HBoxContainer"]
+[node name="ColorRect" type="ColorRect" parent="UI/GUI/HBoxContainer2/SidebarMenu"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 color = Color(0.776471, 0.278431, 0.352941, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/GUI/HBoxContainer2/HBoxContainer/ColorRect"]
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/GUI/HBoxContainer2/SidebarMenu/ColorRect"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -93,7 +100,7 @@ offset_bottom = 80.0
 grow_horizontal = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="MarginContainer" type="MarginContainer" parent="UI/GUI/HBoxContainer2/HBoxContainer/ColorRect/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="UI/GUI/HBoxContainer2/SidebarMenu/ColorRect/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 2
@@ -101,7 +108,7 @@ theme_override_constants/margin_left = 0
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_bottom = 10
 
-[node name="Logo" type="TextureRect" parent="UI/GUI/HBoxContainer2/HBoxContainer/ColorRect/VBoxContainer/MarginContainer"]
+[node name="Logo" type="TextureRect" parent="UI/GUI/HBoxContainer2/SidebarMenu/ColorRect/VBoxContainer/MarginContainer"]
 visible = false
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
@@ -110,12 +117,12 @@ texture = ExtResource("9_5qtum")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="TextureRect" type="TextureRect" parent="UI/GUI/HBoxContainer2/HBoxContainer/ColorRect/VBoxContainer/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="UI/GUI/HBoxContainer2/SidebarMenu/ColorRect/VBoxContainer/MarginContainer"]
 layout_mode = 2
 texture = ExtResource("6_np2xp")
 stretch_mode = 5
 
-[node name="RichTextLabel" type="RichTextLabel" parent="UI/GUI/HBoxContainer2/HBoxContainer/ColorRect/VBoxContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/GUI/HBoxContainer2/SidebarMenu/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("9_q6lx1")
 theme_override_font_sizes/normal_font_size = 24
@@ -124,7 +131,7 @@ text = "[b]GAMLE KORT AF SVENDBORG[/b]"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="ButtonBox" type="VBoxContainer" parent="UI/GUI/HBoxContainer2/HBoxContainer/ColorRect"]
+[node name="ButtonBox" type="VBoxContainer" parent="UI/GUI/HBoxContainer2/SidebarMenu/ColorRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -141,11 +148,11 @@ size_flags_horizontal = 4
 size_flags_vertical = 6
 alignment = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="UI/GUI/HBoxContainer2/HBoxContainer/ColorRect/ButtonBox"]
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/GUI/HBoxContainer2/SidebarMenu/ColorRect/ButtonBox"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="ButtonMenu" type="VBoxContainer" parent="UI/GUI/HBoxContainer2/HBoxContainer/ColorRect/ButtonBox/ScrollContainer"]
+[node name="ButtonMenu" type="VBoxContainer" parent="UI/GUI/HBoxContainer2/SidebarMenu/ColorRect/ButtonBox/ScrollContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -153,7 +160,7 @@ size_flags_vertical = 3
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="InfoButtonContainer" type="VBoxContainer" parent="UI/GUI/HBoxContainer2/HBoxContainer/ColorRect"]
+[node name="InfoButtonContainer" type="VBoxContainer" parent="UI/GUI/HBoxContainer2/SidebarMenu/ColorRect"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -168,28 +175,21 @@ size_flags_horizontal = 8
 size_flags_vertical = 4
 alignment = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="UI/GUI/HBoxContainer2/HBoxContainer/ColorRect/InfoButtonContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="UI/GUI/HBoxContainer2/SidebarMenu/ColorRect/InfoButtonContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 theme_override_constants/margin_bottom = 20
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/GUI/HBoxContainer2"]
+[node name="InfoBox" type="HBoxContainer" parent="UI/GUI/HBoxContainer2"]
 layout_mode = 2
-size_flags_horizontal = 3
 theme_override_constants/separation = 70
-alignment = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="UI/GUI/HBoxContainer2/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/margin_left = 30
-theme_override_constants/margin_top = 500
-
-[node name="InfoBoxText" type="RichTextLabel" parent="UI/GUI/HBoxContainer2/VBoxContainer/MarginContainer"]
+[node name="InfoBoxText" type="RichTextLabel" parent="UI/GUI/HBoxContainer2/InfoBox"]
 unique_name_in_owner = true
 visible = false
 clip_contents = false
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("11_dlo4w")
@@ -215,18 +215,14 @@ d
 d
 "
 
-[node name="MarginContainer2" type="MarginContainer" parent="UI/GUI/HBoxContainer2/VBoxContainer"]
+[node name="InfoButton" type="MarginContainer" parent="UI/GUI/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 0
-size_flags_vertical = 0
+size_flags_vertical = 8
 theme_override_constants/margin_left = 15
 theme_override_constants/margin_bottom = 20
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/GUI/HBoxContainer2/VBoxContainer/MarginContainer2"]
-layout_mode = 2
-alignment = 1
-
-[node name="InfoBoxButton" type="Button" parent="UI/GUI/HBoxContainer2/VBoxContainer/MarginContainer2/VBoxContainer"]
+[node name="InfoBoxButton" type="Button" parent="UI/GUI/HBoxContainer2/InfoButton"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
@@ -236,10 +232,7 @@ icon = ExtResource("3_p3ir5")
 icon_alignment = 1
 expand_icon = true
 
-[node name="InfoBox" type="HBoxContainer" parent="UI/GUI/HBoxContainer2"]
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="UI/GUI"]
+[node name="ZoomButtons" type="MarginContainer" parent="UI/GUI"]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -252,10 +245,10 @@ grow_vertical = 0
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/GUI/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/GUI/ZoomButtons"]
 layout_mode = 2
 
-[node name="ZoomInButton" type="Button" parent="UI/GUI/MarginContainer/VBoxContainer"]
+[node name="ZoomInButton" type="Button" parent="UI/GUI/ZoomButtons/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
@@ -265,7 +258,7 @@ icon = ExtResource("12_ie368")
 icon_alignment = 1
 expand_icon = true
 
-[node name="ZoomOutButton" type="Button" parent="UI/GUI/MarginContainer/VBoxContainer"]
+[node name="ZoomOutButton" type="Button" parent="UI/GUI/ZoomButtons/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2

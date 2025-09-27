@@ -4,7 +4,7 @@
 [ext_resource type="FontFile" uid="uid://7fijmbvj7cw5" path="res://Themes/Fonts/Barlow-Regular.ttf" id="1_sqy3k"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8qaxl"]
-bg_color = Color(0.972549, 0.9764706, 0.98039216, 1)
+bg_color = Color(0.9843137, 0.9607843, 0.92941177, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wfqwq"]
 content_margin_left = 5.0
@@ -26,9 +26,6 @@ content_margin_top = 5.0
 content_margin_right = 5.0
 content_margin_bottom = 5.0
 bg_color = Color(0.984314, 0.960784, 0.929412, 1)
-expand_margin_left = 15.0
-expand_margin_top = 40.0
-expand_margin_bottom = 40.0
 
 [resource]
 default_font = ExtResource("1_sqy3k")
