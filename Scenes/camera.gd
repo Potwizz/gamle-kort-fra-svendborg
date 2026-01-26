@@ -8,6 +8,13 @@ extends Camera2D
 @onready var zoom_out_button_mobile: Button = %ZoomOutButtonMobile
 @onready var zoom_in_button_mobile: Button = %ZoomInButtonMobile
 
+
+
+@export var zoom_speed: float = 0.005
+@export var drag_speed: float = 1.0
+@export var min_zoom: float = 0.5
+@export var max_zoom: float = 3.0
+
 ## Max zoom in
 var zoom_in := 2.0
 ## Max zoom out
@@ -51,10 +58,54 @@ func ZoomOut() -> void:
 			_camera_2d.zoom.x = current_zoom_x - 0.2
 			_camera_2d.zoom.y = current_zoom_y - 0.2
 
-func _unhandled_input(event: InputEvent) -> void:
-		if event is InputEventMouseMotion:
-			if event.button_mask == MOUSE_BUTTON_MASK_LEFT:
-				position -= event.screen_relative / zoom
+#func _unhandled_input(event: InputEvent) -> void:
+		#if event is InputEventMouseMotion:
+			#if event.button_mask == MOUSE_BUTTON_MASK_LEFT:
+				#position -= event.screen_relative / zoom
 		#if event is InputEventMouseButton:
 			#if event.button_index == MOUSE_BUTTON_WHEEL_UP:
 				#zoom += Vector2(0.1, 0.1) 
+
+var _touches: Dictionary = {}
+var _last_distance: float = 0.0
+var _last_drag_pos: Vector2 = Vector2.ZERO
+
+func _input(event):
+	if event is InputEventScreenTouch:
+		if event.pressed:
+			_touches[event.index] = event.position
+		else:
+			_touches.erase(event.index)
+			_last_distance = 0.0
+			_last_drag_pos = Vector2.ZERO
+
+	if event is InputEventScreenDrag:
+		if _touches.has(event.index):
+			_touches[event.index] = event.position
+
+		if _touches.size() == 1:
+			_handle_drag(event)
+
+	if _touches.size() == 2:
+		_handle_pinch()
+
+func _handle_drag(event: InputEventScreenDrag):
+	if _last_drag_pos == Vector2.ZERO:
+		_last_drag_pos = event.position
+		return
+
+	var delta := event.position - _last_drag_pos
+	position -= delta * drag_speed / zoom.x
+	_last_drag_pos = event.position
+
+func _handle_pinch():
+	var points := _touches.values()
+	var distance: float = points[0].distance_to(points[1])
+
+	if _last_distance > 0.0:
+		var delta := distance - _last_distance
+		var new_zoom := zoom.x + delta * zoom_speed
+		new_zoom = clamp(new_zoom, min_zoom, max_zoom)
+		zoom = Vector2(new_zoom, new_zoom)
+
+	_last_distance = distance

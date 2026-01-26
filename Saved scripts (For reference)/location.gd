@@ -15,9 +15,9 @@ class_name Location extends Control
 @export var backToMap = "res://Scenes/map.tscn"
 
 var image_array = [
-	preload("res://Assets Prototyping/df.PNG"),
-	preload("res://Assets Prototyping/fdf.PNG"),
-	preload("res://Assets Prototyping/fsdgfg.PNG")
+	#preload("res://Assets Prototyping/df.PNG"),
+	#preload("res://Assets Prototyping/fdf.PNG"),
+	#preload("res://Assets Prototyping/fsdgfg.PNG")
 ]
 # Holds the current index of the displayed image
 var current_image_index := 0
