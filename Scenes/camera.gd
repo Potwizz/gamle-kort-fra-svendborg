@@ -5,9 +5,13 @@ extends Camera2D
 @onready var map_texture: TextureRect = %MapTexture
 @onready var zoom_in_button: Button = %ZoomInButton
 @onready var zoom_out_button: Button = %ZoomOutButton
+@onready var zoom_out_button_mobile: Button = %ZoomOutButtonMobile
+@onready var zoom_in_button_mobile: Button = %ZoomInButtonMobile
 
-var zoom_in := 1.0
-var zoom_out := 0.1
+## Max zoom in
+var zoom_in := 2.0
+## Max zoom out
+var zoom_out := 0.5
 
 #func _ready() -> void:
 	##_camera_2d.limit_left = 0.0
@@ -18,6 +22,8 @@ var zoom_out := 0.1
 func _ready() -> void:
 	zoom_in_button.pressed.connect(ZoomIn)
 	zoom_out_button.pressed.connect(ZoomOut)
+	zoom_in_button_mobile.pressed.connect(ZoomIn)
+	zoom_out_button_mobile.pressed.connect(ZoomOut)
 
 func _process(_delta: float) -> void:
 	var current_zoom_x = _camera_2d.zoom.x

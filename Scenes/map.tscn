@@ -1,44 +1,39 @@
-[gd_scene load_steps=17 format=3 uid="uid://c1gdolffqfto"]
+[gd_scene load_steps=11 format=3 uid="uid://c1gdolffqfto"]
 
 [ext_resource type="Script" uid="uid://b14y7la05xk07" path="res://Scenes/map.gd" id="1_26yhd"]
-[ext_resource type="Script" uid="uid://dmgt1b4nsp7lw" path="res://Scenes/map_resource.gd" id="2_6q3n4"]
 [ext_resource type="Script" uid="uid://dskw4hvfnq340" path="res://Scenes/camera.gd" id="2_myvm1"]
 [ext_resource type="Texture2D" uid="uid://chewu8f5g3mit" path="res://Assets/Icons/info.png" id="3_p3ir5"]
-[ext_resource type="Texture2D" uid="uid://dcmd0v77we2h1" path="res://Assets/Images/maps/k36-resen-1677.webp" id="3_unquq"]
-[ext_resource type="Texture2D" uid="uid://d2wtv2exi0g4c" path="res://Assets/Images/maps/k-68-1-turistkort-1939.webp" id="4_dlo4w"]
-[ext_resource type="Texture2D" uid="uid://4iy0cmxthtj4" path="res://Assets/Images/maps/k59-kjoebstad-1903.webp" id="5_q6lx1"]
 [ext_resource type="Texture2D" uid="uid://byllqo832ml8j" path="res://Assets/Splash Screen/historie-logo.png" id="6_np2xp"]
 [ext_resource type="Texture2D" uid="uid://doaqa2qy1xt2r" path="res://sh-favicon.png" id="9_5qtum"]
 [ext_resource type="FontFile" uid="uid://7fijmbvj7cw5" path="res://Themes/Fonts/Barlow-Regular.ttf" id="9_q6lx1"]
+[ext_resource type="Texture2D" uid="uid://rqofppg16do8" path="res://Assets/Images/maps/k59-6.webp" id="10_olcgw"]
 [ext_resource type="Theme" uid="uid://cptlnk3vxajih" path="res://Themes/location_theme.tres" id="11_dlo4w"]
 [ext_resource type="Texture2D" uid="uid://2ekm02hi16v6" path="res://Assets/Icons/zoom_in.png" id="12_ie368"]
 [ext_resource type="Texture2D" uid="uid://ckicweawyx70j" path="res://Assets/Icons/zoom_out.png" id="13_x5dfk"]
 
-[sub_resource type="Resource" id="Resource_4c2oa"]
-script = ExtResource("2_6q3n4")
-button_text = "1677"
-info_text = "Resen, bla sdds
-dsf
-sdf
-sdf
-sdf
-dsfsdfsdfsdfdsfsdfsdfsdfsdfsdf"
-map_texture = ExtResource("3_unquq")
-metadata/_custom_type_script = "uid://dmgt1b4nsp7lw"
+[node name="Node2D" type="Node2D"]
 
-[sub_resource type="Resource" id="Resource_olcgw"]
-script = ExtResource("2_6q3n4")
-button_text = "1939"
-map_texture = ExtResource("4_dlo4w")
-metadata/_custom_type_script = "uid://dmgt1b4nsp7lw"
+[node name="BackgroundShader" type="ColorRect" parent="."]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -21240.0
+offset_top = -13143.0
+offset_right = 32973.0
+offset_bottom = 26039.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[sub_resource type="Resource" id="Resource_5qtum"]
-script = ExtResource("2_6q3n4")
-button_text = "1903"
-map_texture = ExtResource("5_q6lx1")
-metadata/_custom_type_script = "uid://dmgt1b4nsp7lw"
+[node name="Camera2D" type="Camera2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(1794, 1812)
+limit_smoothed = true
+position_smoothing_speed = 100.0
+script = ExtResource("2_myvm1")
 
-[node name="Map" type="Control"]
+[node name="GUI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -48,18 +43,9 @@ grow_vertical = 2
 mouse_filter = 2
 mouse_force_pass_scroll_events = false
 script = ExtResource("1_26yhd")
-map_entries = Array[ExtResource("2_6q3n4")]([SubResource("Resource_4c2oa"), SubResource("Resource_olcgw"), SubResource("Resource_5qtum")])
 
-[node name="Camera2D" type="Camera2D" parent="."]
-unique_name_in_owner = true
-position = Vector2(2507, 2418)
-zoom = Vector2(0.2, 0.2)
-limit_smoothed = true
-position_smoothing_enabled = true
-position_smoothing_speed = 100.0
-script = ExtResource("2_myvm1")
-
-[node name="UI" type="Control" parent="."]
+[node name="Desktop" type="Control" parent="GUI"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -68,9 +54,10 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_force_pass_scroll_events = false
 
-[node name="GUI" type="CanvasLayer" parent="UI"]
+[node name="Desktop-GUI" type="CanvasLayer" parent="GUI/Desktop"]
+visible = false
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="UI/GUI"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="GUI/Desktop/Desktop-GUI"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -78,18 +65,18 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 0
 
-[node name="SidebarMenu" type="HBoxContainer" parent="UI/GUI/HBoxContainer2"]
+[node name="SidebarMenu" type="HBoxContainer" parent="GUI/Desktop/Desktop-GUI/HBoxContainer2"]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="ColorRect" type="ColorRect" parent="UI/GUI/HBoxContainer2/SidebarMenu"]
+[node name="ColorRect" type="ColorRect" parent="GUI/Desktop/Desktop-GUI/HBoxContainer2/SidebarMenu"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 color = Color(0.776471, 0.278431, 0.352941, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/GUI/HBoxContainer2/SidebarMenu/ColorRect"]
+[node name="VBoxContainer" type="VBoxContainer" parent="GUI/Desktop/Desktop-GUI/HBoxContainer2/SidebarMenu/ColorRect"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -100,7 +87,7 @@ offset_bottom = 80.0
 grow_horizontal = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="MarginContainer" type="MarginContainer" parent="UI/GUI/HBoxContainer2/SidebarMenu/ColorRect/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="GUI/Desktop/Desktop-GUI/HBoxContainer2/SidebarMenu/ColorRect/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 2
@@ -108,7 +95,7 @@ theme_override_constants/margin_left = 0
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_bottom = 10
 
-[node name="Logo" type="TextureRect" parent="UI/GUI/HBoxContainer2/SidebarMenu/ColorRect/VBoxContainer/MarginContainer"]
+[node name="Logo" type="TextureRect" parent="GUI/Desktop/Desktop-GUI/HBoxContainer2/SidebarMenu/ColorRect/VBoxContainer/MarginContainer"]
 visible = false
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
@@ -117,12 +104,12 @@ texture = ExtResource("9_5qtum")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="TextureRect" type="TextureRect" parent="UI/GUI/HBoxContainer2/SidebarMenu/ColorRect/VBoxContainer/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="GUI/Desktop/Desktop-GUI/HBoxContainer2/SidebarMenu/ColorRect/VBoxContainer/MarginContainer"]
 layout_mode = 2
 texture = ExtResource("6_np2xp")
 stretch_mode = 5
 
-[node name="RichTextLabel" type="RichTextLabel" parent="UI/GUI/HBoxContainer2/SidebarMenu/ColorRect/VBoxContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="GUI/Desktop/Desktop-GUI/HBoxContainer2/SidebarMenu/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("9_q6lx1")
 theme_override_font_sizes/normal_font_size = 24
@@ -131,7 +118,7 @@ text = "[b]GAMLE KORT AF SVENDBORG[/b]"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="ButtonBox" type="VBoxContainer" parent="UI/GUI/HBoxContainer2/SidebarMenu/ColorRect"]
+[node name="ButtonBox" type="VBoxContainer" parent="GUI/Desktop/Desktop-GUI/HBoxContainer2/SidebarMenu/ColorRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -148,11 +135,11 @@ size_flags_horizontal = 4
 size_flags_vertical = 6
 alignment = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="UI/GUI/HBoxContainer2/SidebarMenu/ColorRect/ButtonBox"]
+[node name="ScrollContainer" type="ScrollContainer" parent="GUI/Desktop/Desktop-GUI/HBoxContainer2/SidebarMenu/ColorRect/ButtonBox"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="ButtonMenu" type="VBoxContainer" parent="UI/GUI/HBoxContainer2/SidebarMenu/ColorRect/ButtonBox/ScrollContainer"]
+[node name="ButtonMenu" type="VBoxContainer" parent="GUI/Desktop/Desktop-GUI/HBoxContainer2/SidebarMenu/ColorRect/ButtonBox/ScrollContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -160,7 +147,7 @@ size_flags_vertical = 3
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="InfoButtonContainer" type="VBoxContainer" parent="UI/GUI/HBoxContainer2/SidebarMenu/ColorRect"]
+[node name="InfoButtonContainer" type="VBoxContainer" parent="GUI/Desktop/Desktop-GUI/HBoxContainer2/SidebarMenu/ColorRect"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -175,17 +162,17 @@ size_flags_horizontal = 8
 size_flags_vertical = 4
 alignment = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="UI/GUI/HBoxContainer2/SidebarMenu/ColorRect/InfoButtonContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="GUI/Desktop/Desktop-GUI/HBoxContainer2/SidebarMenu/ColorRect/InfoButtonContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 theme_override_constants/margin_bottom = 20
 
-[node name="InfoBox" type="HBoxContainer" parent="UI/GUI/HBoxContainer2"]
+[node name="InfoBox" type="HBoxContainer" parent="GUI/Desktop/Desktop-GUI/HBoxContainer2"]
 layout_mode = 2
 theme_override_constants/separation = 70
 
-[node name="InfoBoxText" type="RichTextLabel" parent="UI/GUI/HBoxContainer2/InfoBox"]
+[node name="InfoBoxText" type="RichTextLabel" parent="GUI/Desktop/Desktop-GUI/HBoxContainer2/InfoBox"]
 unique_name_in_owner = true
 visible = false
 clip_contents = false
@@ -215,14 +202,14 @@ d
 d
 "
 
-[node name="InfoButton" type="MarginContainer" parent="UI/GUI/HBoxContainer2"]
+[node name="InfoButton" type="MarginContainer" parent="GUI/Desktop/Desktop-GUI/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
 theme_override_constants/margin_left = 15
 theme_override_constants/margin_bottom = 20
 
-[node name="InfoBoxButton" type="Button" parent="UI/GUI/HBoxContainer2/InfoButton"]
+[node name="InfoBoxButton" type="Button" parent="GUI/Desktop/Desktop-GUI/HBoxContainer2/InfoButton"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
@@ -232,7 +219,7 @@ icon = ExtResource("3_p3ir5")
 icon_alignment = 1
 expand_icon = true
 
-[node name="ZoomButtons" type="MarginContainer" parent="UI/GUI"]
+[node name="ZoomButtons" type="MarginContainer" parent="GUI/Desktop/Desktop-GUI"]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -245,10 +232,10 @@ grow_vertical = 0
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/GUI/ZoomButtons"]
+[node name="VBoxContainer" type="VBoxContainer" parent="GUI/Desktop/Desktop-GUI/ZoomButtons"]
 layout_mode = 2
 
-[node name="ZoomInButton" type="Button" parent="UI/GUI/ZoomButtons/VBoxContainer"]
+[node name="ZoomInButton" type="Button" parent="GUI/Desktop/Desktop-GUI/ZoomButtons/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
@@ -258,7 +245,7 @@ icon = ExtResource("12_ie368")
 icon_alignment = 1
 expand_icon = true
 
-[node name="ZoomOutButton" type="Button" parent="UI/GUI/ZoomButtons/VBoxContainer"]
+[node name="ZoomOutButton" type="Button" parent="GUI/Desktop/Desktop-GUI/ZoomButtons/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
@@ -268,32 +255,66 @@ icon = ExtResource("13_x5dfk")
 icon_alignment = 1
 expand_icon = true
 
-[node name="BackgroundShader" type="ColorRect" parent="."]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
-anchors_preset = 15
+[node name="mobile" type="Control" parent="GUI"]
+anchors_preset = 0
+
+[node name="Mobile-GUI" type="CanvasLayer" parent="GUI/mobile"]
+
+[node name="ZoomButtons" type="MarginContainer" parent="GUI/mobile/Mobile-GUI"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -21240.0
-offset_top = -13143.0
-offset_right = 32973.0
-offset_bottom = 26039.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = -70.0
+offset_top = -124.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(1.4538664, 1.4538664)
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GUI/mobile/Mobile-GUI"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -104.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="ZoomInButtonMobile" type="Button" parent="GUI/mobile/Mobile-GUI/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("11_dlo4w")
+icon = ExtResource("12_ie368")
+icon_alignment = 1
+expand_icon = true
+
+[node name="ZoomOutButtonMobile" type="Button" parent="GUI/mobile/Mobile-GUI/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("11_dlo4w")
+icon = ExtResource("13_x5dfk")
+icon_alignment = 1
+expand_icon = true
 
 [node name="MapTexture" type="TextureRect" parent="."]
 unique_name_in_owner = true
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -964.0
-offset_top = -539.0
-offset_right = 6776.0
-offset_bottom = 5140.0
+offset_right = 4083.0
+offset_bottom = 4096.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("10_olcgw")
 stretch_mode = 4
