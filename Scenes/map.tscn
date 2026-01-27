@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c1gdolffqfto"]
+[gd_scene load_steps=14 format=3 uid="uid://c1gdolffqfto"]
 
 [ext_resource type="Script" uid="uid://b14y7la05xk07" path="res://Scenes/map.gd" id="1_26yhd"]
 [ext_resource type="Script" uid="uid://dskw4hvfnq340" path="res://Scenes/camera.gd" id="2_myvm1"]
@@ -8,7 +8,10 @@
 [ext_resource type="FontFile" uid="uid://7fijmbvj7cw5" path="res://Themes/Fonts/Barlow-Regular.ttf" id="9_q6lx1"]
 [ext_resource type="Texture2D" uid="uid://rqofppg16do8" path="res://Assets/Images/maps/k59-6.webp" id="10_olcgw"]
 [ext_resource type="Theme" uid="uid://cptlnk3vxajih" path="res://Themes/location_theme.tres" id="11_dlo4w"]
+[ext_resource type="PackedScene" uid="uid://d1oi0hgb1kprv" path="res://Scenes/pin.tscn" id="11_q6lx1"]
 [ext_resource type="Texture2D" uid="uid://2ekm02hi16v6" path="res://Assets/Icons/zoom_in.png" id="12_ie368"]
+[ext_resource type="Texture2D" uid="uid://drm1fq3qp8lbu" path="res://Assets/Pins/map-pin-1.webp" id="13_5qtum"]
+[ext_resource type="Texture2D" uid="uid://bh560nyxki8qv" path="res://Assets/Pins/map-pin-2.webp" id="13_ie368"]
 [ext_resource type="Texture2D" uid="uid://ckicweawyx70j" path="res://Assets/Icons/zoom_out.png" id="13_x5dfk"]
 
 [node name="Node2D" type="Node2D"]
@@ -26,12 +29,27 @@ offset_bottom = 26039.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." groups=["GroupA"]]
 unique_name_in_owner = true
 position = Vector2(1794, 1812)
 limit_smoothed = true
 position_smoothing_speed = 100.0
 script = ExtResource("2_myvm1")
+
+[node name="MapTexture" type="TextureRect" parent="."]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 4083.0
+offset_bottom = 4096.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_olcgw")
+stretch_mode = 4
+metadata/_edit_lock_ = true
 
 [node name="GUI" type="Control" parent="."]
 layout_mode = 3
@@ -305,16 +323,60 @@ icon = ExtResource("13_x5dfk")
 icon_alignment = 1
 expand_icon = true
 
-[node name="MapTexture" type="TextureRect" parent="."]
-unique_name_in_owner = true
+[node name="Pins" type="Control" parent="GUI"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="pins" type="CanvasLayer" parent="GUI/Pins"]
+
+[node name="Control" type="Control" parent="GUI/Pins/pins"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="pin" parent="GUI/Pins/pins/Control" instance=ExtResource("11_q6lx1")]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_right = 4083.0
-offset_bottom = 4096.0
+offset_left = 1716.0
+offset_top = 1878.0
+offset_right = 1716.0
+offset_bottom = 1878.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("10_olcgw")
-stretch_mode = 4
+pin_texture = ExtResource("13_5qtum")
+pin_text = "Test"
+pin_number = 1
+world_position = Vector2(1736, 1898)
+
+[node name="pin2" parent="GUI/Pins/pins/Control" instance=ExtResource("11_q6lx1")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 2404.0
+offset_top = 1895.0
+offset_right = 2404.0
+offset_bottom = 1895.0
+grow_horizontal = 2
+grow_vertical = 2
+pin_texture = ExtResource("13_ie368")
+pin_text = "TEST"
+pin_number = 2
+world_position = Vector2(2424, 1915)
+
+[node name="pin3" parent="GUI/Pins/pins/Control" instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 1000.0
+offset_top = 2.0
+offset_right = 1000.0
+offset_bottom = 2.0
+pin_texture = ExtResource("13_5qtum")
+world_position = Vector2(1000, 2)
