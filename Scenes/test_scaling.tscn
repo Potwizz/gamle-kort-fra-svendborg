@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnsuhlybaxpu2"]
+
+[ext_resource type="Texture2D" uid="uid://db7a2kj5nnax7" path="res://Assets/Icons/list.png" id="1_vtfk2"]
+[ext_resource type="PackedScene" uid="uid://dbwqsmv5e03p4" path="res://Scenes/camera.tscn" id="2_tnjl0"]
+
+[node name="TestScaling" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(227, 333)
+texture = ExtResource("1_vtfk2")
+
+[node name="Camera2D" parent="." instance=ExtResource("2_tnjl0")]
+position = Vector2(195, 402)

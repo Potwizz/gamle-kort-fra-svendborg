@@ -5,15 +5,11 @@ extends Camera2D
 @onready var map_texture: TextureRect = %MapTexture
 @onready var zoom_in_button: Button = %ZoomInButton
 @onready var zoom_out_button: Button = %ZoomOutButton
-@onready var zoom_out_button_mobile: Button = %ZoomOutButtonMobile
-@onready var zoom_in_button_mobile: Button = %ZoomInButtonMobile
-
-
 
 @export var zoom_speed: float = 0.005
 @export var drag_speed: float = 1.0
-@export var min_zoom: float = 0.5
-@export var max_zoom: float = 3.0
+@export var min_zoom: float = 0.2
+@export var max_zoom: float = 2.0
 
 ## Max zoom in
 var zoom_in := 2.0
@@ -21,16 +17,14 @@ var zoom_in := 2.0
 var zoom_out := 0.5
 
 #func _ready() -> void:
-	##_camera_2d.limit_left = 0.0
-	##_camera_2d.limit_top = 0.0
-	##_camera_2d.limit_right = map_texture.size.x
-	##_camera_2d.limit_bottom = map_texture.size.y
+	#_camera_2d.limit_left = 0.0
+	#_camera_2d.limit_top = 0.0
+	#_camera_2d.limit_right = map_texture.size.x
+	#_camera_2d.limit_bottom = map_texture.size.y
 
 func _ready() -> void:
 	zoom_in_button.pressed.connect(ZoomIn)
 	zoom_out_button.pressed.connect(ZoomOut)
-	zoom_in_button_mobile.pressed.connect(ZoomIn)
-	zoom_out_button_mobile.pressed.connect(ZoomOut)
 
 func _process(_delta: float) -> void:
 	var current_zoom_x = _camera_2d.zoom.x
@@ -43,6 +37,15 @@ func _process(_delta: float) -> void:
 		if current_zoom_x > zoom_out:
 			_camera_2d.zoom.x = current_zoom_x - 0.2
 			_camera_2d.zoom.y = current_zoom_y - 0.2
+	
+	#if Input.is_action_just_pressed("Scroll Up"):
+		#zoom -= Vector2.ONE * zoom_speed
+	#
+	#if Input.is_action_just_pressed("Scroll Down"):
+		#zoom += Vector2.ONE * zoom_speed
+	#
+	#zoom = Vector2.ONE * (1.0 + sin(Time.get_ticks_msec() * 0.001))
+	#zoom = zoom.clamp(Vector2.ONE * min_zoom, Vector2.ONE * max_zoom)
 
 func ZoomIn() -> void:
 	var current_zoom_x = _camera_2d.zoom.x

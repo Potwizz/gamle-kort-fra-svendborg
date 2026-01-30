@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbwqsmv5e03p4"]
+
+[ext_resource type="Script" uid="uid://dskw4hvfnq340" path="res://Scenes/camera.gd" id="1_375tr"]
+
+[node name="Camera2D" type="Camera2D" groups=["GroupA"]]
+limit_smoothed = true
+position_smoothing_speed = 100.0
+script = ExtResource("1_375tr")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://c1gdolffqfto"]
+[gd_scene load_steps=15 format=3 uid="uid://c1gdolffqfto"]
 
 [ext_resource type="Script" uid="uid://b14y7la05xk07" path="res://Scenes/map.gd" id="1_26yhd"]
-[ext_resource type="Script" uid="uid://dskw4hvfnq340" path="res://Scenes/camera.gd" id="2_myvm1"]
 [ext_resource type="Texture2D" uid="uid://chewu8f5g3mit" path="res://Assets/Icons/info.png" id="3_p3ir5"]
+[ext_resource type="PackedScene" uid="uid://dbwqsmv5e03p4" path="res://Scenes/camera.tscn" id="4_q6lx1"]
 [ext_resource type="Texture2D" uid="uid://byllqo832ml8j" path="res://Assets/Splash Screen/historie-logo.png" id="6_np2xp"]
+[ext_resource type="Texture2D" uid="uid://c3re2i0p0l51a" path="res://Assets/Pins/map-pin-placeholder-trimmed.webp" id="6_x5dfk"]
 [ext_resource type="Texture2D" uid="uid://doaqa2qy1xt2r" path="res://sh-favicon.png" id="9_5qtum"]
 [ext_resource type="FontFile" uid="uid://7fijmbvj7cw5" path="res://Themes/Fonts/Barlow-Regular.ttf" id="9_q6lx1"]
 [ext_resource type="Texture2D" uid="uid://rqofppg16do8" path="res://Assets/Images/maps/k59-6.webp" id="10_olcgw"]
@@ -29,12 +30,9 @@ offset_bottom = 26039.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Camera2D" type="Camera2D" parent="." groups=["GroupA"]]
+[node name="Camera2D" parent="." instance=ExtResource("4_q6lx1")]
 unique_name_in_owner = true
 position = Vector2(1794, 1812)
-limit_smoothed = true
-position_smoothing_speed = 100.0
-script = ExtResource("2_myvm1")
 
 [node name="MapTexture" type="TextureRect" parent="."]
 unique_name_in_owner = true
@@ -51,19 +49,440 @@ texture = ExtResource("10_olcgw")
 stretch_mode = 4
 metadata/_edit_lock_ = true
 
-[node name="GUI" type="Control" parent="."]
+[node name="Pins" type="Node2D" parent="."]
+
+[node name="pin1" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(1740, 1909)
+pin_texture = ExtResource("13_5qtum")
+pin_text = "1: Amstue"
+pin_number = 1
+
+[node name="pin2" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(2421, 1919)
+pin_texture = ExtResource("13_ie368")
+pin_text = "2: Apotek Løve"
+pin_number = 1
+
+[node name="pin29" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(2452, 1932)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "29: Hotel, central."
+pin_number = 1
+
+[node name="pin16" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(2265, 1851)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "16"
+pin_number = 1
+
+[node name="pin21" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(2335, 1807)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "21"
+pin_number = 1
+
+[node name="pin69" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(2401, 1823)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "69"
+pin_number = 1
+
+[node name="pin50" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(2394, 1844)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "50"
+pin_number = 1
+
+[node name="pin68" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(2451, 1979)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "68"
+pin_number = 1
+
+[node name="pin48" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(2584, 1919)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "48"
+pin_number = 1
+
+[node name="pin52" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(2294, 1840)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "52:"
+pin_number = 1
+
+[node name="pin6" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(2581, 1975)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "6"
+pin_number = 1
+
+[node name="pin40" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(2402, 2100)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "40"
+pin_number = 1
+
+[node name="pin30" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(2572, 2031)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "30"
+pin_number = 1
+
+[node name="pin7" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(2530, 2023)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "7"
+pin_number = 1
+
+[node name="pin8" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(2629, 2064)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "8"
+pin_number = 1
+
+[node name="pin31" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(2722, 2048)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "31"
+pin_number = 1
+
+[node name="pin32" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(2745, 2149)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "67"
+pin_number = 1
+
+[node name="pin72" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(2309, 2159)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "72"
+pin_number = 1
+
+[node name="pin23" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(2378, 2218)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "23"
+pin_number = 1
+
+[node name="pin59" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(2302, 2205)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "59"
+pin_number = 1
+
+[node name="pin33" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(2116, 2134)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "33"
+pin_number = 1
+
+[node name="pin22" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(1930, 2107)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "22"
+pin_number = 1
+
+[node name="pin53" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(1731, 1776)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "53"
+pin_number = 1
+
+[node name="pin36" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(1482, 1866)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "36"
+pin_number = 1
+
+[node name="pin57" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(2202, 2568)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "57"
+pin_number = 1
+
+[node name="pin78" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(2972, 2220)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "78"
+pin_number = 1
+
+[node name="pin80" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(2830, 1927)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "80"
+pin_number = 1
+
+[node name="pin42" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(2776, 1910)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "42"
+pin_number = 1
+
+[node name="pin35" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(2674, 1941)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "35"
+pin_number = 1
+
+[node name="pin34" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(2716, 1957)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "34"
+pin_number = 1
+
+[node name="pin24" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(2669, 1750)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "24"
+pin_number = 1
+
+[node name="pin44" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(2791, 1443)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "44"
+pin_number = 1
+
+[node name="pin75" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(2879, 1479)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "75"
+pin_number = 1
+
+[node name="pin39" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(2794, 1346)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "39"
+pin_number = 1
+
+[node name="pin55" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(2861, 1320)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "55"
+pin_number = 55
+
+[node name="pin54" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(3325, 1364)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "54"
+pin_number = 54
+
+[node name="pin73" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(3487, 1303)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "73"
+pin_number = 73
+
+[node name="pin19" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(3630, 1326)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "19"
+pin_number = 19
+
+[node name="pin11" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(3732, 1409)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "11"
+pin_number = 11
+
+[node name="pin10" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(3455, 956)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "10"
+pin_number = 10
+
+[node name="pin77" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(3246, 1037)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "77"
+pin_number = 77
+
+[node name="pin61" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(3142, 1019)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "61"
+pin_number = 61
+
+[node name="pin12" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(2968, 1066)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "12"
+pin_number = 12
+
+[node name="pin15" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(2649, 1153)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "15"
+pin_number = 15
+
+[node name="pin62" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(2355, 1484)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "62"
+pin_number = 62
+
+[node name="pin5" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(2255, 1496)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "5"
+pin_number = 5
+
+[node name="pin49" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(2199, 1491)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "49"
+pin_number = 49
+
+[node name="pin9" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(2135, 1483)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "9"
+pin_number = 9
+
+[node name="pin25" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(1981, 1640)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "25"
+pin_number = 25
+
+[node name="pin65" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(1908, 1673)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "65"
+pin_number = 65
+
+[node name="pin70" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(1832, 1698)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "70"
+pin_number = 70
+
+[node name="pin46" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(1783, 1720)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "46"
+pin_number = 46
+
+[node name="pin63" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(1751, 1628)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "63"
+pin_number = 63
+
+[node name="pin66" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(1736, 1465)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "66"
+pin_number = 66
+
+[node name="pin64" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(1859, 1359)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "64"
+pin_number = 64
+
+[node name="pin43" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(3086, 1123)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "43"
+pin_number = 43
+
+[node name="pin47" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(2684, 823)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "47"
+pin_number = 47
+
+[node name="pin79" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(2553, 862)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "79"
+pin_number = 79
+
+[node name="pin18" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(2438, 896)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "18"
+pin_number = 18
+
+[node name="pin4" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(1210, 2032)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "4"
+pin_number = 4
+
+[node name="pin28" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(1722, 2372)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "28"
+pin_number = 28
+
+[node name="pin38" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(1870, 2285)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "38"
+pin_number = 38
+
+[node name="pin26" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(2101, 2241)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "26"
+pin_number = 26
+
+[node name="pin27" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(1999, 2533)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "27"
+pin_number = 27
+
+[node name="pin45" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(2117, 2532)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "45"
+pin_number = 45
+
+[node name="pin71" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(1634, 2513)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "71"
+pin_number = 71
+
+[node name="pin56" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(2630, 2657)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "56"
+pin_number = 56
+
+[node name="pin60" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(2640, 2796)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "60"
+pin_number = 60
+
+[node name="pin13" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(2583, 2186)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "13"
+pin_number = 13
+
+[node name="pin51" parent="Pins" instance=ExtResource("11_q6lx1")]
+position = Vector2(2269, 2115)
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "51"
+pin_number = 51
+
+[node name="Desktop-GUI" type="CanvasLayer" parent="."]
+
+[node name="GUI" type="Control" parent="Desktop-GUI"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
-mouse_force_pass_scroll_events = false
 script = ExtResource("1_26yhd")
 
-[node name="Desktop" type="Control" parent="GUI"]
-visible = false
+[node name="Desktop" type="Control" parent="Desktop-GUI/GUI"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -72,10 +491,8 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_force_pass_scroll_events = false
 
-[node name="Desktop-GUI" type="CanvasLayer" parent="GUI/Desktop"]
-visible = false
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="GUI/Desktop/Desktop-GUI"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="Desktop-GUI/GUI"]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -83,18 +500,19 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 0
 
-[node name="SidebarMenu" type="HBoxContainer" parent="GUI/Desktop/Desktop-GUI/HBoxContainer2"]
+[node name="SidebarMenu" type="HBoxContainer" parent="Desktop-GUI/GUI/HBoxContainer2"]
+visible = false
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="ColorRect" type="ColorRect" parent="GUI/Desktop/Desktop-GUI/HBoxContainer2/SidebarMenu"]
+[node name="ColorRect" type="ColorRect" parent="Desktop-GUI/GUI/HBoxContainer2/SidebarMenu"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 color = Color(0.776471, 0.278431, 0.352941, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="GUI/Desktop/Desktop-GUI/HBoxContainer2/SidebarMenu/ColorRect"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Desktop-GUI/GUI/HBoxContainer2/SidebarMenu/ColorRect"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -105,7 +523,7 @@ offset_bottom = 80.0
 grow_horizontal = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="MarginContainer" type="MarginContainer" parent="GUI/Desktop/Desktop-GUI/HBoxContainer2/SidebarMenu/ColorRect/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Desktop-GUI/GUI/HBoxContainer2/SidebarMenu/ColorRect/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 2
@@ -113,7 +531,7 @@ theme_override_constants/margin_left = 0
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_bottom = 10
 
-[node name="Logo" type="TextureRect" parent="GUI/Desktop/Desktop-GUI/HBoxContainer2/SidebarMenu/ColorRect/VBoxContainer/MarginContainer"]
+[node name="Logo" type="TextureRect" parent="Desktop-GUI/GUI/HBoxContainer2/SidebarMenu/ColorRect/VBoxContainer/MarginContainer"]
 visible = false
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
@@ -122,12 +540,12 @@ texture = ExtResource("9_5qtum")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="TextureRect" type="TextureRect" parent="GUI/Desktop/Desktop-GUI/HBoxContainer2/SidebarMenu/ColorRect/VBoxContainer/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="Desktop-GUI/GUI/HBoxContainer2/SidebarMenu/ColorRect/VBoxContainer/MarginContainer"]
 layout_mode = 2
 texture = ExtResource("6_np2xp")
 stretch_mode = 5
 
-[node name="RichTextLabel" type="RichTextLabel" parent="GUI/Desktop/Desktop-GUI/HBoxContainer2/SidebarMenu/ColorRect/VBoxContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Desktop-GUI/GUI/HBoxContainer2/SidebarMenu/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("9_q6lx1")
 theme_override_font_sizes/normal_font_size = 24
@@ -136,7 +554,7 @@ text = "[b]GAMLE KORT AF SVENDBORG[/b]"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="ButtonBox" type="VBoxContainer" parent="GUI/Desktop/Desktop-GUI/HBoxContainer2/SidebarMenu/ColorRect"]
+[node name="ButtonBox" type="VBoxContainer" parent="Desktop-GUI/GUI/HBoxContainer2/SidebarMenu/ColorRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -153,11 +571,11 @@ size_flags_horizontal = 4
 size_flags_vertical = 6
 alignment = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="GUI/Desktop/Desktop-GUI/HBoxContainer2/SidebarMenu/ColorRect/ButtonBox"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Desktop-GUI/GUI/HBoxContainer2/SidebarMenu/ColorRect/ButtonBox"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="ButtonMenu" type="VBoxContainer" parent="GUI/Desktop/Desktop-GUI/HBoxContainer2/SidebarMenu/ColorRect/ButtonBox/ScrollContainer"]
+[node name="ButtonMenu" type="VBoxContainer" parent="Desktop-GUI/GUI/HBoxContainer2/SidebarMenu/ColorRect/ButtonBox/ScrollContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -165,7 +583,7 @@ size_flags_vertical = 3
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="InfoButtonContainer" type="VBoxContainer" parent="GUI/Desktop/Desktop-GUI/HBoxContainer2/SidebarMenu/ColorRect"]
+[node name="InfoButtonContainer" type="VBoxContainer" parent="Desktop-GUI/GUI/HBoxContainer2/SidebarMenu/ColorRect"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -180,17 +598,17 @@ size_flags_horizontal = 8
 size_flags_vertical = 4
 alignment = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="GUI/Desktop/Desktop-GUI/HBoxContainer2/SidebarMenu/ColorRect/InfoButtonContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Desktop-GUI/GUI/HBoxContainer2/SidebarMenu/ColorRect/InfoButtonContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 theme_override_constants/margin_bottom = 20
 
-[node name="InfoBox" type="HBoxContainer" parent="GUI/Desktop/Desktop-GUI/HBoxContainer2"]
+[node name="InfoBox" type="HBoxContainer" parent="Desktop-GUI/GUI/HBoxContainer2"]
 layout_mode = 2
 theme_override_constants/separation = 70
 
-[node name="InfoBoxText" type="RichTextLabel" parent="GUI/Desktop/Desktop-GUI/HBoxContainer2/InfoBox"]
+[node name="InfoBoxText" type="RichTextLabel" parent="Desktop-GUI/GUI/HBoxContainer2/InfoBox"]
 unique_name_in_owner = true
 visible = false
 clip_contents = false
@@ -220,16 +638,16 @@ d
 d
 "
 
-[node name="InfoButton" type="MarginContainer" parent="GUI/Desktop/Desktop-GUI/HBoxContainer2"]
+[node name="InfoButton" type="MarginContainer" parent="Desktop-GUI/GUI/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
 theme_override_constants/margin_left = 15
 theme_override_constants/margin_bottom = 20
 
-[node name="InfoBoxButton" type="Button" parent="GUI/Desktop/Desktop-GUI/HBoxContainer2/InfoButton"]
+[node name="InfoBoxButton" type="Button" parent="Desktop-GUI/GUI/HBoxContainer2/InfoButton"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(50, 50)
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 focus_mode = 0
 theme = ExtResource("11_dlo4w")
@@ -237,25 +655,26 @@ icon = ExtResource("3_p3ir5")
 icon_alignment = 1
 expand_icon = true
 
-[node name="ZoomButtons" type="MarginContainer" parent="GUI/Desktop/Desktop-GUI"]
+[node name="ZoomButtons" type="MarginContainer" parent="Desktop-GUI/GUI"]
+layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -70.0
-offset_top = -124.0
+offset_left = -170.0
+offset_top = -324.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="VBoxContainer" type="VBoxContainer" parent="GUI/Desktop/Desktop-GUI/ZoomButtons"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Desktop-GUI/GUI/ZoomButtons"]
 layout_mode = 2
 
-[node name="ZoomInButton" type="Button" parent="GUI/Desktop/Desktop-GUI/ZoomButtons/VBoxContainer"]
+[node name="ZoomInButton" type="Button" parent="Desktop-GUI/GUI/ZoomButtons/VBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(50, 50)
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 focus_mode = 0
 theme = ExtResource("11_dlo4w")
@@ -263,120 +682,12 @@ icon = ExtResource("12_ie368")
 icon_alignment = 1
 expand_icon = true
 
-[node name="ZoomOutButton" type="Button" parent="GUI/Desktop/Desktop-GUI/ZoomButtons/VBoxContainer"]
+[node name="ZoomOutButton" type="Button" parent="Desktop-GUI/GUI/ZoomButtons/VBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(50, 50)
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 focus_mode = 0
 theme = ExtResource("11_dlo4w")
 icon = ExtResource("13_x5dfk")
 icon_alignment = 1
 expand_icon = true
-
-[node name="mobile" type="Control" parent="GUI"]
-anchors_preset = 0
-
-[node name="Mobile-GUI" type="CanvasLayer" parent="GUI/mobile"]
-
-[node name="ZoomButtons" type="MarginContainer" parent="GUI/mobile/Mobile-GUI"]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -70.0
-offset_top = -124.0
-grow_horizontal = 0
-grow_vertical = 0
-scale = Vector2(1.4538664, 1.4538664)
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
-
-[node name="VBoxContainer" type="VBoxContainer" parent="GUI/mobile/Mobile-GUI"]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -50.0
-offset_top = -104.0
-grow_horizontal = 0
-grow_vertical = 0
-
-[node name="ZoomInButtonMobile" type="Button" parent="GUI/mobile/Mobile-GUI/VBoxContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-focus_mode = 0
-theme = ExtResource("11_dlo4w")
-icon = ExtResource("12_ie368")
-icon_alignment = 1
-expand_icon = true
-
-[node name="ZoomOutButtonMobile" type="Button" parent="GUI/mobile/Mobile-GUI/VBoxContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-focus_mode = 0
-theme = ExtResource("11_dlo4w")
-icon = ExtResource("13_x5dfk")
-icon_alignment = 1
-expand_icon = true
-
-[node name="Pins" type="Control" parent="GUI"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="pins" type="CanvasLayer" parent="GUI/Pins"]
-
-[node name="Control" type="Control" parent="GUI/Pins/pins"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="pin" parent="GUI/Pins/pins/Control" instance=ExtResource("11_q6lx1")]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 1716.0
-offset_top = 1878.0
-offset_right = 1716.0
-offset_bottom = 1878.0
-grow_horizontal = 2
-grow_vertical = 2
-pin_texture = ExtResource("13_5qtum")
-pin_text = "Test"
-pin_number = 1
-world_position = Vector2(1736, 1898)
-
-[node name="pin2" parent="GUI/Pins/pins/Control" instance=ExtResource("11_q6lx1")]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 2404.0
-offset_top = 1895.0
-offset_right = 2404.0
-offset_bottom = 1895.0
-grow_horizontal = 2
-grow_vertical = 2
-pin_texture = ExtResource("13_ie368")
-pin_text = "TEST"
-pin_number = 2
-world_position = Vector2(2424, 1915)
-
-[node name="pin3" parent="GUI/Pins/pins/Control" instance=ExtResource("11_q6lx1")]
-layout_mode = 0
-offset_left = 1000.0
-offset_top = 2.0
-offset_right = 1000.0
-offset_bottom = 2.0
-pin_texture = ExtResource("13_5qtum")
-world_position = Vector2(1000, 2)

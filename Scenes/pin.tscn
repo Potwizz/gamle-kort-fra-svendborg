@@ -1,6 +1,5 @@
-[gd_scene load_steps=5 format=3 uid="uid://d1oi0hgb1kprv"]
+[gd_scene load_steps=4 format=3 uid="uid://d1oi0hgb1kprv"]
 
-[ext_resource type="Texture2D" uid="uid://cw5xunbefsgw1" path="res://Assets/Pins/map-pin-placeholder-trimmed.png" id="1_2fohy"]
 [ext_resource type="Script" uid="uid://be1yjcpwklikt" path="res://Scenes/pin.gd" id="1_052ig"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p4wps"]
@@ -9,31 +8,25 @@ bg_color = Color(1, 1, 1, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_052ig"]
 bg_color = Color(1, 1, 1, 1)
 
-[node name="pin" type="Control" groups=["GroupA"]]
-layout_mode = 3
-anchors_preset = 0
+[node name="pin" type="Node2D" groups=["GroupA"]]
 script = ExtResource("1_052ig")
 
 [node name="PinText" type="RichTextLabel" parent="."]
 unique_name_in_owner = true
 visible = false
-layout_mode = 0
-offset_left = -48.0
-offset_top = -81.0
-offset_right = 52.0
-offset_bottom = -31.0
+offset_left = -95.0
+offset_top = -148.0
+offset_right = 111.0
+offset_bottom = -66.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_p4wps")
 theme_override_styles/background = SubResource("StyleBoxFlat_052ig")
-text = "4: Lorem Ipsum"
 
 [node name="ToggleVisibility" type="Button" parent="."]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = -30.0
-offset_top = -38.0
-offset_right = 3014.0
-offset_bottom = 4300.0
-scale = Vector2(0.02, 0.02)
-icon = ExtResource("1_2fohy")
+offset_left = -22.0
+offset_top = -64.0
+offset_right = 3022.0
+offset_bottom = 4274.0
+scale = Vector2(0.015, 0.015)
 flat = true
