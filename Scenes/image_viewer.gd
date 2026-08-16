@@ -136,6 +136,12 @@ func _ready() -> void:
 	zoom_out_button.pressed.connect(_on_zoom_out_pressed)
 
 
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("right_key"):
+		next_image()
+	if Input.is_action_just_pressed("left_key"):
+		previous_image()
+
 func _image_text_visible() -> void:
 	if image_desc.visible == false:
 		image_desc.visible = true
