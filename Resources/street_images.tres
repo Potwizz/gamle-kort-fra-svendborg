@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="StreetImages" format=3 uid="uid://r8svp446q6ko"]
+
+[ext_resource type="Script" uid="uid://dsk1lwbts52ij" path="res://Resources/street_images.gd" id="1_5xeat"]
+
+[resource]
+script = ExtResource("1_5xeat")
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"

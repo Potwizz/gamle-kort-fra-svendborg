@@ -1,25 +1,1296 @@
-[gd_scene load_steps=15 format=3 uid="uid://c1gdolffqfto"]
+[gd_scene format=3 uid="uid://c1gdolffqfto"]
 
-[ext_resource type="Script" uid="uid://b14y7la05xk07" path="res://Scenes/map.gd" id="1_26yhd"]
-[ext_resource type="Texture2D" uid="uid://chewu8f5g3mit" path="res://Assets/Icons/info.png" id="3_p3ir5"]
+[ext_resource type="Script" uid="uid://cr0nndt1dvhwu" path="res://Scenes/map.gd" id="1_6q3n4"]
+[ext_resource type="Texture2D" uid="uid://xwiwwmegb62v" path="res://Assets/Images/maps/k59.jpg" id="4_k63oc"]
 [ext_resource type="PackedScene" uid="uid://dbwqsmv5e03p4" path="res://Scenes/camera.tscn" id="4_q6lx1"]
-[ext_resource type="Texture2D" uid="uid://byllqo832ml8j" path="res://Assets/Splash Screen/historie-logo.png" id="6_np2xp"]
-[ext_resource type="Texture2D" uid="uid://c3re2i0p0l51a" path="res://Assets/Pins/map-pin-placeholder-trimmed.webp" id="6_x5dfk"]
-[ext_resource type="Texture2D" uid="uid://doaqa2qy1xt2r" path="res://sh-favicon.png" id="9_5qtum"]
-[ext_resource type="FontFile" uid="uid://7fijmbvj7cw5" path="res://Themes/Fonts/Barlow-Regular.ttf" id="9_q6lx1"]
-[ext_resource type="Texture2D" uid="uid://rqofppg16do8" path="res://Assets/Images/maps/k59-6.webp" id="10_olcgw"]
-[ext_resource type="Theme" uid="uid://cptlnk3vxajih" path="res://Themes/location_theme.tres" id="11_dlo4w"]
+[ext_resource type="Script" uid="uid://dsk1lwbts52ij" path="res://Resources/street_images.gd" id="6_x5dfk"]
+[ext_resource type="Script" uid="uid://b14y7la05xk07" path="res://Scenes/GUI.gd" id="8_5qtum"]
+[ext_resource type="Script" uid="uid://betlslj06s3pb" path="res://Scenes/image_viewer.gd" id="10_dlo4w"]
+[ext_resource type="Theme" uid="uid://cptlnk3vxajih" path="res://Themes/location_theme.tres" id="10_ie368"]
+[ext_resource type="Texture2D" uid="uid://fkyq2wnotst1" path="res://Assets/Icons/cursor_right.png" id="10_x5dfk"]
+[ext_resource type="Texture2D" uid="uid://7xieelg3q5dk" path="res://Assets/Icons/cursor_left.png" id="11_fls3e"]
 [ext_resource type="PackedScene" uid="uid://d1oi0hgb1kprv" path="res://Scenes/pin.tscn" id="11_q6lx1"]
-[ext_resource type="Texture2D" uid="uid://2ekm02hi16v6" path="res://Assets/Icons/zoom_in.png" id="12_ie368"]
-[ext_resource type="Texture2D" uid="uid://drm1fq3qp8lbu" path="res://Assets/Pins/map-pin-1.webp" id="13_5qtum"]
-[ext_resource type="Texture2D" uid="uid://bh560nyxki8qv" path="res://Assets/Pins/map-pin-2.webp" id="13_ie368"]
-[ext_resource type="Texture2D" uid="uid://ckicweawyx70j" path="res://Assets/Icons/zoom_out.png" id="13_x5dfk"]
+[ext_resource type="Texture2D" uid="uid://2ekm02hi16v6" path="res://Assets/Icons/zoom_in.png" id="11_x5dfk"]
+[ext_resource type="Texture2D" uid="uid://ckicweawyx70j" path="res://Assets/Icons/zoom_out.png" id="12_fls3e"]
+[ext_resource type="Texture2D" uid="uid://bkfxoe47m8xcd" path="res://Assets/Icons/cross.png" id="12_k63oc"]
+[ext_resource type="Texture2D" uid="uid://chewu8f5g3mit" path="res://Assets/Icons/info.png" id="13_k63oc"]
+[ext_resource type="Texture2D" uid="uid://6pnki5x05ig7" path="res://Assets/Icons/help.png" id="16_riaky"]
+[ext_resource type="Texture2D" uid="uid://bonvstd1pekh4" path="res://Assets/Icons/image_icon.png" id="17_rg57b"]
+[ext_resource type="Texture2D" uid="uid://bfkyq5tvsago1" path="res://Assets/Icons/list_bulleted.png" id="18_vtkp8"]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="Resource" id="Resource_wk4js"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786609393/b259.webp"
+image_number = "b259"
+image_text = "Torvet, Folketingsvalg i 1895. Pastor Prip taler til forsamling på torvet. Han var muligvis stiller for én af kandidaterne."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
 
-[node name="BackgroundShader" type="ColorRect" parent="."]
+[sub_resource type="Resource" id="Resource_k63oc"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786609394/b280.webp"
+image_number = "b280"
+image_text = "Torvedag ved Torvet ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_riaky"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786609395/b285.webp"
+image_number = "b285"
+image_text = "Torvehandel på Torvet ca. 1905"
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_j4oe2"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786608516/b319.webp"
+image_number = "b319"
+image_text = "Torvehandel ca. 1900"
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_vtkp8"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786608519/b321.webp"
+image_number = "b321"
+image_text = "Lilletorv set fra Torvet. Ca. 1895."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_rg57b"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786609396/b3098.webp"
+image_number = "b3098"
+image_text = "På billedet ses Løve apoteket, \"Kaufmanns hjørne\" og Svendborg Klædefabrik (senere Wiggers gård). Ca. 1896"
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_macow"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786608517/b3502.webp"
+image_number = "3502"
+image_text = "Torvet set fra Lilletorv om vinteren. Ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_ltf6m"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786612244/b3509.webp"
+image_number = "3509"
+image_text = "Torvet 8, Kristiana Jørgensens Viktualie- og Delikatessehandel. Huset blev revet ned i 1938. Ca. 1903."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_uus22"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786608511/b7942.webp"
+image_number = "b7942"
+image_text = "Torvet nr. 7, Svendborg Klædefabrik. Udsmykket i anledning af 50 års jubilæet 1855-1905. "
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_tuwt4"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786615053/b7966.webp"
+image_number = "b7966"
+image_text = "Torvet 7, Svendborg Klædefabrik, personalebillede ca. 1905."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_1ye5v"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786608516/b7894.webp"
+image_number = "b7894"
+image_text = "Torvet nr. 7, Svendborg klædefabrik, efter brand i 1896."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_8cxpi"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786609393/b8748.webp"
+image_number = "b8748"
+image_text = "Frederiksbergs F.D.F. på besøg i Svendborg. Fotograferet foran Sprøjtehuset på Svendborg Torv i 1905."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_wpvg5"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786608513/b10026.webp"
+image_number = "b10026"
+image_text = "Sprøjter og slangevogne foran Sprøjtehuset på Torvet. Ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_078fj"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786608518/b10239.webp"
+image_number = "b10239"
+image_text = "Politiassistent Eckmann i samtale med apoteker Petersen på Børnehjælpsdagen i 1908."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_unquq"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786608514/b10240.webp"
+image_number = "b10240"
+image_text = "Børnehjælpsdag på Svendborg Torv, 1908. Bemærk tårnet, der er rejst foran Vor Frue Kirke."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_pptwf"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786609393/b19641_1.webp"
+image_number = "b19641"
+image_text = "Torvet 2, Centralcafeen, nedrevet 1954 og erstattet af en anden bygning. Nr.4, der var Centralhotellet  i bindingsværk som på foto, blev revet ned kort efter og erstattet af den nuværende bygning. 1896."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_ak4ow"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786614993/b3637.webp"
+image_number = "b3637"
+image_text = "Klosterpladsen 10, Svendborg Banegård. Ca. 1905."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_ajvq6"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786619690/b3767.webp"
+image_number = "b3767"
+image_text = "Klosterpladsen 3 og 4. Telefoncentralen og Svendborg Højskolehjem. Ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_cwq17"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786614994/b3638.webp"
+image_number = "b3638"
+image_text = "Klosterpladsen 10, Svendborg Banegård. Ca. 1902."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_a0h6a"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786615007/b3646.webp"
+image_number = "b3646"
+image_text = "Klosterpladsen 10, Svendborg Banegård, Godsekspedition. Ca. 1905."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_wcnou"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786615005/b3648.webp"
+image_number = "b3648"
+image_text = "Klosterpladsen 10, Svendborg Banegård. Ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_1xwpj"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786615004/b3667.webp"
+image_number = "b3667"
+image_text = "Klosterpladsen 10, Svendborg Banegård, tog ved perronnen. Ca. 1905."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_pmuo0"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786614997/b3668.webp"
+image_number = "b3668"
+image_text = "Klosterpladsen 10, Svendborg Banegård, spor set fra Frederiksgade. Ca. 1905."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_gg4i5"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786615009/b3687.webp"
+image_number = "b3687"
+image_text = "Postvogn foran Svendborg Banegård. Ca. 1905."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_natfk"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786615014/b3704.webp"
+image_number = "b3704"
+image_text = "Klosterpladsen med hestedrocher. I baggrunden Svendborg Bank og Telefontårnet. Ca. 1905."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_y410r"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786615013/b3708.webp"
+image_number = "b3708"
+image_text = "Klosterpladsen i sne set mod Svendborg Bank og med Terrassen til højre. Ca. 1895."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_yvlc8"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786615016/b20219.webp"
+image_number = "b20219"
+image_text = "Klosterpladsen 4 og 5 set fra Frederiksgade. Ca. 1908."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_v4b3l"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786615012/b3810.webp"
+image_number = "b3810"
+image_text = "Klosterpladsen 9, ukendt famile i haven. Ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_gepe4"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786615002/b3817.webp"
+image_number = "b3817"
+image_text = "Klosterpladsen 4 og 5 med kig op ad Kloster Stræde set fra Frederiksgade baneoverskæringen. Ca.1905."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_hnces"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786615003/b3846.webp"
+image_number = "b3846"
+image_text = "Klosterstræde 1, Petersen & Hansens Vinhandel. Ca. 1895."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_pwqop"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786614999/b5140.webp"
+image_number = "b5140"
+image_text = "Sydfynske Jernbane Restaurants personale i haven ved Banegården. Midt i billedet i den ternede kjole restaurationens indehaver restauratrice Jacobine Andersen f. Seiersen. Ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_xvpjn"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786615018/b7322.webp"
+image_number = "b7322"
+image_text = "Klosterplads 2, Svendborg Bank, interiørbillede. Svendborg Bank er senere blevet en del af Sydbank. 1901."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_n3g5y"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786615011/b18740.webp"
+image_number = "b18740"
+image_text = "Banegaardspladsen farvelagt postkort fra 1903."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_mjs32"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786614998/b19655.webp"
+image_number = "b19655"
+image_text = "Klosterplads 1, A. Hansens Gæstgiveri. Hestevogn med øl-leverencer foran. Ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_ylraf"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786630424/b10955.webp"
+image_number = "10955"
+image_text = "Korsgade set mod Københavnerkrydset. På gavlen ses Hybel Rasmussens reklame. han havde skotøjsforretning i Korsgade 1. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_6w3s7"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786630425/b1463.webp"
+image_number = "b1463"
+image_text = "Korsgade 9. Hjørnet af Korsgade og Skattergade. Ca. 1902."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_7t8hk"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786630423/b6201.webp"
+image_number = "b6201"
+image_text = "Thorbensen og Askegaards riveri, Korsgade 5. Interiør fra bagbygninger. Ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_biwe2"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786630434/b1515.webp"
+image_number = "b1515"
+image_text = "Korsgade 14. I forgrunden dame med barnevogn. Ca. 1906."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_dlwvm"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786631012/b375.webp"
+image_number = "b375"
+image_text = "Frederiksgade 1896."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_ura26"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786631014/b6118.webp"
+image_number = "b6118"
+image_text = "Kraghs Hotel, Frederiksgade 17. På hjørnet af Frederiksgade og Jernbanegade. Til venstre Frederiksgade og forrest jernbaneoverskæringen for Odense-Svendborg banen. Postkort. Ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_00ubq"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786630989/b367-a.webp"
+image_number = "b367"
+image_text = "Frederiksgade, oversvømmelse 1904."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_whj3y"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786631011/b533.webp"
+image_number = "b533"
+image_text = "Kvægtorvet med kreaturer. Frederiksgade, Svendborg
+postkort. Ca. 1905."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_db2lx"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786631003/b7532.webp"
+image_number = "b7532"
+image_text = "Festklædte mennesker venter på det første tog på Svendborg-Nyborg banen 1897."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_t45bj"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786630989/b13353.webp"
+image_number = "b13353"
+image_text = "Hestetransport, Dagvognen ved Banegården - Frederiksgade. Ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_qokn7"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786631013/b19778.webp"
+image_number = "b19778"
+image_text = "Frederiksgade, Svendborg. Ca. 1905."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_g172m"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786632250/b1808.webp"
+image_number = "b1808"
+image_text = "Brogade. Den øverste del set fra havnesiden. Ca. 1896."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_xotsd"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786632241/b1848.webp"
+image_number = "1848"
+image_text = "Brogade set fra \"Københavnerkrydset\". Ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_lq0ec"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786632245/b1894.webp"
+image_number = "b1894"
+image_text = "Brogade set fra Gåsetorvet mod \"Københavnerhjørnet\". Ca. 1890."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_6nmmx"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786632260/b2600.webp"
+image_number = "b2600"
+image_text = "Brogade 21. Købmand Johannes Poulsen. Ca. 1903."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_6cmmi"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786632257/b2649.webp"
+image_number = "b2649"
+image_text = "Brogade 24. Gårdsplads. ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_he8li"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786632262/b5189.webp"
+image_number = "b5189"
+image_text = "Hotel Svendborg, Brogade 2-4 på hjørnet af Brogade og Havnepladsen. Til venstre ses hjørnet af Maren Kirstine Møllers Gæstgiveri, Brogade 1. Ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_gj523"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786632265/b6200.webp"
+image_number = "b6200"
+image_text = "Thorbensens Farvehandel, Brogade 42. I døren står Thorvald Thorbensen. Ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_t8p55"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786632253/b7474.webp"
+image_number = "b7474"
+image_text = "Brogade 31, J. M. Langes Hatte-Fabrik. Ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_vyy0v"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786632243/b7469.webp"
+image_number = "b7469"
+image_text = "Brogade 31, Hattefabrikant Hans Henrik Lange (i midten af billedet med hat)  med sit personale i gården. Ca. 1892."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_47muu"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786632247/b4947.webp"
+image_number = "b4947"
+image_text = "Interiør fra Brogade 31, hattefabrikant H. H. Langes spisestue. I sofaen sidder H. H. Lange og hustruen Hansine Lange f. Madsen. Til højre for dem Hansines moder Johanne Margrethe Madsen (enke efter gårdmand Mads Hansen i Byllerup). Ca. 1894."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_aq71w"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786632267/b7475.webp"
+image_number = "b7475"
+image_text = "Hattemagere hos Hans H. Lange i Brogade 31.
+Siddende Andreas Andersen (tv) og Peter Bottos. Ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_x12ss"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786632254/oe58.webp"
+image_number = "oe58"
+image_text = "Hotel Svendborg, Brogade 2. Postkort ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_wg73t"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786632914/b8561.webp"
+image_number = "b8561"
+image_text = "Nordre Havn med Axelsens flydedok. Den tremastede bramsejlsskonnert Erik er første skib i dokken. 1903."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_f0niv"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786632907/b13956.webp"
+image_number = "b13956"
+image_text = "Nordre Havn Anlægges. 1891-1893"
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_0ujsl"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786632912/b5493.webp"
+image_number = "b5493"
+image_text = "Svendborg Nordre Havn ca. 1888."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_6ivqk"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786632909/b5086.webp"
+image_number = "b5086"
+image_text = "Den gamle kulplads ved Svendborg Nordre Havn. Ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_05j33"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786632909/b8560.webp"
+image_number = "b8560"
+image_text = "Nordre Havn med Hudes Plads i baggrunden 1903."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_ihs0y"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786633383/b8937.webp"
+image_number = "b8937"
+image_text = "Svendborg Østre Havn og Hudes Plads. Ca. 1905. "
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_ud8yi"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786633379/b102678.webp"
+image_number = "b102678"
+image_text = "Ved kaj ved Østre Havn i Svendborg. Til venstre ses Petersen og Jensens pakhus. Skibet er Svafva af Svendborg. Svafva forliste i april 1902 efter en kollision med et isbjerg. Det holdtes på pumperne indtil 2 mil fra Husavik, Island men sank så der. Det lykkedes mandskabet at bjerge sig i bådene. Billede fra ca. 1901."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_3qtwd"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786633382/b6185.webp"
+image_number = "b6185"
+image_text = "Svendborg Østre Havn under arbejde i 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_3ylv0"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786633860/b780.webp"
+image_number = "b780"
+image_text = "Havnen, set fra sundet. På billedet ses Havnepakhuset, i dag Maritimt Center, Gasværket. Svendborg Dampmølle, Færgegaarden, Axelhus,det gl. Hotel Svendborg og restaurant Svendborgsund. Ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_muuu2"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786633854/b8555.webp"
+image_number = "b8555"
+image_text = "Skibet Falken er ved ar lægge til kaj ved Havnepladsen ud for Havnepakhuset, Havnepladsen 2. Ca. 1905."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_62dx8"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786633863/b3271.webp"
+image_number = "b3271"
+image_text = "Havnepladsen 2, Havnepakhuset. Foran pakhuset ses en 6-kantet træpavillon (ventesal), hvor senere kontorbygningen er opført. Skibet på Svendborgsund hed Horsens. Ca. 1890."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_d56r8"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786633857/b3275.webp"
+image_number = "b3275"
+image_text = "Havnepladsen. Forrest ses Havnepakhuset, bagved ses bl.a. Baagø & Riber domicil og Svendborg Dampmølle, nu Det Gule Pakhus. Ca. 1905."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_q1vyn"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786633869/b4781.webp"
+image_number = "b4781"
+image_text = "Springvandet \"Drengen og Svanen\" på Svendborg havn for enden af Brogade. Ca. 1908."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_lfpru"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786633866/b5117.webp"
+image_number = "5117"
+image_text = "Svendborg Dampmølle ca. 1908."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_jl21j"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786633853/b9135.webp"
+image_number = "9135"
+image_text = "Cyklister ved N. Erichsens Gjæstgiveri, Havnepladsen 4. Ca. 1896."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_5sj4h"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786636452/b754.webp"
+image_number = "b754"
+image_text = "Kedelsmedstræde 11, ca. 1910."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_ccck4"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786636455/b7758.webp"
+image_number = "b7758"
+image_text = "Kedelsmedstræde 7, Snedker Johan Fritz Selchs medarbejdere på værkstedet. 1896."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_pacvn"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786636878/b2192.webp"
+image_number = "b2192"
+image_text = "Vor Frue Kirke med Torvet , Politi og Brandstation før 1900"
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_qihcx"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786636867/b347.webp"
+image_number = "b347"
+image_text = "Markedsdag med Vor Frue Kirke i baggrunden. Ca. 1897."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_x3jdk"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786636864/b2770.webp"
+image_number = "b2770"
+image_text = "Torvet, Panorama fra Vor Frue Kirke mod Havnen. Ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_ge1el"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786636884/b5087.webp"
+image_number = "b5087"
+image_text = "Udsigt fra Vor Frue Kirke mod øst over Frederiksø (Holmen). Ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_soprd"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786636881/b6080.webp"
+image_number = "b6080"
+image_text = "Jessens Mole, Nordre og Østre Havn set fra Vor Frue Kirke. Ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_ahbkh"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786636874/b8952.webp"
+image_number = "b8952"
+image_text = "Luftfoto fra Vor Frue Kirke, set mod Bagergade, Grubbemøllen, Fattiggården. Ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_24pn0"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786636871/b19274.webp"
+image_number = "b19274"
+image_text = "Udsigt fra Vor Frue Kirke. Man ser bl.a. Østre Havn, Toldboden, Christiansmøllen og Jernbanen. Ca. 1907."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_58lef"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786637368/b1611.webp"
+image_number = "b1611"
+image_text = "Skattergade set fra Kullinggade mod Korsgade. Ca. 1890."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_mmnxp"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786637363/b1626.webp"
+image_number = "b1626"
+image_text = "Skattergade set fra Korsgade. Ca. 1890."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_cg6b7"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786637364/b1600.webp"
+image_number = "b1600"
+image_text = "Gårdparti ved Skattergade 9. Ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_kngjo"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786637668/b9045.webp"
+image_number = "b9045"
+image_text = "Øxenbjerg Dampmølle. Ca. 1895."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_5og88"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786637671/b102665.webp"
+image_number = "b102665"
+image_text = "Ariel af Svendborg, bygget i 1899 til Sejlskibsselskab-A/S Svendborg. Skibet blev bygget ved Andersen Jensens værft, Øxenbjerg.
+
+Solgt i 1917 til Skien. Norge og fik navneændring til KODAN. Forlist 1917 i Atlanterhavet på rejse til Island med Tømmer. 
+Torpederet af tysk ubåd."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_vuxmy"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786637674/b12031.webp"
+image_number = "b12031"
+image_text = "Niels Troensgaard, skibsbygger. Gruppebillede i Øxenbjerg.
+
+Niels Troensegaard var skibsbygger i Thurøbund. Sønnen Peter overtog 1869 og flyttede værftet til Øksenbjerg. Værftet solgt 1893."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_27bms"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786637935/b4549.webp"
+image_number = "b4549"
+image_text = "Svendborg Navigationsskole, Trochs mejeri, Færgevej. Ca. 1905."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_ecupq"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786637932/b4543.webp"
+image_number = "b4543"
+image_text = "Svendborg Navigationsskole, Færgevej 12, elevhold. 1897."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_sv4cp"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786637939/b4632.webp"
+image_number = "b4632"
+image_text = "Svendborg Navigationsskole, Færgevej 12, Styrmandshold, 1892.
+
+1. fra oven, 1. fra venstre: Peter hansen
+1. fra oven, 2. fra venstre: S. Købke
+2. fra oven, 1. fra venstre: Herman Nielsen
+2. fra oven, 2. fra venstre: Oluf Nielsen
+2. fra oven, 3. fra venstre: Max Lundquist"
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_kr4jq"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786638366/b7738.webp"
+image_number = "b7738"
+image_text = "Nyborgvej 4, Svendborg Andels-Svineslagteri. I baggrunden ses til venstre Christiansmøllen og til højre Graaes Mølle. Ca. 1905."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_3uup1"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786638362/b7736.webp"
+image_number = "b7736"
+image_text = "Nyborgvej 4, Svendborg Andels-Svineslagteri, personalegruppebillede. Ca. 1897."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_syb85"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786638741/b335.webp"
+image_number = "b335"
+image_text = "Hulgade set mod Møllergade. Ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_u8ghe"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786638738/b183.webp"
+image_number = "b183"
+image_text = "Hulgade set mod havnen. Ca. 1890."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_uoufc"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786639153/b9416.webp"
+image_number = "b9416"
+image_text = "Svendborg Bryghus set fra Kildevej. Ca. 1905."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_iurxr"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786639157/b12049.webp"
+image_number = "b12049"
+image_text = "Svendborg Bryghus, Rejsegilde 1899."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_18kb3"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786639162/b12091.webp"
+image_number = "b12091"
+image_text = "Svendborg Bryghus, interiør, ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_6oss6"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786639148/b12089.webp"
+image_number = "b12089"
+image_text = "Svendborg Bryghus, interiør, ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_584uq"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786639144/b6749.webp"
+image_number = "b6749"
+image_text = "Ny Pasop med Johannes Jørgensensvej, Marievej og Eggertsvej set fra Svendborg Bryghus.
+
+Poskort fra Stenders Forlag. Ca. 1905."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_i24ow"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786639447/b5925.webp"
+image_number = "b5925"
+image_text = "Sankt Nicolaigade mellem Nicolaigården og Svendborg Amtstidende. Ca. 1905."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_7exym"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786639458/b8354.webp"
+image_number = "b8354"
+image_text = "Sankt Nicolai Kirkes menighedsråd. Ca. 1894."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_1cev8"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786639462/b12164.webp"
+image_number = "b12164"
+image_text = "Jespersen,Carl Lorentz, Sognepræst
+Sankt Nicolai Kirkes Præstegård. Ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_75v7m"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786639449/b10979.webp"
+image_number = "b10979"
+image_text = "Sankt Nicolai Kirke under restaurering. Ca. 1892-1894."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_xtr2u"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786639454/b4238.webp"
+image_number = "b4238"
+image_text = "Sct. Nicolai Kirke .Skibet set mod Alter og delvist nordlige sideskib efter restaureringen. Ca 1895."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_w6ss8"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786640005/b10129.webp"
+image_number = "b10129"
+image_text = "Vestergade 107. Vester Mølle.  Ca. 1890."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_vmlvn"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786640001/b519.webp"
+image_number = "b519"
+image_text = "Vestergades Mølle. Ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_d0clj"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786639996/b14078.webp"
+image_number = "b14078"
+image_text = "Bygningerne til højre nedrevet ca. 1965 for at give plads til supermarked. I dag ligger Svendborg Bycenter her. Billede. Ca. 1905."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_jvkex"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786639988/b8812.webp"
+image_number = "b8812"
+image_text = "L. Lange & Co Jernstøberi, Vestergade 45. Ca. 1903."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_bmem0"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786639984/b8865.webp"
+image_number = "b8865"
+image_text = "L. Langes Jernstøberi, Vestergade 45 - modelværkstedet. Ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_rxad4"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786639992/b8864.webp"
+image_number = "b8864"
+image_text = "L. Langes Jernstøberi, Vestergade 45 - interiørbillede fra støberiet. ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_h0xc2"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786640479/b5079.webp"
+image_number = "b5079"
+image_text = "Toldboden, Jessens Mole 12. Ca. 1906."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_82cry"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786640488/b5320.webp"
+image_number = "b5320"
+image_text = "Svendborg Havn ved Jessens Mole. Ca. 1905."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_eeeqk"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786640493/b5321.webp"
+image_number = "b5321"
+image_text = "Toldkammeret ca. 1904."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_ryvi3"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786640484/b19644.webp"
+image_number = "b19644"
+image_text = "Havnen i Svendborg ca 1895.
+Den markante bygning tv. er Jessens Mole 38."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_cfmg6"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786640502/b8558.webp"
+image_number = "b8558"
+image_text = "Nedgang til Sunddamperne ved Jessens Mole. Ca. 1903."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_acdd6"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786640506/b5228.webp"
+image_number = "b5228"
+image_text = "Svendborg havn med broen ved fiskerihavnen og Jessens Mole til højre. Ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_kergw"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786641126/b1372.webp"
+image_number = "b1372"
+image_text = "Fruestræde 19.
+Hjørnet af Bagergade og Fruestræde. Ca. år 1900.
+Før ombygning."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_4adn6"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786641112/b5179.webp"
+image_number = "b5179"
+image_text = "Fruestræde, gadebillede fra ca 1898.
+Set mod Bagergade. Ca. 1898."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_3qwpy"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786641107/b1374.webp"
+image_number = "b1374"
+image_text = "Fruestræde 19.
+Hjørnet af Bagergade/Fruestræde.
+Før ombygning. Ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_wkddh"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786641098/b1375.webp"
+image_number = "b1375"
+image_text = "Hjørnet af Bagergade/Fruestræde. Ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_gh6cp"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786641117/b1377.webp"
+image_number = "b1377"
+image_text = "Fruestræde 17.
+Møbel + ligkistemagasin, ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_8m7o7"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786641103/b4076.webp"
+image_number = "b4076"
+image_text = "Fruestræde, Den Ny Borgerskole - Svendborg faste Brandkorps holder øvelse i gaarden. Ca. 1893."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_otjl3"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786641095/b2014.webp"
+image_number = "b2014"
+image_text = "Frue Kirkestræde.
+Gadebillede, set mod Fruestræde. Ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_q3vi3"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786641121/b2017.webp"
+image_number = "b2017"
+image_text = "Frue Kirkestræde.
+Gadebillede, Børn i sneen. 1889."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_vkeii"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786641131/b1451.webp"
+image_number = "b1451"
+image_text = "Fruestræde 5, Svendborg Borgerforening. Billedstuen. Ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_3fatf"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786641140/b7501.webp"
+image_number = "b7501"
+image_text = "Fruestræde 10, Klodsemager Hoffmann yderst til højre i første række sammen med sit personale. Ca. 1905."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_f8b0g"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786641145/b4574.webp"
+image_number = "b4574"
+image_text = "Drengeborgerskolen, Fruestræde 11, Lærerpersonalet. 1903."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_dwv62"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786641136/b4576.webp"
+image_number = "b4576"
+image_text = "Drengeborgerskolen, Fruestræde 11, Klassefoto ca. 1908."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_l44yf"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786641748/b1674.webp"
+image_number = "b1674"
+image_text = "Gerritsgade 22, ca. 1905."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_uls7x"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786641730/b1978.webp"
+image_number = "b1978"
+image_text = "Gerritsgade 33-35. Wandalls Hotel og Doktorgården. Ca. 1906."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_5lbwy"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786641874/b169.webp"
+image_number = "b169"
+image_text = "Brolæggere arbejder med stenbelægning i Gerritsgade. Ca. 1897."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_bmb3c"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786641743/b1616.webp"
+image_number = "b1616"
+image_text = "Gerritsgade 17. Musikhuset L. M. Jensen. Ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_egrof"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786641734/b2022.webp"
+image_number = "b2022"
+image_text = "Gerritsgade 33. Wandalls Hotel. Ca. 1905."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_max1q"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786641739/b5150.webp"
+image_number = "b5150"
+image_text = "Wandalls Hotels hestevogn i gården bag hotellet. Ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_mfcbv"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786642414/b19642.webp"
+image_number = "b19642"
+image_text = "Møllergade i 1896
+fra Gerritsgade i retning mod Torvet."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_ntdss"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786642419/b1114.webp"
+image_number = "b1114"
+image_text = "Møllergade 30.Magnus Nielsen. Cigarfabrikant. 1910."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_kvsub"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786642395/b1105.webp"
+image_number = "b1105"
+image_text = "Møllergade 26. Ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_q3kqh"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786642404/b1124.webp"
+image_number = "b1124"
+image_text = "Møllergade 33, baghus til Brandts gård. 1910."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_ltf5x"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786642390/b1203.webp"
+image_number = "b1203"
+image_text = "Møllergade 41 baggård. Ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_f0ial"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786642409/b7406.webp"
+image_number = "b7406"
+image_text = "Møllergade 104, personale hos garver O. N. Lerche ca. 1905."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_er6kg"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786642399/b1282.webp"
+image_number = "b1282"
+image_text = "Møllergade 64 - Politikorpset i købmand Ludvig Petersens gård. Ca. 1895."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_71wgw"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786642814/b6453.webp"
+image_number = "b6453"
+image_text = "Gruppemøllevej ved hjørnet  af Sankt Knudsvej. Ca. 1905."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_5vfgt"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786642788/b847.webp"
+image_number = "b847"
+image_text = "Grubbemøllevej 15, Viggoskilde. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_j3mij"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786642819/b3325.webp"
+image_number = "b3325"
+image_text = "Grubbemøllestræde Svendborg. Ca. 1906."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_xyd4q"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786642808/b4053.webp"
+image_number = "b4053"
+image_text = "Haahrs Skole foto, postkort med eleverne opstillet i skolegården. ca 1906 - 1910."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_exvqp"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786642793/b4137.webp"
+image_number = "b4137"
+image_text = "Svendborg Tekniske Skole, Grubbemøllevej 13. Ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_567om"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786642850/b4138.webp"
+image_number = "b4138"
+image_text = "Svendborg Tekniske Skole, Grubbemøllevej 13. I baggrunden ses den gamle Grubbemølle. Ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_vi4x8"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786642778/b6454.webp"
+image_number = "b6454"
+image_text = "Grubbemøllen, set fra og med Grubbemøllevej. Ca. 1905."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_152bs"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786642839/b7153.webp"
+image_number = "b7153"
+image_text = "Dronningemaen, Fattiggården, Teknisk Skole, Grubbemølle Vindmølle og Svendborg by set fra Ovinehøj. Ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_yf64f"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786642845/b9037.webp"
+image_number = "b9037"
+image_text = "Grubbemølles Vindmølle. 1903."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_1m378"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786642834/b7655.webp"
+image_number = "b7655"
+image_text = "Fremstilling af klapstole og klapborde i Grubbemøllen. Ca. 1893."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_qj7np"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786642798/b9031.webp"
+image_number = "b9031"
+image_text = "Enghavevej og Grubbemølle til højre. Ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_bnxxb"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786642855/b9034.webp"
+image_number = "b9034"
+image_text = "Grubbemøllen, vandmølle. Ca. 1905."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_cuh0y"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786642824/b9036.webp"
+image_number = "b9036"
+image_text = "Grubbemøllen efter en brand. Ca. 1906."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_ouig2"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786642829/b10269.webp"
+image_number = "b10269"
+image_text = "Sommermarked på Viebæltet. Professor Labri underholder sit publikum. I baggrunden ses Svendborg Tekniske Skole. Ca. 1906."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_sdcb0"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786642783/b10640.webp"
+image_number = "b10640"
+image_text = "Svensk Orkester på besøg i Svendborg opstillet foran Viebæltegård. 1906."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_x0qat"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786642803/b18907.webp"
+image_number = "b18907"
+image_text = "Jeppesen, Lars Jørgen, fabrikant, med familie og personale foran Grubbemøllen, Dronningholmsvej 1. På trappen står Fabrikant Lars Jørgen Jeppesen og dennes hustru Ane Margrethe f. Nicolajsen. Yderst til højre står købmand Jens Adolf Leonhardsen (Leonhard). Han var gift med Lars Jørgens datter Jutta Karoline f. Larsen. Ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_gaosk"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786643649/b972.webp"
+image_number = "b972"
+image_text = "Kabelnedlægning i Bagergade. Ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_vl3pk"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786643670/b1364.webp"
+image_number = "b1364"
+image_text = "Svendborg Realskole/Svendborg Statsskole og Gymnasium. Ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_g8h6v"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786643665/b1554.webp"
+image_number = "b1554"
+image_text = "Bagergade 1-3-5. Karnaphusene fra 1700 tallet. I døren pølsemager Carl. L. Winter. Ejer af nr. 5. Ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_ywa6a"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786643644/b1706.webp"
+image_number = "b1706"
+image_text = "Bagergade 33-35, senere nedrevet. Efterfølgende blevFællesbageriet opført ca. 1916. Billedet fra ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_u3vif"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786643655/b1790.webp"
+image_number = "b1790"
+image_text = "Bagergade 67, Realskolen, 1906."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_m2kig"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786643708/b2071.webp"
+image_number = "b2071"
+image_text = "Bagergade, gadebillede. Set mod Tinghusgade. Børnehjælpsdagsoptog 1908."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_vr6fe"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786643676/b3888.webp"
+image_number = "b3888"
+image_text = "Fruestræde 19, hjørnet af Bagergade, samt Bagergade 1, 3, 5. Fruestræde 19 er på billedet et bindingsværkshus, dækket af puds. Ejendommen blev nedrevet i 1908. Billedet fra ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_2cqlk"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786643640/b4084.webp"
+image_number = "b4084"
+image_text = "Børn i gården til Asylet, Børnely, Bagergade 28. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_p5jdi"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786643660/b4648.webp"
+image_number = "b4648"
+image_text = "Svendborg Realskole, Bagergade, klassefoto. Ca. 1903."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_e8rgn"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786643698/b10237.webp"
+image_number = "b10237"
+image_text = "Børnely, Bagergade 28 på Børnehjælpsdag i 1908."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_hy6yc"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786643703/b10243.webp"
+image_number = "b10243"
+image_text = "Personer udklædt som hekse på Børnehjælpsdagen foran Børnely i Bagergade i 1908."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_slgtx"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786643692/b12999.webp"
+image_number = "b12999"
+image_text = "Bagergade 71 (i dag Tinghusgade 28-34).
+Opført 1859, oprindelig tænkt som stationsbygning.
+1889 købt af Svendborg Bymission, der var tilknyttet Vor Frue kirke.
+1985 afhændet til kontor-og butiksformål.
+Billede fra ca. 1900."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_03dox"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786643687/b19662.webp"
+image_number = "b19662"
+image_text = "Bagergade i sne, med kanaphusene på venstre side. Ca. 1903."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="Resource" id="Resource_7h2y6"]
+script = ExtResource("6_x5dfk")
+image_url = "https://res.cloudinary.com/bls4sbwz/image/upload/v1786643681/b19722.webp"
+image_number = "b19722"
+image_text = "Logen Ørkild, Bagergade 59.
+Bygningen opført 1895, til afholdsloge.
+Blev senere, 1963 til Frimurerlogen. Billede fra ca. 1905."
+metadata/_custom_type_script = "uid://dsk1lwbts52ij"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_macow"]
+bg_color = Color(0.9843137, 0.9607843, 0.92941177, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ttmth"]
+bg_color = Color(0.7764706, 0.2784314, 0.3529412, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dwv62"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3fatf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vkeii"]
+
+[node name="Map" type="Control" unique_id=1776998969 groups=["map"]]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_6q3n4")
+
+[node name="Camera2D" parent="." unique_id=1216323547 instance=ExtResource("4_q6lx1")]
 unique_name_in_owner = true
 visible = false
+position = Vector2(1794, 1812)
+enabled = false
+editor_draw_limits = true
+editor_draw_drag_margin = true
+
+[node name="ColorPicker" type="ColorPicker" parent="." unique_id=1912521481]
+visible = false
+layout_mode = 0
+offset_left = -1444.0
+offset_top = 606.0
+offset_right = -1146.0
+offset_bottom = 1213.0
+color = Color(0.7764706, 0.2784314, 0.3529412, 1)
+
+[node name="BackgroundShader" type="ColorRect" parent="." unique_id=1867009611]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -30,664 +1301,784 @@ offset_bottom = 26039.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Camera2D" parent="." instance=ExtResource("4_q6lx1")]
-unique_name_in_owner = true
-position = Vector2(1794, 1812)
+[node name="Desktop-GUI" type="CanvasLayer" parent="." unique_id=1545329571]
+script = ExtResource("8_5qtum")
 
-[node name="MapTexture" type="TextureRect" parent="."]
+[node name="MapTexture" type="TextureRect" parent="Desktop-GUI" unique_id=96437451]
 unique_name_in_owner = true
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_right = 4083.0
-offset_bottom = 4096.0
+offset_left = -360.0
+offset_top = -640.0
+offset_right = 3640.0
+offset_bottom = 2818.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("10_olcgw")
+texture = ExtResource("4_k63oc")
 stretch_mode = 4
-metadata/_edit_lock_ = true
-
-[node name="Pins" type="Node2D" parent="."]
-
-[node name="pin1" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(1740, 1909)
-pin_texture = ExtResource("13_5qtum")
-pin_text = "1: Amstue"
-pin_number = 1
-
-[node name="pin2" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(2421, 1919)
-pin_texture = ExtResource("13_ie368")
-pin_text = "2: Apotek Løve"
-pin_number = 1
-
-[node name="pin29" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(2452, 1932)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "29: Hotel, central."
-pin_number = 1
-
-[node name="pin16" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(2265, 1851)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "16"
-pin_number = 1
-
-[node name="pin21" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(2335, 1807)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "21"
-pin_number = 1
-
-[node name="pin69" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(2401, 1823)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "69"
-pin_number = 1
-
-[node name="pin50" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(2394, 1844)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "50"
-pin_number = 1
-
-[node name="pin68" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(2451, 1979)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "68"
-pin_number = 1
-
-[node name="pin48" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(2584, 1919)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "48"
-pin_number = 1
-
-[node name="pin52" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(2294, 1840)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "52:"
-pin_number = 1
-
-[node name="pin6" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(2581, 1975)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "6"
-pin_number = 1
-
-[node name="pin40" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(2402, 2100)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "40"
-pin_number = 1
-
-[node name="pin30" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(2572, 2031)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "30"
-pin_number = 1
-
-[node name="pin7" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(2530, 2023)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "7"
-pin_number = 1
-
-[node name="pin8" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(2629, 2064)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "8"
-pin_number = 1
-
-[node name="pin31" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(2722, 2048)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "31"
-pin_number = 1
-
-[node name="pin32" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(2745, 2149)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "67"
-pin_number = 1
-
-[node name="pin72" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(2309, 2159)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "72"
-pin_number = 1
-
-[node name="pin23" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(2378, 2218)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "23"
-pin_number = 1
-
-[node name="pin59" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(2302, 2205)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "59"
-pin_number = 1
-
-[node name="pin33" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(2116, 2134)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "33"
-pin_number = 1
-
-[node name="pin22" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(1930, 2107)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "22"
-pin_number = 1
-
-[node name="pin53" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(1731, 1776)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "53"
-pin_number = 1
-
-[node name="pin36" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(1482, 1866)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "36"
-pin_number = 1
-
-[node name="pin57" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(2202, 2568)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "57"
-pin_number = 1
-
-[node name="pin78" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(2972, 2220)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "78"
-pin_number = 1
-
-[node name="pin80" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(2830, 1927)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "80"
-pin_number = 1
-
-[node name="pin42" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(2776, 1910)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "42"
-pin_number = 1
-
-[node name="pin35" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(2674, 1941)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "35"
-pin_number = 1
-
-[node name="pin34" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(2716, 1957)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "34"
-pin_number = 1
-
-[node name="pin24" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(2669, 1750)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "24"
-pin_number = 1
-
-[node name="pin44" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(2791, 1443)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "44"
-pin_number = 1
-
-[node name="pin75" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(2879, 1479)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "75"
-pin_number = 1
-
-[node name="pin39" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(2794, 1346)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "39"
-pin_number = 1
-
-[node name="pin55" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(2861, 1320)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "55"
-pin_number = 55
-
-[node name="pin54" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(3325, 1364)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "54"
-pin_number = 54
-
-[node name="pin73" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(3487, 1303)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "73"
-pin_number = 73
-
-[node name="pin19" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(3630, 1326)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "19"
-pin_number = 19
-
-[node name="pin11" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(3732, 1409)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "11"
-pin_number = 11
-
-[node name="pin10" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(3455, 956)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "10"
-pin_number = 10
-
-[node name="pin77" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(3246, 1037)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "77"
-pin_number = 77
-
-[node name="pin61" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(3142, 1019)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "61"
-pin_number = 61
-
-[node name="pin12" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(2968, 1066)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "12"
-pin_number = 12
-
-[node name="pin15" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(2649, 1153)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "15"
-pin_number = 15
-
-[node name="pin62" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(2355, 1484)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "62"
-pin_number = 62
-
-[node name="pin5" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(2255, 1496)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "5"
-pin_number = 5
-
-[node name="pin49" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(2199, 1491)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "49"
-pin_number = 49
-
-[node name="pin9" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(2135, 1483)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "9"
-pin_number = 9
-
-[node name="pin25" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(1981, 1640)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "25"
-pin_number = 25
-
-[node name="pin65" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(1908, 1673)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "65"
-pin_number = 65
-
-[node name="pin70" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(1832, 1698)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "70"
-pin_number = 70
-
-[node name="pin46" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(1783, 1720)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "46"
-pin_number = 46
-
-[node name="pin63" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(1751, 1628)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "63"
-pin_number = 63
-
-[node name="pin66" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(1736, 1465)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "66"
-pin_number = 66
-
-[node name="pin64" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(1859, 1359)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "64"
-pin_number = 64
-
-[node name="pin43" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(3086, 1123)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "43"
-pin_number = 43
-
-[node name="pin47" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(2684, 823)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "47"
-pin_number = 47
-
-[node name="pin79" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(2553, 862)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "79"
-pin_number = 79
-
-[node name="pin18" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(2438, 896)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "18"
-pin_number = 18
-
-[node name="pin4" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(1210, 2032)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "4"
-pin_number = 4
-
-[node name="pin28" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(1722, 2372)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "28"
-pin_number = 28
-
-[node name="pin38" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(1870, 2285)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "38"
-pin_number = 38
-
-[node name="pin26" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(2101, 2241)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "26"
-pin_number = 26
-
-[node name="pin27" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(1999, 2533)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "27"
-pin_number = 27
-
-[node name="pin45" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(2117, 2532)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "45"
-pin_number = 45
-
-[node name="pin71" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(1634, 2513)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "71"
-pin_number = 71
-
-[node name="pin56" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(2630, 2657)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "56"
-pin_number = 56
-
-[node name="pin60" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(2640, 2796)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "60"
-pin_number = 60
-
-[node name="pin13" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(2583, 2186)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "13"
-pin_number = 13
-
-[node name="pin51" parent="Pins" instance=ExtResource("11_q6lx1")]
-position = Vector2(2269, 2115)
-pin_texture = ExtResource("6_x5dfk")
-pin_text = "51"
-pin_number = 51
-
-[node name="Desktop-GUI" type="CanvasLayer" parent="."]
-
-[node name="GUI" type="Control" parent="Desktop-GUI"]
+
+[node name="Pins" type="Control" parent="Desktop-GUI/MapTexture" unique_id=837652967]
+unique_name_in_owner = true
+anchors_preset = 0
+
+[node name="pin" parent="Desktop-GUI/MapTexture/Pins" unique_id=1770539329 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2283.0
+offset_top = 1577.0
+offset_right = 2283.0
+offset_bottom = 1577.0
+pin_street_name = "Torvet"
+street_images = Array[ExtResource("6_x5dfk")]([SubResource("Resource_wk4js"), SubResource("Resource_k63oc"), SubResource("Resource_riaky"), SubResource("Resource_j4oe2"), SubResource("Resource_vtkp8"), SubResource("Resource_rg57b"), SubResource("Resource_macow"), SubResource("Resource_ltf6m"), SubResource("Resource_uus22"), SubResource("Resource_tuwt4"), SubResource("Resource_1ye5v"), SubResource("Resource_8cxpi"), SubResource("Resource_wpvg5"), SubResource("Resource_078fj"), SubResource("Resource_unquq"), SubResource("Resource_pptwf")])
+
+[node name="pin2" parent="Desktop-GUI/MapTexture/Pins" unique_id=2015767207 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2425.0
+offset_top = 1623.0
+offset_right = 2425.0
+offset_bottom = 1623.0
+pin_street_name = "Klosterplads"
+street_images = Array[ExtResource("6_x5dfk")]([SubResource("Resource_ak4ow"), SubResource("Resource_ajvq6"), SubResource("Resource_cwq17"), SubResource("Resource_a0h6a"), SubResource("Resource_wcnou"), SubResource("Resource_1xwpj"), SubResource("Resource_pmuo0"), SubResource("Resource_gg4i5"), SubResource("Resource_natfk"), SubResource("Resource_y410r"), SubResource("Resource_yvlc8"), SubResource("Resource_v4b3l"), SubResource("Resource_gepe4"), SubResource("Resource_hnces"), SubResource("Resource_pwqop"), SubResource("Resource_xvpjn"), SubResource("Resource_n3g5y"), SubResource("Resource_mjs32")])
+
+[node name="pin3" parent="Desktop-GUI/MapTexture/Pins" unique_id=589857253 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2222.0
+offset_top = 1915.0
+offset_right = 2222.0
+offset_bottom = 1915.0
+pin_street_name = "Korsgade"
+street_images = Array[ExtResource("6_x5dfk")]([SubResource("Resource_ylraf"), SubResource("Resource_6w3s7"), SubResource("Resource_7t8hk"), SubResource("Resource_biwe2")])
+
+[node name="pin4" parent="Desktop-GUI/MapTexture/Pins" unique_id=818121833 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2553.0
+offset_top = 1651.0
+offset_right = 2553.0
+offset_bottom = 1651.0
+pin_street_name = "Frederiksgade"
+street_images = Array[ExtResource("6_x5dfk")]([SubResource("Resource_dlwvm"), SubResource("Resource_ura26"), SubResource("Resource_00ubq"), SubResource("Resource_whj3y"), SubResource("Resource_db2lx"), SubResource("Resource_t45bj"), SubResource("Resource_qokn7")])
+
+[node name="pin5" parent="Desktop-GUI/MapTexture/Pins" unique_id=2000838124 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2493.0
+offset_top = 1774.0
+offset_right = 2493.0
+offset_bottom = 1774.0
+pin_street_name = "Brogade"
+street_images = Array[ExtResource("6_x5dfk")]([SubResource("Resource_g172m"), SubResource("Resource_xotsd"), SubResource("Resource_lq0ec"), SubResource("Resource_6nmmx"), SubResource("Resource_6cmmi"), SubResource("Resource_he8li"), SubResource("Resource_gj523"), SubResource("Resource_t8p55"), SubResource("Resource_vyy0v"), SubResource("Resource_47muu"), SubResource("Resource_aq71w"), SubResource("Resource_x12ss")])
+
+[node name="pin6" parent="Desktop-GUI/MapTexture/Pins" unique_id=761552496 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2774.0
+offset_top = 1227.0
+offset_right = 2774.0
+offset_bottom = 1227.0
+pin_street_name = "Nordre Havn"
+street_images = Array[ExtResource("6_x5dfk")]([SubResource("Resource_wg73t"), SubResource("Resource_f0niv"), SubResource("Resource_0ujsl"), SubResource("Resource_6ivqk"), SubResource("Resource_05j33")])
+
+[node name="pin7" parent="Desktop-GUI/MapTexture/Pins" unique_id=1837010439 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 3083.0
+offset_top = 1398.0
+offset_right = 3083.0
+offset_bottom = 1398.0
+pin_street_name = "Østre Havn"
+street_images = Array[ExtResource("6_x5dfk")]([SubResource("Resource_ihs0y"), SubResource("Resource_ud8yi"), SubResource("Resource_3qtwd")])
+
+[node name="pin8" parent="Desktop-GUI/MapTexture/Pins" unique_id=320682625 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2677.0
+offset_top = 1736.0
+offset_right = 2677.0
+offset_bottom = 1736.0
+pin_street_name = "Havnepladsen"
+street_images = Array[ExtResource("6_x5dfk")]([SubResource("Resource_3ylv0"), SubResource("Resource_muuu2"), SubResource("Resource_62dx8"), SubResource("Resource_d56r8"), SubResource("Resource_q1vyn"), SubResource("Resource_lfpru"), SubResource("Resource_jl21j")])
+
+[node name="pin9" parent="Desktop-GUI/MapTexture/Pins" unique_id=1264740368 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 1947.0
+offset_top = 1487.0
+offset_right = 1947.0
+offset_bottom = 1487.0
+pin_street_name = "Kedelmedstræde"
+street_images = Array[ExtResource("6_x5dfk")]([SubResource("Resource_5sj4h"), SubResource("Resource_ccck4")])
+
+[node name="pin10" parent="Desktop-GUI/MapTexture/Pins" unique_id=1936910764 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2284.0
+offset_top = 1493.0
+offset_right = 2284.0
+offset_bottom = 1493.0
+pin_street_name = "Vor Frue Kirke"
+street_images = Array[ExtResource("6_x5dfk")]([SubResource("Resource_pacvn"), SubResource("Resource_qihcx"), SubResource("Resource_x3jdk"), SubResource("Resource_ge1el"), SubResource("Resource_soprd"), SubResource("Resource_ahbkh"), SubResource("Resource_24pn0")])
+
+[node name="pin11" parent="Desktop-GUI/MapTexture/Pins" unique_id=245323174 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2418.0
+offset_top = 1952.0
+offset_right = 2418.0
+offset_bottom = 1952.0
+pin_street_name = "Skattergade"
+street_images = Array[ExtResource("6_x5dfk")]([SubResource("Resource_58lef"), SubResource("Resource_mmnxp"), SubResource("Resource_cg6b7")])
+
+[node name="pin12" parent="Desktop-GUI/MapTexture/Pins" unique_id=635560496 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 3401.0
+offset_top = 1408.0
+offset_right = 3401.0
+offset_bottom = 1408.0
+pin_street_name = "Øxenbjerg"
+street_images = Array[ExtResource("6_x5dfk")]([SubResource("Resource_kngjo"), SubResource("Resource_5og88"), SubResource("Resource_vuxmy")])
+
+[node name="pin13" parent="Desktop-GUI/MapTexture/Pins" unique_id=1018868642 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2471.0
+offset_top = 2313.0
+offset_right = 2471.0
+offset_bottom = 2313.0
+pin_street_name = "Færgevej"
+street_images = Array[ExtResource("6_x5dfk")]([SubResource("Resource_27bms"), SubResource("Resource_ecupq"), SubResource("Resource_sv4cp")])
+
+[node name="pin14" parent="Desktop-GUI/MapTexture/Pins" unique_id=1618437953 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 3014.0
+offset_top = 1090.0
+offset_right = 3014.0
+offset_bottom = 1090.0
+pin_street_name = "Nyborgvej"
+street_images = Array[ExtResource("6_x5dfk")]([SubResource("Resource_kr4jq"), SubResource("Resource_3uup1")])
+
+[node name="pin15" parent="Desktop-GUI/MapTexture/Pins" unique_id=1720315352 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2404.0
+offset_top = 1395.0
+offset_right = 2404.0
+offset_bottom = 1395.0
+pin_street_name = "Hulgade"
+street_images = Array[ExtResource("6_x5dfk")]([SubResource("Resource_syb85"), SubResource("Resource_u8ghe")])
+
+[node name="pin16" parent="Desktop-GUI/MapTexture/Pins" unique_id=497595656 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 1100.0
+offset_top = 1618.0
+offset_right = 1100.0
+offset_bottom = 1618.0
+pin_street_name = "Svendborg Bryghus"
+street_images = Array[ExtResource("6_x5dfk")]([SubResource("Resource_uoufc"), SubResource("Resource_iurxr"), SubResource("Resource_18kb3"), SubResource("Resource_6oss6"), SubResource("Resource_584uq")])
+
+[node name="pin17" parent="Desktop-GUI/MapTexture/Pins" unique_id=739248429 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2161.0
+offset_top = 1773.0
+offset_right = 2161.0
+offset_bottom = 1773.0
+pin_street_name = "Skt. Nicolai Gade"
+street_images = Array[ExtResource("6_x5dfk")]([SubResource("Resource_i24ow"), SubResource("Resource_7exym"), SubResource("Resource_1cev8"), SubResource("Resource_75v7m"), SubResource("Resource_xtr2u")])
+
+[node name="pin18" parent="Desktop-GUI/MapTexture/Pins" unique_id=1066107542 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 1626.0
+offset_top = 1481.0
+offset_right = 1626.0
+offset_bottom = 1481.0
+pin_street_name = "Vestergade"
+street_images = Array[ExtResource("6_x5dfk")]([SubResource("Resource_w6ss8"), SubResource("Resource_vmlvn"), SubResource("Resource_d0clj"), SubResource("Resource_jvkex"), SubResource("Resource_bmem0"), SubResource("Resource_rxad4")])
+
+[node name="pin19" parent="Desktop-GUI/MapTexture/Pins" unique_id=1051954772 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2616.0
+offset_top = 1504.0
+offset_right = 2616.0
+offset_bottom = 1504.0
+pin_street_name = "Jessens Mole"
+street_images = Array[ExtResource("6_x5dfk")]([SubResource("Resource_h0xc2"), SubResource("Resource_82cry"), SubResource("Resource_eeeqk"), SubResource("Resource_ryvi3"), SubResource("Resource_cfmg6"), SubResource("Resource_acdd6")])
+
+[node name="pin20" parent="Desktop-GUI/MapTexture/Pins" unique_id=1670354194 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2262.0
+offset_top = 1415.0
+offset_right = 2262.0
+offset_bottom = 1415.0
+pin_street_name = "Fruestræde"
+street_images = Array[ExtResource("6_x5dfk")]([SubResource("Resource_kergw"), SubResource("Resource_4adn6"), SubResource("Resource_3qwpy"), SubResource("Resource_wkddh"), SubResource("Resource_gh6cp"), SubResource("Resource_8m7o7"), SubResource("Resource_otjl3"), SubResource("Resource_q3vi3"), SubResource("Resource_vkeii"), SubResource("Resource_3fatf"), SubResource("Resource_f8b0g"), SubResource("Resource_dwv62")])
+
+[node name="pin21" parent="Desktop-GUI/MapTexture/Pins" unique_id=1563515143 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2125.0
+offset_top = 1657.0
+offset_right = 2125.0
+offset_bottom = 1657.0
+pin_street_name = "Gerritsgade"
+street_images = Array[ExtResource("6_x5dfk")]([SubResource("Resource_l44yf"), SubResource("Resource_uls7x"), SubResource("Resource_5lbwy"), SubResource("Resource_bmb3c"), SubResource("Resource_egrof"), SubResource("Resource_max1q")])
+
+[node name="pin22" parent="Desktop-GUI/MapTexture/Pins" unique_id=621198688 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2346.0
+offset_top = 1660.0
+offset_right = 2346.0
+offset_bottom = 1660.0
+pin_street_name = "Møllergade"
+street_images = Array[ExtResource("6_x5dfk")]([SubResource("Resource_mfcbv"), SubResource("Resource_ntdss"), SubResource("Resource_kvsub"), SubResource("Resource_q3kqh"), SubResource("Resource_ltf5x"), SubResource("Resource_f0ial"), SubResource("Resource_er6kg")])
+
+[node name="pin23" parent="Desktop-GUI/MapTexture/Pins" unique_id=326487952 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 1808.0
+offset_top = 1157.0
+offset_right = 1808.0
+offset_bottom = 1157.0
+pin_street_name = "Grubbemøllevej"
+street_images = Array[ExtResource("6_x5dfk")]([SubResource("Resource_71wgw"), SubResource("Resource_5vfgt"), SubResource("Resource_j3mij"), SubResource("Resource_xyd4q"), SubResource("Resource_exvqp"), SubResource("Resource_567om"), SubResource("Resource_vi4x8"), SubResource("Resource_152bs"), SubResource("Resource_yf64f"), SubResource("Resource_1m378"), SubResource("Resource_qj7np"), SubResource("Resource_bnxxb"), SubResource("Resource_cuh0y"), SubResource("Resource_ouig2"), SubResource("Resource_sdcb0"), SubResource("Resource_x0qat")])
+
+[node name="pin24" parent="Desktop-GUI/MapTexture/Pins" unique_id=2086903788 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 1991.0
+offset_top = 1344.0
+offset_right = 1991.0
+offset_bottom = 1344.0
+pin_street_name = "Bagergade"
+street_images = Array[ExtResource("6_x5dfk")]([SubResource("Resource_gaosk"), SubResource("Resource_vl3pk"), SubResource("Resource_g8h6v"), SubResource("Resource_ywa6a"), SubResource("Resource_u3vif"), SubResource("Resource_m2kig"), SubResource("Resource_vr6fe"), SubResource("Resource_2cqlk"), SubResource("Resource_p5jdi"), SubResource("Resource_e8rgn"), SubResource("Resource_hy6yc"), SubResource("Resource_slgtx"), SubResource("Resource_03dox"), SubResource("Resource_7h2y6")])
+
+[node name="ImageViewer" type="Control" parent="Desktop-GUI" unique_id=321727444]
+unique_name_in_owner = true
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_26yhd")
+script = ExtResource("10_dlo4w")
 
-[node name="Desktop" type="Control" parent="Desktop-GUI/GUI"]
+[node name="ColorRect" type="ColorRect" parent="Desktop-GUI/ImageViewer" unique_id=216188871]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_force_pass_scroll_events = false
+color = Color(0, 0, 0, 1)
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Desktop-GUI/GUI"]
+[node name="ImageTextureNext" type="TextureRect" parent="Desktop-GUI/ImageViewer" unique_id=1596003009]
+unique_name_in_owner = true
+z_index = -1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -280.0
+offset_right = 280.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 0
-
-[node name="SidebarMenu" type="HBoxContainer" parent="Desktop-GUI/GUI/HBoxContainer2"]
-visible = false
-custom_minimum_size = Vector2(64, 0)
-layout_mode = 2
-theme_override_constants/separation = 20
-
-[node name="ColorRect" type="ColorRect" parent="Desktop-GUI/GUI/HBoxContainer2/SidebarMenu"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(0.776471, 0.278431, 0.352941, 1)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Desktop-GUI/GUI/HBoxContainer2/SidebarMenu/ColorRect"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -25.0
-offset_right = 25.0
-offset_bottom = 80.0
-grow_horizontal = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="MarginContainer" type="MarginContainer" parent="Desktop-GUI/GUI/HBoxContainer2/SidebarMenu/ColorRect/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 2
-theme_override_constants/margin_left = 0
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_bottom = 10
-
-[node name="Logo" type="TextureRect" parent="Desktop-GUI/GUI/HBoxContainer2/SidebarMenu/ColorRect/VBoxContainer/MarginContainer"]
-visible = false
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-size_flags_horizontal = 3
-texture = ExtResource("9_5qtum")
-expand_mode = 1
-stretch_mode = 4
-
-[node name="TextureRect" type="TextureRect" parent="Desktop-GUI/GUI/HBoxContainer2/SidebarMenu/ColorRect/VBoxContainer/MarginContainer"]
-layout_mode = 2
-texture = ExtResource("6_np2xp")
+expand_mode = 2
 stretch_mode = 5
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Desktop-GUI/GUI/HBoxContainer2/SidebarMenu/ColorRect/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_q6lx1")
-theme_override_font_sizes/normal_font_size = 24
-bbcode_enabled = true
-text = "[b]GAMLE KORT AF SVENDBORG[/b]"
-fit_content = true
-horizontal_alignment = 1
+[node name="ImageTexture" type="TextureRect" parent="Desktop-GUI/ImageViewer" unique_id=1010946377]
+unique_name_in_owner = true
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -280.0
+offset_right = 280.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 2
+stretch_mode = 5
 
-[node name="ButtonBox" type="VBoxContainer" parent="Desktop-GUI/GUI/HBoxContainer2/SidebarMenu/ColorRect"]
+[node name="ImageDesc" type="Control" parent="Desktop-GUI/ImageViewer" unique_id=2042454535]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.94200003
+anchor_right = 0.5
+anchor_bottom = 0.94200003
+offset_top = -565.76
+offset_bottom = -565.76
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="BackgroundPanelImageText" type="Panel" parent="Desktop-GUI/ImageViewer/ImageDesc" unique_id=1364909917]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -244.0
+offset_top = 255.0
+offset_right = 238.0
+offset_bottom = 500.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_macow")
+
+[node name="ColorRect" type="Panel" parent="Desktop-GUI/ImageViewer/ImageDesc" unique_id=506409228]
+layout_mode = 0
+offset_left = -244.0
+offset_top = 254.0
+offset_right = 238.0
+offset_bottom = 288.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ttmth")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Desktop-GUI/ImageViewer/ImageDesc/ColorRect" unique_id=1996362370]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_dwv62")
+bbcode_enabled = true
+text = "[b]BILLEDTEKST[/b]"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ImageTextBoxClose" type="Button" parent="Desktop-GUI/ImageViewer/ImageDesc/ColorRect" unique_id=442497838]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -13.5
+offset_right = -8.0
+offset_bottom = 13.5
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("10_ie368")
+icon = ExtResource("12_k63oc")
+icon_alignment = 1
+expand_icon = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Desktop-GUI/ImageViewer/ImageDesc" unique_id=1729658989]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = -403.0
-offset_right = 100.0
-offset_bottom = 446.0
+offset_left = -235.25
+offset_top = 298.0
+offset_right = 235.25
+offset_bottom = 495.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 6
-alignment = 1
+theme_override_constants/margin_top = 5
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Desktop-GUI/GUI/HBoxContainer2/SidebarMenu/ColorRect/ButtonBox"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="ButtonMenu" type="VBoxContainer" parent="Desktop-GUI/GUI/HBoxContainer2/SidebarMenu/ColorRect/ButtonBox/ScrollContainer"]
+[node name="ImageText" type="RichTextLabel" parent="Desktop-GUI/ImageViewer/ImageDesc/MarginContainer" unique_id=136209144]
 unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/separation = 10
-alignment = 1
-
-[node name="InfoButtonContainer" type="VBoxContainer" parent="Desktop-GUI/GUI/HBoxContainer2/SidebarMenu/ColorRect"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -66.0
-offset_top = -70.0
-grow_horizontal = 0
-grow_vertical = 0
-size_flags_horizontal = 8
-size_flags_vertical = 4
-alignment = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="Desktop-GUI/GUI/HBoxContainer2/SidebarMenu/ColorRect/InfoButtonContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 6
-theme_override_constants/margin_bottom = 20
-
-[node name="InfoBox" type="HBoxContainer" parent="Desktop-GUI/GUI/HBoxContainer2"]
-layout_mode = 2
-theme_override_constants/separation = 70
-
-[node name="InfoBoxText" type="RichTextLabel" parent="Desktop-GUI/GUI/HBoxContainer2/InfoBox"]
-unique_name_in_owner = true
-visible = false
-clip_contents = false
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("11_dlo4w")
+theme = ExtResource("10_ie368")
+theme_override_constants/line_separation = 8
 bbcode_enabled = true
-text = "[b]Anført af Resen.[/b]
+text = "[b]Velkommen til Svendborg 1903[/b]
 
-Topografisk kort af Svendborg by 1677.
-df
-d
-d
-df
-d
-d
-d
-d
-d
-d
-d
-d
-d
-dd
-d
-d
-"
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam convallis id nunc id dignissim. Ut rutrum nisi sit amet turpis pharetra, eu ultrices nisi commodo. Morbi blandit, ante at euismod cursus, dolor urna cursus libero, sed rhoncus lacus turpis nec nibh. Nullam eu lectus in justo suscipit mollis. Donec maximus dui vel lorem dapibus eleifend. Nullam porta vel metus vel gravida. Nam ut feugiat augue. Suspendisse dictum convallis ipsum a tempus. Sed et ex malesuada, placerat augue in, fringilla massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed porta eros, sit amet dictum nunc. Nam id augue ornare purus eleifend dapibus. Vestibulum ultrices quis dolor id aliquam. Aliquam in nibh in orci euismod mattis.
 
-[node name="InfoButton" type="MarginContainer" parent="Desktop-GUI/GUI/HBoxContainer2"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 8
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_bottom = 20
 
-[node name="InfoBoxButton" type="Button" parent="Desktop-GUI/GUI/HBoxContainer2/InfoButton"]
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam convallis id nunc id dignissim. Ut rutrum nisi sit amet turpis pharetra, eu ultrices nisi commodo. Morbi blandit, ante at euismod cursus, dolor urna cursus libero, sed rhoncus lacus turpis nec nibh. Nullam eu lectus in justo suscipit mollis. Donec maximus dui vel lorem dapibus eleifend. Nullam porta vel metus vel gravida. Nam ut feugiat augue. Suspendisse dictum convallis ipsum a tempus. Sed et ex malesuada, placerat augue in, fringilla massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed porta eros, sit amet dictum nunc. Nam id augue ornare purus eleifend dapibus. Vestibulum ultrices quis dolor id aliquam. Aliquam in nibh in orci euismod mattis."
+
+[node name="ImageTextButton" type="Button" parent="Desktop-GUI/ImageViewer" unique_id=1464777479]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(150, 150)
-layout_mode = 2
-focus_mode = 0
-theme = ExtResource("11_dlo4w")
-icon = ExtResource("3_p3ir5")
-icon_alignment = 1
+z_index = 1
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.94000006
+anchor_right = 0.5
+anchor_bottom = 0.94000006
+offset_left = -25.0
+offset_top = -61.200073
+offset_right = 25.0
+offset_bottom = -11.200073
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("10_ie368")
+icon = ExtResource("13_k63oc")
 expand_icon = true
 
-[node name="ZoomButtons" type="MarginContainer" parent="Desktop-GUI/GUI"]
+[node name="NextButton" type="Button" parent="Desktop-GUI/ImageViewer" unique_id=656126390]
+unique_name_in_owner = true
+z_index = 1
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 1
-anchors_preset = 3
+anchors_preset = 6
 anchor_left = 1.0
-anchor_top = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -66.0
+offset_top = -25.0
+offset_right = -16.0
+offset_bottom = 25.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("10_ie368")
+icon = ExtResource("10_x5dfk")
+expand_icon = true
+
+[node name="PreviousButton" type="Button" parent="Desktop-GUI/ImageViewer" unique_id=1475806670]
+unique_name_in_owner = true
+z_index = 1
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 16.0
+offset_top = -25.0
+offset_right = 66.0
+offset_bottom = 25.0
+grow_vertical = 2
+theme = ExtResource("10_ie368")
+icon = ExtResource("11_fls3e")
+expand_icon = true
+
+[node name="BackToMap" type="Button" parent="Desktop-GUI/ImageViewer" unique_id=1723383775]
+unique_name_in_owner = true
+z_index = 1
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 66.0
+offset_bottom = 66.0
+theme = ExtResource("10_ie368")
+icon = ExtResource("12_k63oc")
+expand_icon = true
+
+[node name="GUI" type="Control" parent="Desktop-GUI" unique_id=1514590022]
+z_index = 1
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -170.0
-offset_top = -324.0
-grow_horizontal = 0
-grow_vertical = 0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MenuBar" type="ColorRect" parent="Desktop-GUI/GUI" unique_id=942463927]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.9480001
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -9.440063
+grow_horizontal = 2
+grow_vertical = 2
+mouse_behavior_recursive = 2
+color = Color(0.7764706, 0.2784314, 0.3529412, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Desktop-GUI/GUI/MenuBar" unique_id=257694853]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.0
+offset_top = -20.0
+offset_right = 79.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Desktop-GUI/GUI/MenuBar/HBoxContainer" unique_id=164365189]
+layout_mode = 2
+theme_override_constants/margin_left = 20
 theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Desktop-GUI/GUI/ZoomButtons"]
-layout_mode = 2
-
-[node name="ZoomInButton" type="Button" parent="Desktop-GUI/GUI/ZoomButtons/VBoxContainer"]
+[node name="VisiblePinsButton" type="Button" parent="Desktop-GUI/GUI/MenuBar/HBoxContainer/MarginContainer2" unique_id=992108491]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(150, 150)
+custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
-focus_mode = 0
-theme = ExtResource("11_dlo4w")
-icon = ExtResource("12_ie368")
+theme = ExtResource("10_ie368")
+icon = ExtResource("17_rg57b")
+flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="ZoomOutButton" type="Button" parent="Desktop-GUI/GUI/ZoomButtons/VBoxContainer"]
+[node name="MarginContainer3" type="MarginContainer" parent="Desktop-GUI/GUI/MenuBar/HBoxContainer" unique_id=1695219347]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="test-button3" type="Button" parent="Desktop-GUI/GUI/MenuBar/HBoxContainer/MarginContainer3" unique_id=1890518223]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(150, 150)
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+
+[node name="MarginContainer6" type="MarginContainer" parent="Desktop-GUI/GUI/MenuBar/HBoxContainer" unique_id=1573711157]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="IndexButton" type="Button" parent="Desktop-GUI/GUI/MenuBar/HBoxContainer/MarginContainer6" unique_id=2043484072]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
 focus_mode = 0
-theme = ExtResource("11_dlo4w")
-icon = ExtResource("13_x5dfk")
+theme = ExtResource("10_ie368")
+icon = ExtResource("18_vtkp8")
 icon_alignment = 1
 expand_icon = true
+
+[node name="MarginContainer4" type="MarginContainer" parent="Desktop-GUI/GUI/MenuBar/HBoxContainer" unique_id=354771582]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="ZoomInButton" type="Button" parent="Desktop-GUI/GUI/MenuBar/HBoxContainer/MarginContainer4" unique_id=708973630]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("10_ie368")
+icon = ExtResource("11_x5dfk")
+icon_alignment = 1
+expand_icon = true
+
+[node name="MarginContainer5" type="MarginContainer" parent="Desktop-GUI/GUI/MenuBar/HBoxContainer" unique_id=774361774]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="ZoomOutButton" type="Button" parent="Desktop-GUI/GUI/MenuBar/HBoxContainer/MarginContainer5" unique_id=1354990125]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("10_ie368")
+icon = ExtResource("12_fls3e")
+icon_alignment = 1
+expand_icon = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Desktop-GUI/GUI/MenuBar/HBoxContainer" unique_id=1888693516]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="InfoBoxButton" type="Button" parent="Desktop-GUI/GUI/MenuBar/HBoxContainer/MarginContainer" unique_id=1864418388]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("10_ie368")
+icon = ExtResource("16_riaky")
+icon_alignment = 1
+expand_icon = true
+
+[node name="InfoBox" type="Control" parent="Desktop-GUI/GUI" unique_id=1594018592]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BackgroundPanel" type="Panel" parent="Desktop-GUI/GUI/InfoBox" unique_id=2092120348]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -244.0
+offset_top = -347.0
+offset_right = 238.0
+offset_bottom = 416.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_macow")
+
+[node name="ColorRect" type="Panel" parent="Desktop-GUI/GUI/InfoBox" unique_id=713695741]
+layout_mode = 0
+offset_left = -244.0
+offset_top = -347.0
+offset_right = 238.0
+offset_bottom = -313.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ttmth")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Desktop-GUI/GUI/InfoBox/ColorRect" unique_id=1378834504]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3fatf")
+bbcode_enabled = true
+text = "[b]OM KORTET[/b]"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InfoBoxButtonClose" type="Button" parent="Desktop-GUI/GUI/InfoBox/ColorRect" unique_id=430390194]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -13.5
+offset_right = -8.0
+offset_bottom = 13.5
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("10_ie368")
+icon = ExtResource("12_k63oc")
+icon_alignment = 1
+expand_icon = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Desktop-GUI/GUI/InfoBox" unique_id=1986087442]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -235.25
+offset_top = -312.0
+offset_right = 235.25
+offset_bottom = 411.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 5
+
+[node name="InfoBoxText" type="RichTextLabel" parent="Desktop-GUI/GUI/InfoBox/MarginContainer" unique_id=762137320]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("10_ie368")
+theme_override_constants/line_separation = 8
+bbcode_enabled = true
+text = "[b]Velkommen til Svendborg 1903[/b]
+
+Dette topografiske købstads kort af Svendborg år 1903, er et vidunderligt detaljeret kort nu med moderniseret brugergrænsflade. 
+
+Med kortet er også en række billedserier fra perioden. Alle billederne er med til at give et indblik i Svendborgensernes hverdag, industri og gader. 
+Gå på udflugt og se hvad du opdager! 
+
+[b]Kortets funktioner[/b]
+[img]res://Assets/Icons/image_explain.webp[/img] 
+Denne knap slår billedserierne til eller fra på kortet.
+[img]res://Assets/Icons/image_text_explain.webp[/img] 
+Denne knap viser et billeds billedtekst, når du er inde i en billedserie.
+[img]res://Assets/Icons/zoom_in_explain.webp[/img] 
+Zoomer ind på kortet.
+[img]res://Assets/Icons/zoom_out_explain.webp[/img] 
+Zoomer ud på kortet."
+
+[node name="IndexBox" type="Control" parent="Desktop-GUI/GUI" unique_id=511825465]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -244.0
+offset_top = -348.0
+offset_right = 239.0
+offset_bottom = 263.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme = ExtResource("10_ie368")
+
+[node name="BackgroundPanelIndex" type="Panel" parent="Desktop-GUI/GUI/IndexBox" unique_id=99381794]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -249.0
+offset_right = -1.0
+offset_bottom = 293.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_macow")
+
+[node name="ColorRect" type="Panel" parent="Desktop-GUI/GUI/IndexBox" unique_id=890291602]
+layout_mode = 0
+offset_top = -249.0
+offset_right = 482.0
+offset_bottom = -206.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ttmth")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Desktop-GUI/GUI/IndexBox/ColorRect" unique_id=45624355]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vkeii")
+bbcode_enabled = true
+text = "[b]BILLEDSERIER INDEKS[/b]"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IndexBoxClose" type="Button" parent="Desktop-GUI/GUI/IndexBox/ColorRect" unique_id=608914951]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -13.5
+offset_right = -8.0
+offset_bottom = 13.5
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("10_ie368")
+icon = ExtResource("12_k63oc")
+icon_alignment = 1
+expand_icon = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Desktop-GUI/GUI/IndexBox" unique_id=131893333]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -179.5
+offset_top = -499.5
+offset_right = 188.5
+offset_bottom = 590.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Desktop-GUI/GUI/IndexBox/MarginContainer" unique_id=1296025490]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Desktop-GUI/GUI/IndexBox/MarginContainer/ScrollContainer" unique_id=1870911097]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="IndexButtonsContainer" type="VBoxContainer" parent="Desktop-GUI/GUI/IndexBox/MarginContainer/ScrollContainer/MarginContainer" unique_id=112692740]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1

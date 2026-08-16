@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4wn0okk8lgxa"
-path="res://.godot/imported/settings_3.png-3dd33682b5b979fc99ce98e709e3992a.ctex"
+uid="uid://c6uv22k7w6j3j"
+path="res://.godot/imported/zoom_out_explain.webp-39baf689d8375f8339693187dfdeb5cf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Icons/settings_3.png"
-dest_files=["res://.godot/imported/settings_3.png-3dd33682b5b979fc99ce98e709e3992a.ctex"]
+source_file="res://Assets/Icons/zoom_out_explain.webp"
+dest_files=["res://.godot/imported/zoom_out_explain.webp-39baf689d8375f8339693187dfdeb5cf.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

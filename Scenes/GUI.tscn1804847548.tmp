@@ -1,0 +1,170 @@
+[gd_scene format=3 uid="uid://cv58b5u2em50l"]
+
+[ext_resource type="Script" uid="uid://b14y7la05xk07" path="res://Scenes/map.gd" id="1_1ne4b"]
+[ext_resource type="PackedScene" uid="uid://dbwqsmv5e03p4" path="res://Scenes/camera.tscn" id="1_4mau4"]
+[ext_resource type="Theme" uid="uid://cptlnk3vxajih" path="res://Themes/location_theme.tres" id="5_i8ger"]
+[ext_resource type="Texture2D" uid="uid://2ekm02hi16v6" path="res://Assets/Icons/zoom_in.png" id="6_vi63y"]
+[ext_resource type="Texture2D" uid="uid://ckicweawyx70j" path="res://Assets/Icons/zoom_out.png" id="7_4ft8f"]
+[ext_resource type="Texture2D" uid="uid://chewu8f5g3mit" path="res://Assets/Icons/info.png" id="8_pw18r"]
+
+[node name="GUI" type="Control" unique_id=15990489]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Camera2D" parent="." unique_id=1216323547 instance=ExtResource("1_4mau4")]
+unique_name_in_owner = true
+position = Vector2(1794, 1812)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1683292508]
+
+[node name="GUI" type="Control" parent="CanvasLayer" unique_id=1514590022]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_1ne4b")
+
+[node name="Desktop" type="Control" parent="CanvasLayer/GUI" unique_id=1464235673]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
+
+[node name="ZoomButtons" type="MarginContainer" parent="CanvasLayer/GUI" unique_id=18413519]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -119.0
+offset_top = -290.0
+offset_right = 1.0
+offset_bottom = -66.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/GUI/ZoomButtons" unique_id=222755395]
+layout_mode = 2
+
+[node name="ZoomInButton" type="Button" parent="CanvasLayer/GUI/ZoomButtons/VBoxContainer" unique_id=708973630]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("5_i8ger")
+icon = ExtResource("6_vi63y")
+icon_alignment = 1
+expand_icon = true
+
+[node name="ZoomOutButton" type="Button" parent="CanvasLayer/GUI/ZoomButtons/VBoxContainer" unique_id=1354990125]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("5_i8ger")
+icon = ExtResource("7_4ft8f")
+icon_alignment = 1
+expand_icon = true
+
+[node name="TextureRect" type="ColorRect" parent="CanvasLayer/GUI" unique_id=942463927]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.9480001
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.44006348
+grow_horizontal = 2
+grow_vertical = 2
+mouse_behavior_recursive = 2
+color = Color(0.7764706, 0.2784314, 0.3529412, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/GUI/TextureRect" unique_id=257694853]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.0
+offset_top = -20.0
+offset_right = 79.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/GUI/TextureRect/HBoxContainer" unique_id=1888693516]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="InfoBoxButton" type="Button" parent="CanvasLayer/GUI/TextureRect/HBoxContainer/MarginContainer" unique_id=1864418388]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("5_i8ger")
+icon = ExtResource("8_pw18r")
+icon_alignment = 1
+expand_icon = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/GUI/TextureRect/HBoxContainer" unique_id=164365189]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="test-button2" type="Button" parent="CanvasLayer/GUI/TextureRect/HBoxContainer/MarginContainer2" unique_id=992108491]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="CanvasLayer/GUI/TextureRect/HBoxContainer" unique_id=1695219347]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="test-button3" type="Button" parent="CanvasLayer/GUI/TextureRect/HBoxContainer/MarginContainer3" unique_id=1890518223]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="InfoBoxText" type="RichTextLabel" parent="CanvasLayer/GUI" unique_id=762137320]
+unique_name_in_owner = true
+visible = false
+clip_contents = false
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -229.0
+offset_top = -306.0
+offset_right = 226.0
+offset_bottom = 305.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme = ExtResource("5_i8ger")
+bbcode_enabled = true
+text = "[b]Lorem Ipsum[/b]
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam convallis id nunc id dignissim. Ut rutrum nisi sit amet turpis pharetra, eu ultrices nisi commodo. Morbi blandit, ante at euismod cursus, dolor urna cursus libero, sed rhoncus lacus turpis nec nibh. Nullam eu lectus in justo suscipit mollis. Donec maximus dui vel lorem dapibus eleifend. Nullam porta vel metus vel gravida. Nam ut feugiat augue. Suspendisse dictum convallis ipsum a tempus. Sed et ex malesuada, placerat augue in, fringilla massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed porta eros, sit amet dictum nunc. Nam id augue ornare purus eleifend dapibus. Vestibulum ultrices quis dolor id aliquam. Aliquam in nibh in orci euismod mattis.
+"
+
+[node name="Control" type="Control" parent="." unique_id=216354731]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

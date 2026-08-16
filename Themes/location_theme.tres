@@ -1,10 +1,14 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://cptlnk3vxajih"]
+[gd_resource type="Theme" format=3 uid="uid://cptlnk3vxajih"]
 
 [ext_resource type="FontFile" uid="uid://0ly24o6e4u6m" path="res://Themes/Fonts/Barlow-Bold.ttf" id="1_8qaxl"]
 [ext_resource type="FontFile" uid="uid://7fijmbvj7cw5" path="res://Themes/Fonts/Barlow-Regular.ttf" id="1_sqy3k"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8qaxl"]
 bg_color = Color(0.9843137, 0.9607843, 0.92941177, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wfqwq"]
 content_margin_left = 5.0
@@ -12,30 +16,49 @@ content_margin_top = 5.0
 content_margin_right = 5.0
 content_margin_bottom = 5.0
 bg_color = Color(0.7764706, 0.2784314, 0.3529412, 0.28235295)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sqy3k"]
-content_margin_left = 5.0
-content_margin_top = 5.0
-content_margin_right = 5.0
-content_margin_bottom = 5.0
 bg_color = Color(0.7764706, 0.2784314, 0.3529412, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 0.3019608)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ep3xt"]
-content_margin_left = 5.0
-content_margin_top = 5.0
-content_margin_right = 5.0
-content_margin_bottom = 5.0
+content_margin_left = 30.0
+content_margin_top = 0.0
+content_margin_right = 30.0
+content_margin_bottom = 0.0
 bg_color = Color(0.984314, 0.960784, 0.929412, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+expand_margin_top = 10.0
+expand_margin_right = 5.0
+expand_margin_bottom = 15.0
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_it8xo"]
+bg_color = Color(0.7764706, 0.2784314, 0.3529412, 1)
 
 [resource]
 default_font = ExtResource("1_sqy3k")
 default_font_size = 24
 Button/colors/font_focus_color = Color(0, 0, 0, 1)
 Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/font_sizes/font_size = 34
+Button/fonts/font = ExtResource("1_sqy3k")
 Button/styles/focus = SubResource("StyleBoxFlat_8qaxl")
 Button/styles/hover = SubResource("StyleBoxFlat_wfqwq")
 Button/styles/normal = SubResource("StyleBoxFlat_sqy3k")
 RichTextLabel/colors/default_color = Color(0, 0, 0, 0.780392)
-RichTextLabel/constants/line_separation = 5
 RichTextLabel/fonts/bold_font = ExtResource("1_8qaxl")
 RichTextLabel/styles/normal = SubResource("StyleBoxFlat_ep3xt")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_it8xo")

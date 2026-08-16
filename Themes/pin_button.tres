@@ -1,0 +1,23 @@
+[gd_resource type="Theme" format=3 uid="uid://qgqid2r3j7l0"]
+
+[ext_resource type="FontFile" uid="uid://7fijmbvj7cw5" path="res://Themes/Fonts/Barlow-Regular.ttf" id="1_7tink"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7tink"]
+bg_color = Color(0.7764706, 0.2784314, 0.3529412, 0.28235295)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6myk8"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.1764706, 0.5882353, 0.70980394, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[resource]
+default_font = ExtResource("1_7tink")
+Button/font_sizes/font_size = 32
+Button/styles/hover = SubResource("StyleBoxFlat_7tink")
+Button/styles/normal = SubResource("StyleBoxFlat_6myk8")

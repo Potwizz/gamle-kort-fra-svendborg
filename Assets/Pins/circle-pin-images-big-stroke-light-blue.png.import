@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1vuec8b6y585"
-path="res://.godot/imported/settings_1.png-ee610833bdf5d4c4e580264ebd163a33.ctex"
+uid="uid://c2llrhfh5ibm2"
+path="res://.godot/imported/circle-pin-images-big-stroke-light-blue.png-3ad16264c8b5ca7a5a9ee50b03732c31.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Icons/settings_1.png"
-dest_files=["res://.godot/imported/settings_1.png-ee610833bdf5d4c4e580264ebd163a33.ctex"]
+source_file="res://Assets/Pins/circle-pin-images-big-stroke-light-blue.png"
+dest_files=["res://.godot/imported/circle-pin-images-big-stroke-light-blue.png-3ad16264c8b5ca7a5a9ee50b03732c31.ctex"]
 
 [params]
 

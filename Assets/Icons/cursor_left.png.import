@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dln54lmfks5fs"
-path="res://.godot/imported/looking_glass.png-61f29a07282e35938e59b2e956828ccc.ctex"
+uid="uid://7xieelg3q5dk"
+path="res://.godot/imported/cursor_left.png-7779e340569e4ad8deb357f0ef7ea04a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Icons/looking_glass.png"
-dest_files=["res://.godot/imported/looking_glass.png-61f29a07282e35938e59b2e956828ccc.ctex"]
+source_file="res://Assets/Icons/cursor_left.png"
+dest_files=["res://.godot/imported/cursor_left.png-7779e340569e4ad8deb357f0ef7ea04a.ctex"]
 
 [params]
 

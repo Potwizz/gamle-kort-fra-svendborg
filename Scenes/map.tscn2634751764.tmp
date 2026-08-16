@@ -1,0 +1,762 @@
+[gd_scene format=3 uid="uid://c1gdolffqfto"]
+
+[ext_resource type="Texture2D" uid="uid://c3re2i0p0l51a" path="res://Assets/Pins/map-pin-placeholder-trimmed.webp" id="6_x5dfk"]
+[ext_resource type="PackedScene" uid="uid://cv58b5u2em50l" path="res://Scenes/GUI.tscn" id="8_6q3n4"]
+[ext_resource type="Texture2D" uid="uid://bkp3r37444vd" path="res://Assets/placeholder_images/kloster-test-1.webp" id="8_fls3e"]
+[ext_resource type="Texture2D" uid="uid://rqofppg16do8" path="res://Assets/Images/maps/k59-6.webp" id="10_olcgw"]
+[ext_resource type="PackedScene" uid="uid://d1oi0hgb1kprv" path="res://Scenes/pin.tscn" id="11_q6lx1"]
+[ext_resource type="Texture2D" uid="uid://drm1fq3qp8lbu" path="res://Assets/Pins/map-pin-1.webp" id="13_5qtum"]
+[ext_resource type="Texture2D" uid="uid://bh560nyxki8qv" path="res://Assets/Pins/map-pin-2.webp" id="13_ie368"]
+
+[node name="Node2D" type="Node2D" unique_id=1013978578]
+
+[node name="BackgroundShader" type="ColorRect" parent="." unique_id=1867009611]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -21240.0
+offset_top = -13143.0
+offset_right = 32973.0
+offset_bottom = 26039.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MapTexture" type="TextureRect" parent="." unique_id=96437451]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 4083.0
+offset_bottom = 4096.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_olcgw")
+stretch_mode = 4
+metadata/_edit_lock_ = true
+
+[node name="Pins" type="Control" parent="." unique_id=837652967]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+
+[node name="pin1" parent="Pins" unique_id=2132938529 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 1740.0
+offset_top = 1909.0
+offset_right = 1740.0
+offset_bottom = 1909.0
+pin_texture = ExtResource("13_5qtum")
+pin_text = "1: Amstue"
+pin_number = 1
+
+[node name="pin2" parent="Pins" unique_id=353169464 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2421.0
+offset_top = 1919.0
+offset_right = 2421.0
+offset_bottom = 1919.0
+pin_texture = ExtResource("13_ie368")
+pin_text = "2: Apotek Løve"
+pin_number = 1
+
+[node name="pin29" parent="Pins" unique_id=794850926 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2452.0
+offset_top = 1932.0
+offset_right = 2452.0
+offset_bottom = 1932.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "29: Hotel, central."
+pin_number = 1
+
+[node name="pin16" parent="Pins" unique_id=1752099980 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2265.0
+offset_top = 1851.0
+offset_right = 2265.0
+offset_bottom = 1851.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "16"
+pin_number = 1
+
+[node name="pin21" parent="Pins" unique_id=29853425 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2335.0
+offset_top = 1807.0
+offset_right = 2335.0
+offset_bottom = 1807.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "21"
+pin_number = 1
+
+[node name="pin69" parent="Pins" unique_id=1718561571 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2401.0
+offset_top = 1823.0
+offset_right = 2401.0
+offset_bottom = 1823.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "69"
+pin_number = 1
+
+[node name="pin50" parent="Pins" unique_id=452779927 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2394.0
+offset_top = 1844.0
+offset_right = 2394.0
+offset_bottom = 1844.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "50"
+pin_number = 1
+
+[node name="pin68" parent="Pins" unique_id=1816650615 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2451.0
+offset_top = 1979.0
+offset_right = 2451.0
+offset_bottom = 1979.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "68"
+pin_number = 1
+
+[node name="pin48" parent="Pins" unique_id=2022650788 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2584.0
+offset_top = 1919.0
+offset_right = 2584.0
+offset_bottom = 1919.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "48"
+pin_number = 1
+
+[node name="pin52" parent="Pins" unique_id=1982673663 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2294.0
+offset_top = 1840.0
+offset_right = 2294.0
+offset_bottom = 1840.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "52:"
+pin_number = 1
+
+[node name="pin6" parent="Pins" unique_id=1164207968 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2581.0
+offset_top = 1975.0
+offset_right = 2581.0
+offset_bottom = 1975.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "6"
+pin_number = 1
+
+[node name="pin40" parent="Pins" unique_id=1829715641 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2402.0
+offset_top = 2100.0
+offset_right = 2402.0
+offset_bottom = 2100.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "40"
+pin_number = 1
+
+[node name="pin30" parent="Pins" unique_id=1242241529 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2572.0
+offset_top = 2031.0
+offset_right = 2572.0
+offset_bottom = 2031.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "30"
+pin_number = 1
+
+[node name="pin7" parent="Pins" unique_id=1130716878 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2530.0
+offset_top = 2023.0
+offset_right = 2530.0
+offset_bottom = 2023.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "7"
+pin_number = 1
+
+[node name="pin8" parent="Pins" unique_id=1390590079 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2629.0
+offset_top = 2064.0
+offset_right = 2629.0
+offset_bottom = 2064.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "8"
+pin_number = 1
+
+[node name="pin31" parent="Pins" unique_id=842310761 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2722.0
+offset_top = 2048.0
+offset_right = 2722.0
+offset_bottom = 2048.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "31"
+pin_number = 1
+
+[node name="pin32" parent="Pins" unique_id=101571801 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2745.0
+offset_top = 2149.0
+offset_right = 2745.0
+offset_bottom = 2149.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "67"
+pin_number = 1
+
+[node name="pin72" parent="Pins" unique_id=1011858874 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2309.0
+offset_top = 2159.0
+offset_right = 2309.0
+offset_bottom = 2159.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "72"
+pin_number = 1
+
+[node name="pin23" parent="Pins" unique_id=882743506 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2378.0
+offset_top = 2218.0
+offset_right = 2378.0
+offset_bottom = 2218.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "23"
+pin_number = 1
+
+[node name="pin59" parent="Pins" unique_id=2120639740 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2302.0
+offset_top = 2205.0
+offset_right = 2302.0
+offset_bottom = 2205.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "59"
+pin_number = 1
+
+[node name="pin33" parent="Pins" unique_id=338163073 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2116.0
+offset_top = 2134.0
+offset_right = 2116.0
+offset_bottom = 2134.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "33"
+pin_number = 1
+
+[node name="pin22" parent="Pins" unique_id=1942205044 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 1930.0
+offset_top = 2107.0
+offset_right = 1930.0
+offset_bottom = 2107.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "22"
+pin_number = 1
+
+[node name="pin53" parent="Pins" unique_id=1761653593 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 1731.0
+offset_top = 1776.0
+offset_right = 1731.0
+offset_bottom = 1776.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "53"
+pin_number = 1
+
+[node name="pin36" parent="Pins" unique_id=1475342699 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 1482.0
+offset_top = 1866.0
+offset_right = 1482.0
+offset_bottom = 1866.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "36"
+pin_number = 1
+
+[node name="pin57" parent="Pins" unique_id=1695048507 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2202.0
+offset_top = 2568.0
+offset_right = 2202.0
+offset_bottom = 2568.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "57"
+pin_number = 1
+
+[node name="pin78" parent="Pins" unique_id=452017843 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2972.0
+offset_top = 2220.0
+offset_right = 2972.0
+offset_bottom = 2220.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "78"
+pin_number = 1
+
+[node name="pin80" parent="Pins" unique_id=1245742667 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2830.0
+offset_top = 1927.0
+offset_right = 2830.0
+offset_bottom = 1927.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "80"
+pin_number = 1
+
+[node name="pin42" parent="Pins" unique_id=808665545 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2776.0
+offset_top = 1910.0
+offset_right = 2776.0
+offset_bottom = 1910.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "42"
+pin_number = 1
+
+[node name="pin35" parent="Pins" unique_id=350930134 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2674.0
+offset_top = 1941.0
+offset_right = 2674.0
+offset_bottom = 1941.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "35"
+pin_number = 1
+
+[node name="pin34" parent="Pins" unique_id=641571553 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2716.0
+offset_top = 1957.0
+offset_right = 2716.0
+offset_bottom = 1957.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "34"
+pin_number = 1
+
+[node name="pin24" parent="Pins" unique_id=1914138959 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2669.0
+offset_top = 1750.0
+offset_right = 2669.0
+offset_bottom = 1750.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "24"
+pin_number = 1
+
+[node name="pin44" parent="Pins" unique_id=1509834562 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2791.0
+offset_top = 1443.0
+offset_right = 2791.0
+offset_bottom = 1443.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "44"
+pin_number = 1
+
+[node name="pin75" parent="Pins" unique_id=646451737 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2879.0
+offset_top = 1479.0
+offset_right = 2879.0
+offset_bottom = 1479.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "75"
+pin_number = 1
+
+[node name="pin39" parent="Pins" unique_id=1910468365 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2794.0
+offset_top = 1346.0
+offset_right = 2794.0
+offset_bottom = 1346.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "39"
+pin_number = 1
+
+[node name="pin55" parent="Pins" unique_id=800282568 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2861.0
+offset_top = 1320.0
+offset_right = 2861.0
+offset_bottom = 1320.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "55"
+pin_number = 55
+
+[node name="pin54" parent="Pins" unique_id=885935602 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 3325.0
+offset_top = 1364.0
+offset_right = 3325.0
+offset_bottom = 1364.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "54"
+pin_number = 54
+
+[node name="pin73" parent="Pins" unique_id=1328611935 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 3487.0
+offset_top = 1303.0
+offset_right = 3487.0
+offset_bottom = 1303.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "73"
+pin_number = 73
+
+[node name="pin19" parent="Pins" unique_id=1173766259 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 3630.0
+offset_top = 1326.0
+offset_right = 3630.0
+offset_bottom = 1326.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "19"
+pin_number = 19
+
+[node name="pin11" parent="Pins" unique_id=183956915 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 3732.0
+offset_top = 1409.0
+offset_right = 3732.0
+offset_bottom = 1409.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "11"
+pin_number = 11
+
+[node name="pin10" parent="Pins" unique_id=54168681 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 3455.0
+offset_top = 956.0
+offset_right = 3455.0
+offset_bottom = 956.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "10"
+pin_number = 10
+
+[node name="pin77" parent="Pins" unique_id=480345623 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 3246.0
+offset_top = 1037.0
+offset_right = 3246.0
+offset_bottom = 1037.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "77"
+pin_number = 77
+
+[node name="pin61" parent="Pins" unique_id=1494327113 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 3142.0
+offset_top = 1019.0
+offset_right = 3142.0
+offset_bottom = 1019.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "61"
+pin_number = 61
+
+[node name="pin12" parent="Pins" unique_id=830796977 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2968.0
+offset_top = 1066.0
+offset_right = 2968.0
+offset_bottom = 1066.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "12"
+pin_number = 12
+
+[node name="pin15" parent="Pins" unique_id=769182650 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2649.0
+offset_top = 1153.0
+offset_right = 2649.0
+offset_bottom = 1153.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "15"
+pin_number = 15
+
+[node name="pin62" parent="Pins" unique_id=2018155468 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2355.0
+offset_top = 1484.0
+offset_right = 2355.0
+offset_bottom = 1484.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "62"
+pin_number = 62
+
+[node name="pin5" parent="Pins" unique_id=1544059843 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2255.0
+offset_top = 1496.0
+offset_right = 2255.0
+offset_bottom = 1496.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "5"
+pin_number = 5
+
+[node name="pin49" parent="Pins" unique_id=161440006 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2199.0
+offset_top = 1491.0
+offset_right = 2199.0
+offset_bottom = 1491.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "49"
+pin_number = 49
+
+[node name="pin9" parent="Pins" unique_id=1839366889 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2135.0
+offset_top = 1483.0
+offset_right = 2135.0
+offset_bottom = 1483.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "9"
+pin_number = 9
+
+[node name="pin25" parent="Pins" unique_id=1517117552 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 1981.0
+offset_top = 1640.0
+offset_right = 1981.0
+offset_bottom = 1640.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "25"
+pin_number = 25
+
+[node name="pin65" parent="Pins" unique_id=413253178 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 1908.0
+offset_top = 1673.0
+offset_right = 1908.0
+offset_bottom = 1673.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "65"
+pin_number = 65
+
+[node name="pin70" parent="Pins" unique_id=1517350469 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 1832.0
+offset_top = 1698.0
+offset_right = 1832.0
+offset_bottom = 1698.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "70"
+pin_number = 70
+
+[node name="pin46" parent="Pins" unique_id=372176338 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 1783.0
+offset_top = 1720.0
+offset_right = 1783.0
+offset_bottom = 1720.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "46"
+pin_number = 46
+
+[node name="pin63" parent="Pins" unique_id=1239653672 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 1751.0
+offset_top = 1628.0
+offset_right = 1751.0
+offset_bottom = 1628.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "63"
+pin_number = 63
+
+[node name="pin66" parent="Pins" unique_id=283778042 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 1736.0
+offset_top = 1465.0
+offset_right = 1736.0
+offset_bottom = 1465.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "66"
+pin_number = 66
+
+[node name="pin64" parent="Pins" unique_id=991899315 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 1859.0
+offset_top = 1359.0
+offset_right = 1859.0
+offset_bottom = 1359.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "64"
+pin_number = 64
+
+[node name="pin43" parent="Pins" unique_id=247451972 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 3086.0
+offset_top = 1123.0
+offset_right = 3086.0
+offset_bottom = 1123.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "43"
+pin_number = 43
+
+[node name="pin47" parent="Pins" unique_id=1484663020 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2684.0
+offset_top = 823.0
+offset_right = 2684.0
+offset_bottom = 823.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "47"
+pin_number = 47
+
+[node name="pin79" parent="Pins" unique_id=904054668 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2553.0
+offset_top = 862.0
+offset_right = 2553.0
+offset_bottom = 862.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "79"
+pin_number = 79
+
+[node name="pin18" parent="Pins" unique_id=684515125 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2438.0
+offset_top = 896.0
+offset_right = 2438.0
+offset_bottom = 896.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "18"
+pin_number = 18
+
+[node name="pin4" parent="Pins" unique_id=836693423 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 1210.0
+offset_top = 2032.0
+offset_right = 1210.0
+offset_bottom = 2032.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "4"
+pin_number = 4
+
+[node name="pin28" parent="Pins" unique_id=1592715945 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 1722.0
+offset_top = 2372.0
+offset_right = 1722.0
+offset_bottom = 2372.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "28"
+pin_number = 28
+
+[node name="pin38" parent="Pins" unique_id=1578838220 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 1870.0
+offset_top = 2285.0
+offset_right = 1870.0
+offset_bottom = 2285.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "38"
+pin_number = 38
+
+[node name="pin26" parent="Pins" unique_id=717135423 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2101.0
+offset_top = 2241.0
+offset_right = 2101.0
+offset_bottom = 2241.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "26"
+pin_number = 26
+
+[node name="pin27" parent="Pins" unique_id=1571032799 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 1999.0
+offset_top = 2533.0
+offset_right = 1999.0
+offset_bottom = 2533.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "27"
+pin_number = 27
+
+[node name="pin45" parent="Pins" unique_id=349110405 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2117.0
+offset_top = 2532.0
+offset_right = 2117.0
+offset_bottom = 2532.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "45"
+pin_number = 45
+
+[node name="pin71" parent="Pins" unique_id=488384912 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 1634.0
+offset_top = 2513.0
+offset_right = 1634.0
+offset_bottom = 2513.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "71"
+pin_number = 71
+
+[node name="pin56" parent="Pins" unique_id=870951043 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2630.0
+offset_top = 2657.0
+offset_right = 2630.0
+offset_bottom = 2657.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "56"
+pin_number = 56
+
+[node name="pin60" parent="Pins" unique_id=330366584 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2640.0
+offset_top = 2796.0
+offset_right = 2640.0
+offset_bottom = 2796.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "60"
+pin_number = 60
+
+[node name="pin13" parent="Pins" unique_id=232901332 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2583.0
+offset_top = 2186.0
+offset_right = 2583.0
+offset_bottom = 2186.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "13"
+pin_number = 13
+
+[node name="pin51" parent="Pins" unique_id=1575259936 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2269.0
+offset_top = 2115.0
+offset_right = 2269.0
+offset_bottom = 2115.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "51"
+pin_number = 51
+
+[node name="ImagePins" type="Control" parent="." unique_id=916776326]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="klosterplads-test" parent="ImagePins" unique_id=1211075981 instance=ExtResource("11_q6lx1")]
+layout_mode = 0
+offset_left = 2812.0
+offset_top = 2012.0
+offset_right = 2812.0
+offset_bottom = 2012.0
+pin_texture = ExtResource("6_x5dfk")
+pin_text = "Se billeder"
+image_test = ExtResource("8_fls3e")
+
+[node name="Desktop-GUI" parent="." unique_id=1545329571 instance=ExtResource("8_6q3n4")]

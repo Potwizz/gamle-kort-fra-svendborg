@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3a6etm45kxwb"
-path="res://.godot/imported/add.png-3520d3bd6bbe6551666d487ef1026a75.ctex"
+uid="uid://bcshpajs2slm8"
+path="res://.godot/imported/image_text_explain.webp-0b45e6e80d5faaed2982ff344544c571.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Icons/add.png"
-dest_files=["res://.godot/imported/add.png-3520d3bd6bbe6551666d487ef1026a75.ctex"]
+source_file="res://Assets/Icons/image_text_explain.webp"
+dest_files=["res://.godot/imported/image_text_explain.webp-0b45e6e80d5faaed2982ff344544c571.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

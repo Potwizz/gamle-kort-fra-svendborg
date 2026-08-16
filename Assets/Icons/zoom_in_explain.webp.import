@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3re2i0p0l51a"
-path="res://.godot/imported/map-pin-placeholder-trimmed.webp-9a6d49e92b4e6072a382d3bd136a0cc5.ctex"
+uid="uid://va1xf5teden5"
+path="res://.godot/imported/zoom_in_explain.webp-63e94181e3bc7d693d35576a45ea43c2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pins/map-pin-placeholder-trimmed.webp"
-dest_files=["res://.godot/imported/map-pin-placeholder-trimmed.webp-9a6d49e92b4e6072a382d3bd136a0cc5.ctex"]
+source_file="res://Assets/Icons/zoom_in_explain.webp"
+dest_files=["res://.godot/imported/zoom_in_explain.webp-63e94181e3bc7d693d35576a45ea43c2.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

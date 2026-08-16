@@ -8,13 +8,17 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
-config/name="gamle-kort-fra-svendborg"
+config/name="Svendborg-1903"
 run/main_scene="uid://c1gdolffqfto"
-config/features=PackedStringArray("4.5", "GL Compatibility")
+config/features=PackedStringArray("4.7", "GL Compatibility")
 boot_splash/bg_color=Color(0.776471, 0.278431, 0.352941, 1)
-boot_splash/fullsize=false
+boot_splash/stretch_mode=0
 boot_splash/use_filter=false
 boot_splash/image="uid://byllqo832ml8j"
 config/icon="uid://doaqa2qy1xt2r"
@@ -22,17 +26,24 @@ boot_splash/minimum_display_time=2000
 
 [display]
 
-window/size/viewport_width=1080
-window/size/viewport_height=1920
+window/size/viewport_width=720
+window/size/viewport_height=1280
 window/size/mode=2
-window/size/window_width_override=1280
-window/size/window_height_override=720
+window/size/window_width_override=390
+window/size/window_height_override=844
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+window/handheld/orientation=1
 
 [global_group]
 
 GroupA=""
+
+[importer_defaults]
+
+texture={
+&"compress/mode": 2
+}
 
 [input]
 
@@ -66,3 +77,7 @@ pointing/emulate_touch_from_mouse=true
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
+
+[threading]
+
+worker_pool/max_threads=1

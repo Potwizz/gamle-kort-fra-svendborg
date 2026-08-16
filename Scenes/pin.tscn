@@ -1,32 +1,84 @@
-[gd_scene load_steps=4 format=3 uid="uid://d1oi0hgb1kprv"]
+[gd_scene format=3 uid="uid://d1oi0hgb1kprv"]
 
 [ext_resource type="Script" uid="uid://be1yjcpwklikt" path="res://Scenes/pin.gd" id="1_052ig"]
+[ext_resource type="Texture2D" uid="uid://c2llrhfh5ibm2" path="res://Assets/Pins/circle-pin-images-big-stroke-light-blue.png" id="2_1nwex"]
+[ext_resource type="Theme" uid="uid://qgqid2r3j7l0" path="res://Themes/pin_button.tres" id="3_p4wps"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p4wps"]
-bg_color = Color(1, 1, 1, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_052ig"]
-bg_color = Color(1, 1, 1, 1)
-
-[node name="pin" type="Node2D" groups=["GroupA"]]
+[node name="pin" type="Control" unique_id=2015767207 groups=["GroupA"]]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 4
 script = ExtResource("1_052ig")
 
-[node name="PinText" type="RichTextLabel" parent="."]
+[node name="PinsTexture" type="TextureRect" parent="." unique_id=1104550405]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -22.0
+offset_right = 10.886715
+offset_bottom = 11.886715
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.3869742, 1.3869742)
+texture = ExtResource("2_1nwex")
+expand_mode = 1
+
+[node name="ToggleVisibility" type="Button" parent="." unique_id=1747752736]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -22.0
+offset_right = 24.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+flat = true
+autowrap_trim_flags = 0
+icon_alignment = 1
+expand_icon = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1708251198]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="Control" type="Control" parent="VBoxContainer" unique_id=1455993855]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ImageButton" type="Button" parent="VBoxContainer/Control" unique_id=1951848073]
 unique_name_in_owner = true
 visible = false
-offset_left = -95.0
-offset_top = -148.0
-offset_right = 111.0
-offset_bottom = -66.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_p4wps")
-theme_override_styles/background = SubResource("StyleBoxFlat_052ig")
-
-[node name="ToggleVisibility" type="Button" parent="."]
-unique_name_in_owner = true
-offset_left = -22.0
-offset_top = -64.0
-offset_right = 3022.0
-offset_bottom = 4274.0
-scale = Vector2(0.015, 0.015)
-flat = true
+z_index = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.5
+offset_top = -72.0
+offset_right = 27.5
+offset_bottom = -43.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_p4wps")

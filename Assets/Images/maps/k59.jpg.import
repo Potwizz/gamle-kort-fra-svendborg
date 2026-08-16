@@ -2,22 +2,22 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bh560nyxki8qv"
-path="res://.godot/imported/map-pin-2.webp-365fc88d75ac33b5b91b887e0f2db86a.ctex"
+uid="uid://xwiwwmegb62v"
+path="res://.godot/imported/k59.jpg-1715b0cb9f7dde0e44648a01faddae33.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pins/map-pin-2.webp"
-dest_files=["res://.godot/imported/map-pin-2.webp-365fc88d75ac33b5b91b887e0f2db86a.ctex"]
+source_file="res://Assets/Images/maps/k59.jpg"
+dest_files=["res://.godot/imported/k59.jpg-1715b0cb9f7dde0e44648a01faddae33.ctex"]
 
 [params]
 
 compress/mode=0
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=1.0
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1

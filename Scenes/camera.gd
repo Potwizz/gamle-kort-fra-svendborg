@@ -1,10 +1,11 @@
-extends Camera2D
+class_name CameraScript extends Camera2D
 
 #@onready var _map_texture: TextureRect = %MapTexture
 @onready var _camera_2d: Camera2D = %Camera2D
-@onready var map_texture: TextureRect = %MapTexture
 @onready var zoom_in_button: Button = %ZoomInButton
 @onready var zoom_out_button: Button = %ZoomOutButton
+@onready var info_box_text: RichTextLabel = %InfoBoxText
+@onready var image_viewer: Control = %ImageViewer
 
 @export var zoom_speed: float = 0.005
 @export var drag_speed: float = 1.0
@@ -12,7 +13,7 @@ extends Camera2D
 @export var max_zoom: float = 2.0
 
 ## Max zoom in
-var zoom_in := 2.0
+var zoom_in := 5.0
 ## Max zoom out
 var zoom_out := 0.5
 
@@ -29,23 +30,26 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	var current_zoom_x = _camera_2d.zoom.x
 	var current_zoom_y = _camera_2d.zoom.y
-	if Input.is_action_just_pressed("Scroll Up"):
-		if current_zoom_x < zoom_in:
-			_camera_2d.zoom.x = current_zoom_x + 0.2
-			_camera_2d.zoom.y = current_zoom_y + 0.2
-	if Input.is_action_just_pressed("Scroll Down"):
-		if current_zoom_x > zoom_out:
-			_camera_2d.zoom.x = current_zoom_x - 0.2
-			_camera_2d.zoom.y = current_zoom_y - 0.2
-	
-	#if Input.is_action_just_pressed("Scroll Up"):
-		#zoom -= Vector2.ONE * zoom_speed
-	#
-	#if Input.is_action_just_pressed("Scroll Down"):
-		#zoom += Vector2.ONE * zoom_speed
-	#
-	#zoom = Vector2.ONE * (1.0 + sin(Time.get_ticks_msec() * 0.001))
-	#zoom = zoom.clamp(Vector2.ONE * min_zoom, Vector2.ONE * max_zoom)
+	if info_box_text.visible or image_viewer.visible == true:
+		pass
+	else:
+		if Input.is_action_just_pressed("Scroll Up"):
+			if current_zoom_x < zoom_in:
+				_camera_2d.zoom.x = current_zoom_x + 0.2
+				_camera_2d.zoom.y = current_zoom_y + 0.2
+		if Input.is_action_just_pressed("Scroll Down"):
+			if current_zoom_x > zoom_out:
+				_camera_2d.zoom.x = current_zoom_x - 0.2
+				_camera_2d.zoom.y = current_zoom_y - 0.2
+		
+		#if Input.is_action_just_pressed("Scroll Up"):
+			#zoom -= Vector2.ONE * zoom_speed
+		#
+		#if Input.is_action_just_pressed("Scroll Down"):
+			#zoom += Vector2.ONE * zoom_speed
+		#
+		#zoom = Vector2.ONE * (1.0 + sin(Time.get_ticks_msec() * 0.001))
+		#zoom = zoom.clamp(Vector2.ONE * min_zoom, Vector2.ONE * max_zoom)
 
 func ZoomIn() -> void:
 	var current_zoom_x = _camera_2d.zoom.x
@@ -74,23 +78,26 @@ var _last_distance: float = 0.0
 var _last_drag_pos: Vector2 = Vector2.ZERO
 
 func _input(event):
-	if event is InputEventScreenTouch:
-		if event.pressed:
-			_touches[event.index] = event.position
-		else:
-			_touches.erase(event.index)
-			_last_distance = 0.0
-			_last_drag_pos = Vector2.ZERO
+	if info_box_text.visible or image_viewer.visible == true:
+		pass
+	else:
+		if event is InputEventScreenTouch:
+			if event.pressed:
+				_touches[event.index] = event.position
+			else:
+				_touches.erase(event.index)
+				_last_distance = 0.0
+				_last_drag_pos = Vector2.ZERO
 
-	if event is InputEventScreenDrag:
-		if _touches.has(event.index):
-			_touches[event.index] = event.position
+		if event is InputEventScreenDrag:
+			if _touches.has(event.index):
+				_touches[event.index] = event.position
 
-		if _touches.size() == 1:
-			_handle_drag(event)
+			if _touches.size() == 1:
+				_handle_drag(event)
 
-	if _touches.size() == 2:
-		_handle_pinch()
+		if _touches.size() == 2:
+			_handle_pinch()
 
 func _handle_drag(event: InputEventScreenDrag):
 	if _last_drag_pos == Vector2.ZERO:

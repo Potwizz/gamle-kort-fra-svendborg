@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://c7vt8x74cfpt"]
+
+[ext_resource type="Script" uid="uid://betlslj06s3pb" path="res://Scenes/image_viewer.gd" id="1_hjpx2"]
+[ext_resource type="Texture2D" uid="uid://dtmswk2bwhhp4" path="res://Assets/Billeder/Vestergade/b506.webp" id="2_5q7cw"]
+
+[node name="ImageViewer" type="Control" unique_id=321727444]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hjpx2")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=216188871]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Control" type="Control" parent="." unique_id=1773689520]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ImageTexture" type="TextureRect" parent="Control" unique_id=1010946377]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_5q7cw")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="NextButton" type="Button" parent="." unique_id=656126390]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -49.0
+offset_top = -15.5
+offset_bottom = 15.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "NEXT"
+
+[node name="PreviousButton" type="Button" parent="." unique_id=1475806670]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -15.5
+offset_right = 86.0
+offset_bottom = 15.5
+grow_vertical = 2
+text = "PREVIOUS"
+
+[node name="BackToMap" type="Button" parent="." unique_id=1723383775]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 31.0
+text = "BACK"
