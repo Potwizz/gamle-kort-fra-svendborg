@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://cr0nndt1dvhwu" path="res://Scenes/map.gd" id="1_6q3n4"]
 [ext_resource type="Texture2D" uid="uid://xwiwwmegb62v" path="res://Assets/Images/maps/k59.jpg" id="4_k63oc"]
-[ext_resource type="PackedScene" uid="uid://dbwqsmv5e03p4" path="res://Scenes/camera.tscn" id="4_q6lx1"]
 [ext_resource type="Script" uid="uid://dsk1lwbts52ij" path="res://Resources/street_images.gd" id="6_x5dfk"]
 [ext_resource type="Script" uid="uid://b14y7la05xk07" path="res://Scenes/GUI.gd" id="8_5qtum"]
 [ext_resource type="Script" uid="uid://betlslj06s3pb" path="res://Scenes/image_viewer.gd" id="10_dlo4w"]
@@ -1269,37 +1268,6 @@ corner_radius_top_right = 10
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_6q3n4")
-
-[node name="Camera2D" parent="." unique_id=1216323547 instance=ExtResource("4_q6lx1")]
-unique_name_in_owner = true
-visible = false
-position = Vector2(1794, 1812)
-enabled = false
-editor_draw_limits = true
-editor_draw_drag_margin = true
-
-[node name="ColorPicker" type="ColorPicker" parent="." unique_id=1912521481]
-visible = false
-layout_mode = 0
-offset_left = -1444.0
-offset_top = 606.0
-offset_right = -1146.0
-offset_bottom = 1213.0
-color = Color(0.7764706, 0.2784314, 0.3529412, 1)
-
-[node name="BackgroundShader" type="ColorRect" parent="." unique_id=1867009611]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -21240.0
-offset_top = -13143.0
-offset_right = 32973.0
-offset_bottom = 26039.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="Desktop-GUI" type="CanvasLayer" parent="." unique_id=1545329571]
 script = ExtResource("8_5qtum")

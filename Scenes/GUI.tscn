@@ -1,7 +1,6 @@
-[gd_scene format=3 uid="uid://cv58b5u2em50l"]
+[gd_scene format=3 uid="uid://d1s6ygyg17rel"]
 
 [ext_resource type="Script" uid="uid://b14y7la05xk07" path="res://Scenes/GUI.gd" id="1_1ne4b"]
-[ext_resource type="PackedScene" uid="uid://dbwqsmv5e03p4" path="res://Scenes/camera.tscn" id="1_4mau4"]
 [ext_resource type="Theme" uid="uid://cptlnk3vxajih" path="res://Themes/location_theme.tres" id="5_i8ger"]
 [ext_resource type="Texture2D" uid="uid://2ekm02hi16v6" path="res://Assets/Icons/zoom_in.png" id="6_vi63y"]
 [ext_resource type="Texture2D" uid="uid://ckicweawyx70j" path="res://Assets/Icons/zoom_out.png" id="7_4ft8f"]
@@ -9,11 +8,6 @@
 
 [node name="GUI" type="CanvasLayer" unique_id=1419197966]
 script = ExtResource("1_1ne4b")
-map_entries = null
-
-[node name="Camera2D" parent="." unique_id=1216323547 instance=ExtResource("1_4mau4")]
-unique_name_in_owner = true
-position = Vector2(1794, 1812)
 
 [node name="GUI" type="Control" parent="." unique_id=1514590022]
 layout_mode = 3
@@ -139,8 +133,8 @@ layout_mode = 2
 [node name="InfoBoxText" type="RichTextLabel" parent="GUI" unique_id=762137320]
 unique_name_in_owner = true
 visible = false
-clip_contents = false
 custom_minimum_size = Vector2(200, 0)
+clip_contents = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
